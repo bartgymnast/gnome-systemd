@@ -1,0 +1,32 @@
+2013-09-24 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.0-1dl:
+	* Updated to the latest stable sources available.
+
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.5-1dl:
+	* Build on Slackware-14.1
+	* Used dev version for deps checking
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.0-1dl:
+	* Updated to the latest sources tarball available.
+
+2012-11-14 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.2-1dl:
+	* Updated
+	* Changed to noarch
+
+2012-10-10 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 3.6.0
+	* Removed old patch
+	* Adapted for dbs-2
+	* Added $PKG_NEEDSTATIC

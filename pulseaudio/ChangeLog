@@ -1,0 +1,53 @@
+2013-10-21 Eugene Wissner <belka.ew@gmail.com>
+
+	4.0-1dl:
+	* Removed PKG_LOCALSTATEDIR="/var"
+	* mv bash_completion script to its place
+
+2013-07-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	4.0-3dl:
+	* Added patch permanent fix for pulseaudio bash completion script on slackware
+
+2013-07-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	4.0-2dl:
+	* added a modified pulseaudio-bash-completion.sh to fix gdm problem
+
+2013-06-04 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	4.0-1dl:
+	* Updated to the latest sources tarball available.
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.99.1-1dl:
+	* Updated to the latest sources tarball available.
+
+2013-01-13 Eugene Wissner <belka.ew@gmail.com>
+
+	2.1-1dl:
+	* Reverted to 2.1
+
+2012-12-23 Eugene Wissner <belka.ew@gmail.com>
+
+	3.0-1dl:
+	* Updated to 3.0
+
+2012-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	2.1-2dl:
+	* Build against tdb
+	* Bumped the build number to 2dl
+
+2012-10-12 Eugene Wissner <belka.ew@gmail.com>
+	* Fixed desc
+
+2012-07-29 Eugene Wissner <belka.ew@gmail.com>
+	* I have forgotten to remove a break point yesterday. Mea culpa, sorry.
+	Fixed
+
+2012-07-28 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2
+	* Added ChangeLog
+	* Updated to 2.1

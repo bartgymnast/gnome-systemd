@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Copyright 2004-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="ipython"
+VERSION="1.1.0"
+REVISION="1"
+
+PKG_SOURCEURL='http://pypi.python.org/packages/source/i/${NAME}/${NAME}-${VERSION}.tar.gz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+if [ "${PKG_ARCH%86}" != "$PKG_ARCH" ]; then
+  PKG_ARCH=i486
+fi
+
+prepare
+analyzesource
+
+spewdo "cd $PKG_SRCROOT"
+loggedcommand make "python3 setup.py install --prefix=$PKG_PREFIX --root=$PKG_STAGEROOT"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

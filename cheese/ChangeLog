@@ -1,0 +1,45 @@
+2013-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.2-1dl:
+	* Updated to the latest stable sources available.
+
+2013-10-21 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.1-1dl:
+	* Updated
+	* Updated download url
+
+2013-07-20 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.8.3-2dl:
+	* Rebuild against gst-plugins-good1 for vp8enc
+
+2013-07-20 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.3-1dl:
+	* Updated to the latest stable sources tarball available.
+	* Added PKG_SANIFYNOTOUCH
+
+2013-05-19 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-24 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.1-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2012-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.2-1dl:
+	* Updated to 3.6.2
+
+2012-10-27 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.1-1dl:
+	* Ported to dbs-2
+	* Added ChangeLog
+	* Fixed download url
+	* Fixed typo in desc
+	* Removed cxxflags ()

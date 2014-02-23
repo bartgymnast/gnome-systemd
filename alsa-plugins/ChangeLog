@@ -1,0 +1,39 @@
+2013-10-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.0.27-3dl:
+	* Added patch for avcodec hang
+
+2013-08-08 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.0.27-2dlc:
+	* Removed patch from build
+	* Rebuild on Slackware 14.1
+
+2013-07-08 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	1.0.26-3dl:
+	* Downgraded, and built against a new pulseaudio 4.0
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	1.0.27-1dl:
+	* Updated and built against pulseaudio-3.99.1
+	* Commented out the applypatch().
+
+2012-12-24 Eugene Wissner <belka.ew@gmail.com>
+
+	1.0.26-2dl:
+	* Rebuilt against pulseaudio-3.0
+	* Bumped the build number to 2dl
+
+2012-10-12 Eugene Wissner <belka.ew@gmail.com>
+
+	1.0.26-1dl:
+	* Updated
+	* Added patch
+
+2012-07-28 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2
+	* Added ChangeLog
+	* Updated to 1.0.25
+	* Added PKG_SANIFYNOTOUCH="yes"

@@ -1,0 +1,10 @@
+2013-06-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	5.1.5-1dlc:
+	* Downgraded to 5.1.5 for compatibility
+	* Build on Slackware 14.1
+
+2012-12-19 Eugene Wissner <belka.ew@gmail.com>
+
+        5.2.1-1dl:
+        * Created (rewritten script from slackbuilds.org)

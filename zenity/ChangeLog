@@ -1,0 +1,28 @@
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.8.0-3dl:
+	* Removed PKG_SANIFYNOTOUCH
+	* Added PKG_USEAUTOGENSH
+
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.8.0-2dl:
+	* Build on Slackware 14.1
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.0-1dl:
+	* Updated to the latest sources tarball available.
+	* Added PKG_SANIFYNOTOUCH
+
+2012-10-12 Bart van der Hall <bartgymnast@hotmail.com>
+	Zenity-3.6.0-1
+	* Updated to 3.6.0
+
+2012-07-29 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 3.4.0
+	* Ported to dbs-2
+	* Added makecheck
+	* Added PKG_NEEDSTATIC variable (to avoid the warning "unrecognized option
+	--disable-static")
+	* Updated desc (added new Zenity dialogs)

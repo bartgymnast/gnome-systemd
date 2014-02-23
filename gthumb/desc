@@ -1,0 +1,20 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+gthumb: gthumb (Image viewer)
+gthumb:
+gthumb: gThumb is a multipurpose image utility for the GNOME environment.
+gthumb: It supports image viewing, browsing, organizing, editing, and
+gthumb: even the generation of web albums and slideshows.
+gthumb:
+gthumb:
+gthumb:
+gthumb:
+gthumb:
+gthumb:
+gthumb:

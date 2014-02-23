@@ -1,0 +1,97 @@
+2013-02-23 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.2-2dl:
+	* Rebuild against slackwares harfbuzz
+
+2013-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.2-1dl:
+	* Updated to the latest stable sources available.
+
+2013-10-21 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.1-1dl:
+	* Updated
+	* Updated download url
+	* Removed unused patches
+
+2013-08-11 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.4.1-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-07-07 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.3-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-06-06 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-2dl:
+	* Rebuilt against PulseAudio 4.0
+
+2013-05-19 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-05-07 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.1.5-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-28 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.1-2dl:
+	* Rebuilt against new pango and gtk+3
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.1-1dl:
+	* Updated to the latest sources tarball available.
+	* Commented out patch 0 and 1.
+	* Added PKG_SANIFYNOTOUCH
+	* Removed unrecognized config flag --disable-update-mimedb
+
+2013-01-27 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.3-3dl:
+	* Added patch that fixes that the arrows for the AM/PM field are shown
+	althoughh glib returns empty value for some locales
+	* Bumped the build number to 3dl
+
+2012-12-23 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.3-2dl:
+	* Rebuilt against pulseaudio-3.0
+	* Bumped the build number to 2dl
+
+2012-11-14 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.6.3-1dl:
+	* Updated
+
+2012-10-24 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.6.2-1dl:
+	* Updated script to the latest available stable source tarball.
+
+2012-10-15 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.6.1-1dl:
+	* Updated script to the latest available stable source tarball.
+
+2012-07-31 Eugene Wissner <belka.ew@gmail.com>
+	* Modified gnome-control-center-3.4-lib64locale.patch. It removes now the
+	code that checks system locales in /usr/lib/locale-archive. Slackware
+	doesn't use single file for locales.
+
+2012-07-31 Eugene Wissner <belka.ew@gmail.com>
+	* Added the patch that sets the right path to glibc locale on x86-64
+
+2012-07-28 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2
+	* Updated to 3.4.2
+	* Added this ChangeLog
+	* Removed the patch (can't find file to patch at input line 3)
+	* Removed unknown option --enable-aboutme from configure

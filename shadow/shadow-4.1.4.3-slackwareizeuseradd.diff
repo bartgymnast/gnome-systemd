@@ -1,0 +1,9 @@
+--- shadow-4.1.4.3-pristine/etc/useradd	2011-02-13 18:58:23.000000000 +0100
++++ shadow-4.1.4.3/etc/useradd	2012-05-23 13:52:54.392891386 +0200
+@@ -1,5 +1,5 @@
+ # useradd defaults file
+-GROUP=1000
++GROUP=100
+ HOME=/home
+ INACTIVE=-1
+ EXPIRE=

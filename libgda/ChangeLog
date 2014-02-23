@@ -1,0 +1,38 @@
+2013-12-23 Eugene Wissner <belka.ew@gmail.com>
+
+	5.2.2-1dl:
+	* Updated
+
+2013-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	5.2.1-1dl:
+	* Updated
+
+2013-11-14 Eugene Wissner <belka.ew@gmail.com>
+
+	5.2.0-1dl:
+	* Updated to the latest stable sources tarball available.
+	* Set the download url using DLG_GNOMEMIRROR
+
+2013-06-04 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	5.0.4-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-05-19 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	5.0.3-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2012-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	4.2.13-1dl:
+	* Ported to dbs-2
+	* Updated
+	* Disabled java support
+	* Use system sqlite instead of the embedded one
+	* Fixed the path to Berkeley DB
+	* Added ChangeLog
+	* Removed commented out lines
+	* Added $PKG_SCROLLKEEPER to disable scrollkeeper code in doinst
+	because the source has one .omf file which isn't installed

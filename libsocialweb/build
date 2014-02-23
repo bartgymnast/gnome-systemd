@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Copyright 2013 Bart van der Hall <bartgymnast@hotmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="libsocialweb"
+VERSION="0.25.21"
+REVISION="1"
+
+PKG_SOURCEURL='$DLG_GNOMEMIRROR/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --enable-all-services \
+	--enable-introspection \
+	--enable-vala-bindings
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

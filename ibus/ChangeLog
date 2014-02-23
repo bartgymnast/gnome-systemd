@@ -1,0 +1,16 @@
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.5.3-1dl:
+	* Build on Slackware 14.1
+	* Updated to the latest sources tarball available.
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	1.5.2-1dl:
+	* Updated to the latest sources tarball available.
+	* Added PKG_SANIFYNOTOUCH
+
+2012-10-15 Eugene Wissner <belka.ew@gmail.com>
+
+	1.4.99.20121006-1dl:
+	* Created

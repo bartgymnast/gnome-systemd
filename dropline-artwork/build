@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# Copyright 2013 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+NAME="dropline-artwork"
+VERSION="3.10.0"
+REVISION="1"
+PKG_ARCH="noarch"
+
+PKG_SOURCEURL='http://belka.droplinegnome.org/${NAME}/${NAME}-${VERSION}.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+preparescratchspace
+
+findtarball filename
+opentarball $filename
+sanifysource $PKG_SRCROOT
+
+createdir "${PKG_STAGEROOT}${PKG_DATADIR}/gnome-background-properties"
+spewdo "mv ${PKG_SRCROOT}/dropline-artwork.xml ${PKG_STAGEROOT}${PKG_DATADIR}/gnome-background-properties"
+# Add desktop-login sound file from the moblin theme
+createdir "${PKG_STAGEROOT}${PKG_DATADIR}/sounds/freedesktop/stereo"
+spewdo "mv ${PKG_SRCROOT}/desktop-login.ogg ${PKG_STAGEROOT}${PKG_DATADIR}/sounds/freedesktop/stereo"
+# Copy backgrounds
+createdir "${PKG_STAGEROOT}${PKG_DATADIR}/backgrounds"
+spewdo "mv ${PKG_SRCROOT} ${PKG_STAGEROOT}${PKG_DATADIR}/backgrounds/${NAME}"
+
+# Download and install some additional GTK+ themes
+createdir ${PKG_STAGEROOT}${PKG_DATADIR}/themes
+cd ${PKG_WORKROOT}
+downloadfile . "http://fc04.deviantart.net/fs71/f/2013/302/4/7/evolve___gtk3_theme_by_satya164-d4dn66o.zip" "filename=evolve.zip"
+downloadfile . "https://github.com/shimmerproject/Numix/archive/v2.0.tar.gz" "filename=numix.tar.gz"
+downloadfile . "https://github.com/shimmerproject/Orion/archive/v1.3.tar.gz" "filename=orion.tar.gz"
+unzip evolve.zip
+tar zxf numix.tar.gz
+tar zxf orion.tar.gz
+mv Evolve ${PKG_STAGEROOT}${PKG_DATADIR}/themes
+mv Numix-2.0 ${PKG_STAGEROOT}${PKG_DATADIR}/themes/Numix
+mv Orion-1.3 ${PKG_STAGEROOT}${PKG_DATADIR}/themes/Orion
+
+finalizepackage
+packagize
+cleanup

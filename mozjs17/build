@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+# Copyright 2004, 2007-2008 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Copyright 2005, 2006, 2007 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="mozjs17"
+VERSION="17.0.0"
+REVISION="1"
+
+PKG_SOURCEURL='http://ftp.mozilla.org/pub/mozilla.org/js/${NAME}.0.0.tar.gz'
+PKG_LOCALSTATEDIR='/var/lib'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_PATCH[0]='js17-build-fixes.patch'
+PKG_PATCH[1]='js17-jsval.patch'
+PKG_PATCH[2]='mozbug746112-no-decommit-on-large-pages.patch'
+
+PKG_BUILDDIR="js/src"
+
+
+cflags
+cxxflags
+prepare
+
+applypatch 0 1
+applypatch 1 1
+applypatch 2 1
+
+analyzesource
+configure --with-system-nspr \
+	--with-system-ffi \
+	--enable-threadsafe \
+	--enable-readline
+make
+makeinstall
+
+# For some reason the headers and pkg-config file are executable
+spewdo "find ${PKG_STAGEROOT}/usr/include/js-17.0/ -type f -exec chmod chmod 644 {} ';'"
+spewdo "chmod 644 ${PKG_STAGEROOT}/usr/lib${LIBSUFFIX}/pkgconfig/*.pc"
+spewdo "chmod 644 ${PKG_STAGEROOT}/usr/lib${LIBSUFFIX}/libmozjs-17.0.a"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

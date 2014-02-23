@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Copyright 2011 Sasa Ostrouska <saxa@droplinegnome.org>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="lensfun"
+VERSION="0.2.7"
+REVISION="2"
+
+PKG_SOURCEURL='http://downloads.sf.net/project/${NAME}.berlios/${NAME}-${VERSION}.tar.bz2'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+unset PKG_LOCALSTATEDIR
+PKG_NEEDSTATIC="1"
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

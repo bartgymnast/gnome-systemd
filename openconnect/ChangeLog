@@ -1,0 +1,22 @@
+2013-10-21 Eugene Wissner <belka.ew@gmail.com>
+
+        5.0.1-1dl:
+        * Updated
+	* Added PKG_SANIFYNOTOUCH="sanifynotouch"
+
+2012-12-09 Eugene Wissner <belka.ew@gmail.com>
+
+        4.07-3dl:
+        * Removed the patch for 3.x
+	* Bumped the build number to 3dl
+	* Rewritten the description
+
+2012-11-29 Bart van der Hall <bartgymnast@hotmail.com>
+
+        4.07-2dl:
+        * Added configure option --with-vpnc-script
+
+2012-11-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	4.07-1dl:
+	* ported to dbs2

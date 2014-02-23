@@ -1,0 +1,58 @@
+2013-10-21 Euegene Wissner <belka.ew@gmail.com>
+
+	1.0.2-1dl:
+	* Removed PKG_LOCALSTATEDIR="/var"
+	* Added to doinst.sh:
+	* chroot . /bin/chown colord.colord /var/lib/colord
+	* chroot . /bin/chown colord.colord /var/lib/colord/icc
+
+2013-07-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.0.2-2dl:
+	* Added PKG_LOCALSTATEDIR="/var"
+
+2013-07-12 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.0.2-1dl:
+	*  Updated to the latest stable sources tarball available
+
+2013-07-11 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.0.0-2dl:
+	* Reverted back to 1.0.0 as 1.0.1 is crashing after startup.
+	* fixed doinst.sh from errors
+
+2013-06-20 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.0.1-1dl:
+	* rebuild with configure options
+	* Added --enable-vala
+	* Changed --enable-systemd-login=no to --disable-systemd-login
+	* Added --with-daemon-user=colord
+	* Added createcontroleaccount colord 71 71
+	* Added Note about bash-completion
+	* Added doinst.sh for the user account
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	1.0.0-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-13 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	0.1.32-1dl:
+	* Updated to the latest stable sources tarball available.
+	* Added --enable-systemd-login=no
+
+2012-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	0.1.24-1dl:
+	* Updated script to the latest stable release.
+
+2012-10-07 Sasa Ostrouska  <saxa@droplinegnome.org>
+
+	0.1.23-1dl:
+	* Updated script to the latest stable release.
+
+2012-07-27 Eugene Wissner <belka.ew@gmail.com>
+	* Created

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="openconnect"
+VERSION="5.01"
+REVISION="1"
+
+PKG_SOURCEURL='ftp://ftp.infradead.org/pub/${NAME}/${NAME}-${VERSION}.tar.gz'
+PKG_SANIFYNOTOUCH="sanifynotouch"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --with-vpnc-script=/etc/vpnc/vpnc-script
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,12 @@
+diff -uNr dropline-installer.orig/src/Makefile.in dropline-installer/src/Makefile.in
+--- dropline-installer.orig/src/Makefile.in	2008-01-18 00:19:50.443732598 +0100
++++ dropline-installer/src/Makefile.in	2008-01-18 00:20:24.094598947 +0100
+@@ -225,7 +225,7 @@
+ target_alias = @target_alias@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 	\
+-	-DG_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED \
++	-DG_DISABLE_DEPRECATED \
+ 	-DGNOME_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+ 	-DGNOME_ICONDIR=\"$(datadir)/pixmaps\" \
+ 	$(APPLET_CFLAGS) \

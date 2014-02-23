@@ -1,0 +1,16 @@
+2013-08-08 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.22.7-2dlc:
+	* Rebuild on Slackware 14.1
+
+2013-04-24 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	2.22.7-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2012-11-03 Sasa Ostrouska  <saxa@droplinegnome.org>
+
+	2.22.6-1dl
+	* Added ChangeLog
+	* Updated to point to xz tarball.
+	* Ported script to dbs2

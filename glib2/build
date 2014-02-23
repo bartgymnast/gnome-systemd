@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# Copyright 2004,2007,2008 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Copyright 2005, 2006, 2007 Scott Harmon
+# Available under the terms of the GNU GPL 2.0
+#
+
+NAME="glib2"
+VERSION="2.38.2"
+REVISION="1"
+
+PKG_SOURCEURL='$DLG_GNOMEMIRROR/glib/$VER_MAJ.$VER_MIN/glib-$VERSION.tar.xz'
+PKG_USEAUTOGENSH="oef"
+
+PKG_PATCH[0]='libglib2.sh'
+PKG_PATCH[1]='libglib2.csh'
+# Skip a broken new dbus-appinfo test which is hanging. Debian patch
+PKG_PATCH[2]='skip-brokwn-dbus-appinfo-test.patch'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_DOCDIR="$DLG_DOCDIR/glib-$VERSION"
+
+cflags
+prepare
+
+applypatch 2 1
+
+analyzesource
+configure
+make
+makecheck
+makeinstall install-strip
+
+createdir $PKG_STAGEROOT$PKG_SYSCONFDIR/profile.d
+findpatch filename ${PKG_PATCH[0]}
+spewdo "install -m 755 -o root -g root $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/profile.d/libglib2.sh"
+configfile $PKG_SYSCONFDIR/profile.d/libglib2.sh
+findpatch filename ${PKG_PATCH[1]}
+spewdo "install -m 755 -o root -g root $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/profile.d/libglib2.csh"
+configfile $PKG_SYSCONFDIR/profile.d/libglib2.csh
+
+# Set executable bit for /etc/bash_completion.d/*
+spewdo "chmod 755 $PKG_STAGEROOT$PKG_DATADIR/bash-completion/completions/*"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

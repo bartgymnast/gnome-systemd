@@ -1,0 +1,16 @@
+2014-02-13 Eugene Wissner <belka.ew@gmail.com>
+
+	0.2.3-2dl:
+	* Added SANIFYNOTOUCH
+	* Bumped the build number
+
+2014-02-06 Eugene Wissner <belka.ew@gmail.com>
+
+	0.2.3-1dl:
+	* Updated to the latest stable sources available.
+	* Use DLG_GNOMEMIRROR
+
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.2.2-1dl:
+	* Initial release

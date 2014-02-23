@@ -1,0 +1,46 @@
+2013-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.1-1dl:
+	* Updated to the latest stable sources available.
+	* Added DLG_GNOMEMIRROR to the download url
+
+2013-10-16 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.0-1dl:
+	* Updated to the latest stable sources available.
+
+2013-09-25 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.99-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-09-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.92-2dl:
+	* Added PKG_SANIFYNOTOUCH
+
+2013-09-17 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.92-1dl:
+	* Updated to latest dev version.
+
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.90-1dl:
+	* Build on Slackware 14.1
+	* Used dev version for deps checking
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.1-1dl:
+	* Updated to the latest stable sources.
+
+2012-12-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.6.1-1dl:
+	* Ported to dbs 2

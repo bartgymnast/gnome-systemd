@@ -1,0 +1,46 @@
+2014-01-25 Eugene Wissner <belka.ew@gmail.com>
+	
+	1.16.4-1dl:
+	* Updated
+
+2013-11-19 Eugene Wissner <belka.ew@gmail.com>
+	
+	1.16.2-1dl:
+	* Updated
+
+2013-10-19 Eugene Wissner <belka.ew@gmail.com>
+	
+	1.16.0-1dl:
+	* Updated
+	* Updated download url
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	1.14.4-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-28 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	1.14.2-2dl:
+	* Rebiult against new pango.
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	1.14.2-1dl:
+	* Updated to the latest sources tarball available.
+
+2012-10-19 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.12.2-1dl:
+	* Updated to 1.12.2
+
+2012-10-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	* Updated to 1.12.0
+
+2012-07-29 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 1.10.8
+	* Updated for dbs-2
+	* Fixed download link and archive type
+	* Changed --enable-introspection to "yes" because we need Clutter-1.0.gir
+	for mutter

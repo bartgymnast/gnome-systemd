@@ -1,0 +1,27 @@
+2013-10-20 Eugene Wissner <belka.ew@gmail.com>
+
+	0.6.31-1dl:
+	* Added ChangeLog
+	* Added two patches because of compilation problems
+	* Removed PKG_LOCALSTATEDIR=/var as it is now default in dbs
+	* Added PKG_SANIFYNOTOUCH
+
+2013-07-20 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.6.31-3dl:
+	* Moved the patches after prepare and before analyzesource
+
+2013-07-19 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.6.31-2dl:
+	* Added patch reserve-space-for-data-record.patch
+	* Added patch avahi-privacy.patch
+	* Added patch hostname-machineid.patch
+	* Added --disable-mono and --disable-monodoc --with-systemdsystemunitdir=no
+
+2012-07-28 Eugene Wissner <belka.ew@gmail.com>
+	* Added ChangeLog
+	* Removed avahi-0.6.13-kernelcapabilitycheck.diff (too old for 3.2.x
+	kernels)
+	* Updated to 0.6.31
+	* Edited some flags to work with GTK+3

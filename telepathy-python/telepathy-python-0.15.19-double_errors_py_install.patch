@@ -1,0 +1,10 @@
+--- telepathy-python-0.15.19-pristine/src/Makefile.am	2013-02-15 21:58:44.069853680 +0100
++++ telepathy-python-0.15.19/src/Makefile.am	2013-02-15 21:58:58.021852597 +0100
+@@ -16,7 +16,6 @@
+ BUILT_SOURCES = \
+ 	_generated/interfaces.py \
+ 	_generated/constants.py \
+-	_generated/errors.py \
+ 	_generated/__init__.py \
+ 	$(spec_files)
+ 

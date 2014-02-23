@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+     |-----handy-ruler------------------------------------------------------|
+ptlib: ptlib (Multi-platform C++ library)
+ptlib:
+ptlib: PTLib is a moderately large class library that has its genesis
+ptlib: many years ago as a method to product applications to run on 
+ptlib: both Microsoft Windows and Unix X-Windows systems.
+ptlib:
+ptlib: If you intend to run ekiga, you will need this library.
+ptlib:
+ptlib:
+ptlib:
+ptlib:

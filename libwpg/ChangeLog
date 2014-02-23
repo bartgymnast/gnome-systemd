@@ -1,0 +1,20 @@
+2013-09-22 Bart van der Hall <bartgymast@hotmail.com>
+
+	0.2.2-2dl:
+	* Rebuild on Slackware 14.1
+
+2013-06-15 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	0.2.2-1dl:
+	* Updated to the latest stable sources.
+	* Added PKG_SANIFYNOTOUCH
+
+2012-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	0.2.1-1dl:
+	* Ported to dbs-2
+	* Updated
+	* Added install-strip to makeinstall ()
+	* Added ChangeLog
+	* Updated desc
+	* Changed tarball to *.tar.xz

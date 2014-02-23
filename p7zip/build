@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="p7zip"
+VERSION="9.20.1"
+REVISION="2"
+
+PKG_SOURCEURL='http://${DLG_SFMIRROR}.dl.sourceforge.net/sourceforge/${NAME}/${NAME}_${VERSION}_src_all.tar.bz2'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cxxflags
+prepare
+analyzesource
+
+spew 4 "Don't start DBS make() function but the system make command"
+spewdo "cd $PKG_BUILDROOT"
+
+set_title "$NAME-$VERSION-$REVISION: make phase"
+spew 2 "Running the make..."
+command="$(which make) all3 \
+  OPTFLAGS=\"$PKG_CXXFLAGS\" \
+  DEST_HOME=$PKG_PREFIX \
+  DEST_SHARE_DOC=$PKG_DOCDIR \
+  DEST_SHARE=$PKG_PREFIX/lib$LIBSUFFIX/$NAME \
+  DEST_DIR=$PKG_STAGEROOT"
+loggedcommand make "$command"
+
+set_title "$NAME-$VERSION-$REVISION: make install phase"
+spew 2 "Running the make install..."
+command="$(which make) install \
+  OPTFLAGS=\"$PKG_CXXFLAGS\" \
+  DEST_HOME=$PKG_PREFIX \
+  DEST_SHARE_DOC=$PKG_DOCDIR \
+  DEST_SHARE=$PKG_PREFIX/lib$LIBSUFFIX/$NAME \
+  DEST_DIR=$PKG_STAGEROOT"
+loggedcommand makeinstall "$command"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

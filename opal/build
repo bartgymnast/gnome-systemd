@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Copyright 2004-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="opal"
+VERSION="3.10.10"
+REVISION="1"
+
+PKG_SOURCEURL='http://ftp.gnome.org/pub/GNOME/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+
+PKG_PATCH[0]="opal-3.10.10-ffmpeg2-1.patch"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+
+applypatch 0 1
+
+analyzesource
+configure
+make 
+makeinstall
+
+spewdo "rm $PKG_STAGEROOT$PKG_PREFIX/lib$LIBSUFFIX/libopal_s.a"
+spewdo "strip -g $PKG_STAGEROOT$PKG_PREFIX/lib$LIBSUFFIX/libopal.so.${VERSION}"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

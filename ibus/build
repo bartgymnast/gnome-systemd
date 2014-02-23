@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="ibus"
+VERSION="1.5.3"
+REVISION="1"
+
+PKG_SOURCEURL='http://ibus.googlecode.com/files/${NAME}-${VERSION}.tar.gz'
+PKG_SANIFYNOTOUCH='oh yeah'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --enable-dconf \
+	--disable-gconf \
+	--disable-gtk2
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

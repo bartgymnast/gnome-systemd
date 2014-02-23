@@ -1,0 +1,21 @@
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.7.1-2dlc:
+	* Rebuild on Slackware 14.1
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	0.7.1-1dl:
+	* Updated to the latest sources tarball available.
+
+2012-10-14 Eugene Wissner <belka.ew@gmail.com>
+
+	0.6-1dl
+	* Updated
+	* Changed download link to sf.net
+
+2012-07-29 Eugene Wissner <belka.ew@gmail.com>
+	* Deleted few unneeded symbols from desc
+
+2012-07-28 Eugene Wissner <belka.ew@gmail.com>
+	* Created

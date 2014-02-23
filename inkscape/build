@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Copyright 2004 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="inkscape"
+VERSION="0.48.4"
+REVISION="3"
+
+PKG_SOURCEURL='http://$DLG_SFMIRROR.dl.sourceforge.net/sourceforge/$NAME/$NAME-$VERSION.tar.bz2'
+PKG_SANIFYNOTOUCH="1"
+PKG_NEEDSTATIC="WARNING: unrecognized options: --disable-static"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+
+spewdo "cd $PKG_SRCROOT"
+spewdo "sed -e 's@commands_toolbox,@commands_toolbox@' -i src/widgets/desktop-widget.h"
+
+configure --enable-binreloc
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

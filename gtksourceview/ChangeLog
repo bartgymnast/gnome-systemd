@@ -1,0 +1,55 @@
+2014-01-27 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.2-1dl:
+	* Updated to the latest stable sources available.
+	* Add DLG_GNOMEMIRROR
+
+2013-10-16 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.1-1dl:
+	* Updated to the latest stable sources available.
+
+2013-09-24 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.0-1dl:
+	* Updated to the latest stable sources available.
+
+2013-09-17 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.92-1dl:
+	* Updated to latest dev version.
+
+2013-09-08 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.9.5-1dl:
+	* Removed description about libgnomeprint requirement
+	* Build on Slackware 14.1
+	* Used dev version for deps checking.
+
+2013-04-24 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.1-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-01-26 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.3-1dl:
+	* Fixed the description file
+	* Updated to 3.6.3
+
+2013-01-25 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.2-1dl:
+	* Updated to 3.6.2
+
+2012-11-05 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.1-1dl:
+	* Updated
+
+2012-11-03 Sasa Ostrouska  <saxa@droplinegnome.org>
+
+	3.6.0-1dl:
+	* Created ChangeLog
+	* Ported script to dbs2
+	* Updated download lin to point to a .xz tarball.

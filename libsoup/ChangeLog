@@ -1,0 +1,48 @@
+2013-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	2.44.2-1dl:
+	* Updated
+
+2013-10-14 Eugene Wissner <belka.ew@gmail.com>
+	
+	2.44.0-1dl:
+	* Updated to the latest stable sources tarball available.
+	* Modified mirror using $DLG_GNOMEMIRROR
+	* Added $PKG_SANIFYNOTOUCH
+
+2013-04-24 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	2.42.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	2.42.1-1dl:
+	* Updated to the latest sources tarball available.
+
+2013-04-13 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	2.42.0-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-01-15 Eugene Wissner <belka.ew@gmail.com>
+
+	2.40.3-1dl:
+	* Updated
+
+2012-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	2.40.2-1dl:
+	* Updated
+
+2012-10-17 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.40.1-1dl:
+	* Updated to 2.40.1
+
+2012-10-06 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 2.40.0
+
+2012-06-15 Eugene Wissner <belka.ew@gmail.com>
+	* Ported script to the new build system.
+	* Updated to 2.38.1

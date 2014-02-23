@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+     |-----handy-ruler------------------------------------------------------|
+ekiga: Ekiga (Video conferencing software)
+ekiga:
+ekiga: Ekiga (formerly GnomeMeeting) is the premier GNU/Linux
+ekiga: H323-compatible client for Unix.  It has been designed for the Gnome 
+ekiga: desktop, but it also works under other environments.  It is 
+ekiga: compatible with Netmeeting and other H.323 products.
+ekiga:
+ekiga:
+ekiga:
+ekiga:
+ekiga:

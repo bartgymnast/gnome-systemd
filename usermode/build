@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# Copyright 2005 Paul Blazejowski <paulb@blazebox.homeip.net>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="usermode"
+VERSION="1.111"
+REVISION="2"
+
+# Theres has *got* to be a more proper location than this to download the
+# package, but I can't find the thing.  Debian rolled back to 1.81.
+PKG_SOURCEURL='http://fedorahosted.org/releases/u/s/${NAME}/${NAME}-${VERSION}.tar.xz'
+#http://download.fedora.redhat.com/pub/fedora/linux/development/source/SRPMS/usermode-1.92-1.src.rpm
+PKG_SANIFYNOTOUCH="1"
+
+# PAM policy files
+PKG_PATCH[0]="halt"
+PKG_PATCH[1]="poweroff"
+PKG_PATCH[2]="reboot"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+#buildrequires libuser
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure
+make
+#makecheck
+makeinstall install-strip
+
+spewdo "cd $PKG_STAGEROOT/usr/bin"
+for wrappedapp in halt reboot poweroff ; do
+ln -s consolehelper $wrappedapp
+done
+
+spewdo "chmod u+s $PKG_STAGEROOT$PKG_PREFIX/sbin/userhelper"
+
+# Remove the evil cruft we don't need cluttering up the place.
+for cruft in userinfo usermount userpasswd; do
+	spewdo "rm $PKG_STAGEROOT$PKG_PREFIX/bin/$cruft"
+	spewdo "rm $PKG_STAGEROOT$PKG_PREFIX/man/man1/$cruft.1"
+done
+removedir $PKG_STAGEROOT$PKG_PREFIX/man/man1/
+
+createdir $PKG_STAGEROOT/etc/pam.d
+findpatch filename ${PKG_PATCH[0]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT/etc/pam.d/"
+findpatch filename ${PKG_PATCH[1]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT/etc/pam.d/"
+findpatch filename ${PKG_PATCH[2]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT/etc/pam.d/"
+
+# To remove the unneeded red-hat shortcuts.
+spewdo "rm $PKG_STAGEROOT/usr/share/applications/redhat-userinfo.desktop"
+spewdo "rm $PKG_STAGEROOT/usr/share/applications/redhat-usermount.desktop"
+spewdo "rm $PKG_STAGEROOT/usr/share/applications/redhat-userpasswd.desktop"
+spewdo "rmdir $PKG_STAGEROOT/usr/share/applications/"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

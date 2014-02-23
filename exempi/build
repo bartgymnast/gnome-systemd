@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Copyright 2013 Bart van der Hall
+# Available under the terms of the GNU GPL.
+#
+
+NAME="exempi"
+VERSION="2.2.1"
+REVISION="1"
+
+PKG_SOURCEURL='http://libopenraw.freedesktop.org/download/${NAME}-${VERSION}.tar.gz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --enable-unittest=no
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

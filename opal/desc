@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+    |-----handy-ruler------------------------------------------------------|
+opal: opal (Open Phone Abstraction Library (aka OpenH323 v2))
+opal:
+opal: OPAL is the "next generation" of Open H323 that has a new
+opal: architecture. Not only does it support H.323 and SIP, but new VoIP
+opal: protocols or devices can be added very easily. It is being actively
+opal: developed and is used by several projects such as Ekiga.
+opal:
+opal:
+opal:
+opal:
+opal:

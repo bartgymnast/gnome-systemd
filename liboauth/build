@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2013 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="liboauth"
+VERSION="1.0.1"
+REVISION="1"
+
+PKG_SOURCEURL='http://$DLG_SFMIRROR.dl.sourceforge.net/sourceforge/$NAME/$NAME-$VERSION.tar.gz'
+PKG_SANIFYNOTOUCH="needed"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure --enable-nss
+make
+makecheck
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

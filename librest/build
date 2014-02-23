@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="librest"
+VERSION="0.7.90"
+REVISION="3"
+
+PKG_SOURCEURL='$DLG_GNOMEMIRROR/rest/$VER_MAJ.$VER_MIN/rest-$VERSION.tar.xz'
+PKG_SANIFYNOTOUCH="1"
+
+PKG_PATCH[0]='rest-0.7.90-xml.patch'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+
+applypatch 0 1
+
+analyzesource
+spewdo "cd $PKG_SRCROOT && autoreconf"
+configure --enable-gtk-doc \
+	--with-ca-certificates=$PKG_SYSCONFDIR/ssl/certs/ca-certificates.crt
+make
+makecheck
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

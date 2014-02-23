@@ -1,0 +1,9 @@
+2013-08-08 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.10.0-2dl:
+	* Rebuild on Slackware 14.1
+
+2012-06-02 Eugene Wissner <belka.ew@gmail.com>
+	* Ported script to the new build system.
+	* Added -lcairo to CFLAGS (new binutils issue)
+	* Added --without-libstdc-doc to ./configure (WARNING during execution)

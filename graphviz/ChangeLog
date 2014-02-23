@@ -1,0 +1,11 @@
+2013-09-24 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.34.0-1dl:
+	* Updated to the latest stable sources available.
+
+2012-11-29 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.28.0-1dl:
+	* ported to dbs2
+	* fixed download link
+	* disabled php bindings, because of errors

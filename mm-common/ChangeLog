@@ -1,0 +1,10 @@
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.9.6-2dl:
+	* Rebuild on Slackware 14.1
+
+2012-11-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.9.6-1dl
+	* Created ChangeLog
+	* ported build script to dbs2

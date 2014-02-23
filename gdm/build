@@ -1,0 +1,97 @@
+#!/bin/bash
+#
+# Copyright 2005, 2006 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gdm"
+VERSION="3.10.0.1"
+REVISION="2"
+
+PKG_SOURCEURL='${DLG_GNOMEMIRROR}/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH="yes"
+
+PKG_PATCH[0]="xinitrc.gnome"
+PKG_PATCH[1]='blackbox.desktop'
+PKG_PATCH[2]='fluxbox.desktop'
+PKG_PATCH[3]='fvwm2.desktop'
+PKG_PATCH[4]='kde.desktop'
+PKG_PATCH[5]='twm.desktop'
+PKG_PATCH[6]='windowmaker.desktop'
+PKG_PATCH[7]='custom.conf'
+PKG_PATCH[8]='gdmpin-pamd'
+PKG_PATCH[9]='gdmauto-pamd'
+PKG_PATCH[10]='gdmcard-pamd'
+PKG_PATCH[11]='gdmfinger-pamd'
+PKG_PATCH[12]='gdmpass-pamd'
+PKG_PATCH[13]='system.conf'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+
+# Because of configure: WARNING: unregcognized options: --disable-schemas-install
+PKG_GCONFTWO=""
+
+configure --enable-authentication-scheme=pam \
+	--without-selinux \
+	--with-log-dir=/var/log/gdm \
+	--with-initial-vt=7 \
+	--with-default-pam-config=redhat \
+	--with-tcp-wrappers \
+	--with-dbus-sys=/etc/dbus-1/system.d \
+	--with-dbus-services=/usr/share/dbus-1/services \
+	--libexecdir=/usr/libexec \
+	--enable-introspection=yes \
+	--with-user=gdm \
+	--with-group=gdm
+
+make
+makeinstall install-strip
+
+# configfile $PKG_SYSCONFDIR/gdm/custom.conf
+createroleaccount gdm 42 42
+
+# Install the xinitrc.gnome file that starts GNOME *correctly*
+createdir $PKG_STAGEROOT$PKG_SYSCONFDIR/X11/xinit
+findpatch filename ${PKG_PATCH[0]}
+spewdo "install -m 755 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/X11/xinit/"
+spewdo "cd $PKG_STAGEROOT$PKG_SYSCONFDIR/X11/xinit/ && ln -sf xinitrc.gnome xinitrc"
+
+# Copy all those little .desktop files (for the things Slackware ships only)
+spewdo "createdir $PKG_STAGEROOT$PKG_PREFIX/share/xsessions"
+for (( idx=1; idx <= 6; idx++ )); do
+	findpatch filename ${PKG_PATCH[idx]}
+	spewdo "install -m 755 $filename $PKG_STAGEROOT$PKG_PREFIX/share/xsessions"
+done
+
+createdir $PKG_STAGEROOT$PKG_SYSCONFDIR/gdm
+findpatch filename ${PKG_PATCH[7]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/gdm/custom.conf"
+
+# Add the files that consolekit and userhelper require to make gdmsetup
+# work with a non-root user
+createdir $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d
+findpatch filename ${PKG_PATCH[8]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d/gdm-pin"
+findpatch filename ${PKG_PATCH[9]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d/gdm-autologin"
+findpatch filename ${PKG_PATCH[10]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d/gdm-smartcard"
+findpatch filename ${PKG_PATCH[11]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d/gdm-fingerprint"
+findpatch filename ${PKG_PATCH[12]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d/gdm-password"
+
+# Copy the original dbus config
+findpatch filename ${PKG_PATCH[13]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/dbus-1/system.conf"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

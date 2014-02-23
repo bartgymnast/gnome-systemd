@@ -1,0 +1,48 @@
+diff -uNr gnome-terminal-3.8.2.orig/src/org.gnome.Terminal.gschema.xml.in gnome-terminal-3.8.2/src/org.gnome.Terminal.gschema.xml.in
+--- gnome-terminal-3.8.2.orig/src/org.gnome.Terminal.gschema.xml.in	2013-05-19 00:16:47.304240803 +0100
++++ gnome-terminal-3.8.2/src/org.gnome.Terminal.gschema.xml.in	2013-05-19 00:28:57.651274610 +0100
+@@ -94,7 +94,7 @@
+       <_description>Human-readable name of the profile.</_description>
+     </key>
+     <key name="foreground-color" type="s">
+-      <default>'#00FF00'</default>
++      <default>'#bfbfbf'</default>
+       <_summary>Default color of text in the terminal</_summary>
+       <_description>Default color of text in the terminal, as a color specification (can be HTML-style hex digits, or a color name such as "red").</_description>
+     </key>
+@@ -159,7 +159,7 @@
+       <_description>Number of rows in newly created terminal windows. Has no effect if use_custom_default_size is not enabled.</_description>
+     </key>
+     <key name="scrollbar-policy" enum="org.gnome.Terminal.ScrollbarPolicy">
+-      <default>'always'</default>
++      <default>'never'</default>
+       <_summary>When to show the scrollbar</_summary>
+     </key>
+     <key name="scrollback-lines" type="i">
+@@ -168,7 +168,7 @@
+       <_description>Number of scrollback lines to keep around. You can scroll back in the terminal by this number of lines; lines that don't fit in the scrollback are discarded. If scrollback_unlimited is true, this value is ignored.</_description>
+     </key>
+     <key name="scrollback-unlimited" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Whether an unlimited number of lines should be kept in scrollback</_summary>
+       <_description>If true, scrollback lines will never be discarded. The scrollback history is stored on disk temporarily, so this may cause the system to run out of disk space if there is a lot of output to the terminal.</_description>
+     </key>
+@@ -188,7 +188,7 @@
+       <_description>Possible values are "close" to close the terminal, and "restart" to restart the command.</_description>
+     </key>
+     <key name="login-shell" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Whether to launch the command in the terminal as a login shell</_summary>
+       <_description>If true, the command inside the terminal will be launched as a login shell. (argv[0] will have a hyphen in front of it.)</_description>
+     </key>
+@@ -236,7 +236,7 @@
+       <_summary>Palette for terminal applications</_summary>
+     </key>
+     <key name="font" type="s">
+-      <default>'Monospace 12'</default>
++      <default>'Monospace 11'</default>
+       <_summary>A Pango font name and size</_summary>
+     </key>
+     <key name="backspace-binding" enum="org.gnome.Terminal.EraseBinding">

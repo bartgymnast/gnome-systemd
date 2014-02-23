@@ -1,0 +1,40 @@
+2013-02-02 Eugene Wissner <belka.ew@gmail.com>
+	
+	3.10.2-1dl:
+	* Updated
+
+2013-10-19 Eugene Wissner <belka.ew@gmail.com>
+	
+	3.10.1-1dl:
+	* Updated
+	* Updated the download url
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-13 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.0-1dl:
+	* Updated to the latest stable sources tarball available.
+	* Added PKG_SANIFYNOTOUCH to prevent the build break.
+
+2012-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.2-1dl:
+	* Updated
+
+2012-10-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.6.1-1dl:
+	* Updated to 3.6.1
+
+2012-10-06 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 3.6.0
+
+2012-06-17 Eugene Wissner <belka.ew@gmail.com>
+	* Ported script to the new build system.
+	* Updated to 3.4.1
+	* Added short description to desc
+	* Removed not existed --enable-python  flag

@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Copyright 2008 Sasa Ostrouska <saxa@droplinegnome.org>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="mousetweaks"
+VERSION="3.10.0"
+REVISION="1"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_NEEDSTATIC="no libraries"
+PKG_SANIFYNOTOUCH='yes'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure
+make
+makecheck
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

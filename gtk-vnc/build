@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Copyright 2008 Sasa Ostrouska <saxa@droplinegnome.org>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gtk-vnc"
+VERSION="0.5.3"
+REVISION="1"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+PKG_SANIFYNOTOUCH="1"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --with-libview \
+	--with-gtk=3.0 \
+	--enable-introspection=yes
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Copyright 2012-2013 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gsettings-desktop-schemas"
+VERSION="3.10.1"
+REVISION="1"
+
+PKG_SOURCEURL='$DLG_GNOMEMIRROR/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_NEEDSTATIC="unrecognized option --disable-static"
+PKG_SANIFYNOTOUCH='ajajaj'
+
+PKG_PATCH[0]="gsettings-desktop-schemas-3.x-set_default_background.patch"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+
+applypatch 0 1
+
+analyzesource
+configure --enable-introspection=yes
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

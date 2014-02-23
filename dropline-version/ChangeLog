@@ -1,0 +1,123 @@
+2013-09-24 Bart van der Hall <bartgymnast@hotmail.com>
+
+	Released revision 3.10.0-1dl. (Dropline GNOME 3.10.0 / Slackware 14.1)
+
+	3.10.0-1dl:
+	* Updated to gnome-desktop-3.10.0 and updated date
+
+2013-06-15 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.3-1dl:
+	* Updated to gnome-desktop-3.8.3 and updated date.
+
+2012-12-10 Bart van der Hall  <bartgymnast@hotmail.com>
+
+        Released revision 3.6.2-1dl. (Dropline GNOME 3.6.2 / Slackware 14.0)
+
+	* build: Ported to DBS 2
+
+2008-07-09 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.22.3-x86_64-1dl.  (Dropline GNOME 2.22 / Slamd64-12.1)
+
+	* build: Rebuilt on Slamd64-12.1 platform and updated
+	to the latest stable source available tarball.
+	Need various updates to splash and other things.
+
+2008-06-01 Rudson Alves <rudsonalves@yahoo.com.br>
+
+	Released revision 2.22.2-x86_64-1dl. (Dropline GNOME 2.22.0 / Slamd64-12.1)
+
+	* build: Upgraded to latest stable release.
+
+2008-01-13 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.20.3-x86_64-1dl.  (Dropline GNOME 2.20 / Slamd64-12.0)
+
+	* build: Rebuilt on Slamd64-12.0 platform and updated
+	to the latest stable source available tarball.
+
+2007-07-05 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.3-x86_64-1dl.  (Dropline GNOME 2.18.3)
+
+	* build: Rebuilt on Slamd64-11.0 platform and updated
+	to the latest stable source available tarball.
+
+2007-05-29 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.2-x86_64-1dl.  (Dropline GNOME 2.18.2)
+
+	* build: Rebuilt on Slamd64-11.0 platform and updated
+	to the latest stable source available tarball.
+
+2007-05-01 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.1-x86_64-1dl.  (Dropline GNOME 2.18.1)
+
+	* build: Rebuilt on Slamd64-11.0 platform and updated
+	to the latest stable source available tarball.
+
+2006-12-09 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	NEVER Released revision 2.16.2-x86_64-1dl.  (Dropline GNOME 2.16.2)
+
+	* build: built on Slamd64-11.0 platform.
+	* fisrst test release of dropline gnome 2.16.2 for Slamd64-11.0
+
+2006-11-02 Zach Borgerding <zborgerd@gmail.com>
+
+	Released revision 2.16.1-i686-1. (Dropline 2.16.1)
+
+	* build: Updated version.  Merged some changes with Paul's updates,
+	and wrote the new start page.
+
+2006-07-02 Scott Harmon
+
+	Released revision 2.14.3-i686-1.
+
+2006-05-31 Scott Harmon
+
+	Released revision 2.14.2-i686-1.
+
+2006-04-24 Scott Harmon
+
+	Released revision 2.14.1-i686-3.
+
+	* Changed some links in the start page.
+
+2006-04-23 Scott Harmon
+
+	Released revision 2.14.1-i686-2.
+
+	* Modified the start page.
+
+2006-04-20 Scott Harmon
+
+	Released revision 2.14.1-i686-1.
+
+2006-02-08 Scott Harmon
+
+	Released revision 2.12.3-i686-1.
+
+2005-11-28 Scott Harmon
+
+	Released revision 2.12.2-i686-1.
+
+2005-10-11 Scott Harmon
+
+	Released revision 2.12.1-i686-2.
+
+	* Added fixes for the webpage from Paul Best.
+
+2005-10-08 Scott Harmon
+
+	Released revision 2.12.1-i686-1.
+
+2005-09-20 Scott Harmon
+
+	Released revision 2.12.0-i686-1.
+
+	* build: Initial build for 2.12, this now has more tweaks added to the build script
+		 to make it easier to change the location of the website tarball and splash.
+	* This is not the final pack (startpage needs to be revised).

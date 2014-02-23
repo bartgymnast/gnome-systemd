@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="dotconf"
+VERSION="1.3"
+REVISION="1"
+
+PKG_SOURCEURL='https://github.com/williamh/${NAME}/archive/v${VERSION}.tar.gz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+
+# Regenerate ./configure:
+spewdo "cd $PKG_SRCROOT"
+libtoolize --copy --force
+autoreconf -vif
+
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

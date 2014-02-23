@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+# Copyright 2004 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Copyright 2006 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="vino"
+VERSION="3.10.1"
+REVISION="1"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH='yes'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+
+# Regenerate ./configure:
+spewdo "cd $PKG_SRCROOT" libtoolize --copy --force autoreconf -vif
+# Autoconf changes linux to linux-gnu. Our host is $ARCH-slackware-linux not $ARCH-slackware-linux-gnu:
+spewdo "cd $PKG_SRCROOT/build-aux; sed -i -e 's#linux|linux-gnu|#linux|linux|#' config.sub"
+
+
+if [ "$DLG_ARCH" == "x86-64" ]; then
+	host="x86_64-slackware-linux"
+else
+	host="i486-slackware-linux"
+fi
+
+PKG_CFLAGS="${PKG_CFLAGS} -DHOST='"'"${host}"'"'"
+
+configure --with-network-manager \
+	--enable-http-server \
+	--with-avahi \
+	--with-telepathy=yes \
+	--build=$host
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,40 @@
+2013-10-12 Eugene Wissner <belka.ew@gmail.com>
+
+	1.38.0-1dl:
+	* Updated
+
+2013-04-06 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	1.36.0-1dl:
+	* Updated to the latest stable sources.
+
+2012-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	1.34.2-1dl:
+	* Updated
+
+2012-10-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.34.1.1-1dl:
+	* update to 1.34.1.1
+
+2012-10-17 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.34.0-3dl:
+	* Build against glib-2.34.1
+
+2012-10-07 Sasa Ostrouska  <saxa@droplinegnome.org>
+
+	1.34.0-2dl:
+	* bumped build number to 2dl
+	* Added PKG_SANIFYNOTOUCH=
+
+2012-10-05 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 1.34.0
+	* Removed cxxflag; poor c and python
+
+2012-06-05 Eugene Wissner <belka.ew@gmail.com>
+	* Added ChangeLog
+	* Updated to 1.32.1 needed for GNOME 3.4.1
+	* Changed url to download .tar.xz
+	* Added install-strip to makeinstall()

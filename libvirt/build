@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Copyright 2013 Bart van der Hall
+# Available under the terms of the GNU GPL.
+#
+
+NAME="libvirt"
+VERSION="1.1.2"
+REVISION="1"
+
+PKG_SOURCEURL='http://${NAME}.org/sources/${NAME}-${VERSION}.tar.gz'
+PKG_SANIFYNOTOUCH='indeed'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --with-qemu-group=users \
+	  --with-openvz \
+	  --with-vmware \
+	  --with-esx \
+	  --with-vbox \
+	  --without-hal \
+	  --with-python=/usr
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

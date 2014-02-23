@@ -1,0 +1,12 @@
+2013-09-22 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.0.9-2dl:
+	* Rebuild on Slackware 14.1
+
+2012-11-22 Eugene Wissner <belka.ew@gmail.com>
+
+	0.0.9-1dl:
+	* Ported
+	* Added this ChangeLog
+	* Updated
+	* Changed the tarball type to .tar.bz2

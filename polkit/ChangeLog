@@ -1,0 +1,33 @@
+2013-10-13 Eugene Wissner <belka.ew@gmail.com>
+
+	0.112-1dl:
+	* Removed code from doinst.sh, which adds user and group,
+	since createroleaccount() does it
+	* Add --with-mozjs=mozjs-17.0 option
+	* Built for slackware 14.1
+
+2013-10-08 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.112-3dl:
+	* Removed polkit-pam file, we switch to default of redhat
+
+2013-09-26 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.112-1dl:
+	* Updated to the latest stable sources available.
+
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.111-4dl:
+	* Removed PKG_LOCALSTATEDIR="/var" as it is now default in DLG
+
+2013-07-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.111-3dl:
+	* Removed the patches for /etc/localautorithy.d/ as they are obsolute
+	* Added PKG_LOCALSTATEDIR="/var"
+
+2013-06-11 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.111-1dl:
+	* changed 05 local admin patch to match 0.111 source

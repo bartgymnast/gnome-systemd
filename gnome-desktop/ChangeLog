@@ -1,0 +1,52 @@
+2013-11-21 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.2-1dl:
+	* Updated
+
+2013-10-19 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.1-1dl:
+	* Updated
+	* Updated download url
+
+2013-06-12 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.8.3-1dl:
+	* Updated to 3.8.3
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.1-1dl:
+	* Updated to the latest sources tarball available.
+	* Added PKG_SANIFYNOTOUCH
+
+2013-03-16 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.6.3-1dl:
+	* Updated to the latest stable sources tarball.
+
+2012-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.2-1dl:
+	* Updated to 3.6.2
+
+2012-10-19 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.6.1-1dl:
+	* Updated to 3.6.1
+
+2012-10-09 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 3.6.0.1
+
+2012-07-27 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2
+	* Updated to 3.4.2
+	* Removed unused DISTRIBUTOR variable
+	* Removed the patching of not existed gnome-version.xml
+	* Removed gnome-desktop-2.22.3-toddcontrib.patch
+	* Added this ChangeLog

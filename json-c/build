@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Copyright 2011 Sasa Ostrouska <saxa@droplinegnome.org>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="json-c"
+VERSION="0.11"
+REVISION="1"
+
+PKG_SOURCEURL='https://s3.amazonaws.com/${NAME}_releases/releases/${NAME}-${VERSION}.tar.gz'
+PKG_SANIFYNOTOUCH="1"
+PKG_DISABLESMP="1"
+PKG_LOCALSTATEDIR='/var/lib'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

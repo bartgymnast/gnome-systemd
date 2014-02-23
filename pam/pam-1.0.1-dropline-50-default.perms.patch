@@ -1,0 +1,13 @@
+diff -urN pam-redhat-0.99.9-1-pristine/pam_console/50-default.perms pam-redhat-0.99.9-1/pam_console/50-default.perms
+--- Linux-PAM-1.0.1/modules/pam_console/50-default.perms	2008-02-28 15:20:28.000000000 -0600
++++ Linux-PAM-1.0.1/modules/pam_console/50-default.perms	2008-05-09 15:34:51.000000000 -0500
+@@ -27,6 +27,8 @@
+ <console>  0600 <bluetooth>  0600 root
+ <console>  0600 <irda>       0600 root
+ <console>  0600 <dvb>        0600 root
++<console>  0660 <sound>      0660 root.audio
++<console>  0660 <cdrom>      0660 root.cdrom
+ 
+ <xconsole> 0600 /dev/console 0600 root.root
+-<console>  0600 <dri>	     0600 root
++<console>  0660 <dri>	     0600 root.video

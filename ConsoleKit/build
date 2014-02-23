@@ -1,0 +1,62 @@
+#!/bin/bash
+#
+# Copyright 2008 Rudson R. Alves
+# Available under the terms of the GNU GPL.
+#
+
+NAME="ConsoleKit"
+VERSION="0.4.6"
+REVISION="1"
+
+PKG_SOURCEURL='http://www.freedesktop.org/software/${NAME}/dist/${NAME}-${VERSION}.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_PATCH[0]='pam-system-session'
+PKG_PATCH[1]='pam-foreground-compat.ck'
+PKG_PATCH[2]='rc.consolekit'
+PKG_PATCH[3]='consolekit-0.2.10-cleanup_console_tags.patch'
+PKG_PATCH[4]='consolekit-0.4.2-revert.patch'
+PKG_PATCH[5]='dbus-properties.patch'
+
+cflags
+cxxflags
+prepare
+analyzesource
+
+applypatch 3 1
+applypatch 4 1
+applypatch 5 1
+
+configure --with-pam-module-dir=/lib$LIBSUFFIX/security \
+	--with-pid-file=/var/run/ConsoleKit/pid \
+	--with-dbus-services=/usr/share/dbus-1/services \
+	--enable-pam-module \
+	--with-dbus-sys=/etc/dbus-1/system.d \
+	--enable-docbook-docs
+
+make
+makeinstall install-strip
+
+createdir $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d
+findpatch filename ${PKG_PATCH[0]}
+spewdo "install -m 644 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/pam.d/system-session"
+
+createdir $PKG_STAGEROOT/usr/lib/ConsoleKit/run-session.d
+findpatch filename ${PKG_PATCH[1]}
+spewdo "install -m 755 $filename $PKG_STAGEROOT/usr/lib/ConsoleKit/run-session.d/pam-foreground-compat.ck"
+
+# Let's not clobber config files
+spewdo "mv $PKG_STAGEROOT$PKG_SYSCONFDIR/ConsoleKit/seats.d/00-primary.seat $PKG_STAGEROOT$PKG_SYSCONFDIR/ConsoleKit/seats.d/00-primary.seat.new"
+
+# Add an init script
+createdir $PKG_STAGEROOT$PKG_SYSCONFDIR/rc.d
+findpatch filename ${PKG_PATCH[2]}
+spewdo "install -m 755 $filename $PKG_STAGEROOT$PKG_SYSCONFDIR/rc.d/rc.consolekit"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

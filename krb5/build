@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+# Copyright 2004, 200, 2008 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="krb5"
+VERSION="1.11.4"
+REVISION="1"
+
+PKG_SOURCEURL='http://web.mit.edu/kerberos/dist/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION-signed.tar'
+
+PKG_PATCH[0]='python27.diff'
+PKG_PATCH[1]='tcl86.diff'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_OPTLEVEL="${PKG_OPTLEVEL:+$PKG_OPTLEVEL }-fstack-protector-all"
+PKG_BUILDDIR="src"
+
+# The flag turns off treating some warnings as errors for gcc-4.7
+cflags -Werror=maybe-uninitialized
+
+# There is no source directory in the top level archive. Real source archive is inside
+# the downloaded one, therefore we need to rewrite prepare() function for our purposes.
+preparescratchspace
+findtarball filename
+removedir $PKG_WORKROOT
+createdir $PKG_WORKROOT
+tar xvvf $filename -C $PKG_WORKROOT
+opentarball $PKG_WORKROOT/$NAME-$VERSION.tar.gz
+smp_check
+
+## First diff fixes Python detection and second one fixes build with Tcl 8.6
+applypatch 0 1
+applypatch 1 1
+
+analyzesource
+
+spewdo "cd $PKG_BUILDROOT ; autoconf"
+
+configure --enable-dns-for-realm
+make
+makeinstall install-strip
+
+# Bring the shared libraries in line with the way all the others are.
+spewdo "find $PKG_STAGEROOT -type f -name "*.so*" ! -perm 755 -exec chmod 755 \{\} \\;"
+
+spewdo "mkdir -p $PKG_STAGEROOT$PKG_SYSCONFDIR/krb5kdc"
+spewdo "cp $PKG_BUILDROOT/config-files/krb5.conf $PKG_STAGEROOT$PKG_SYSCONFDIR/krb5.conf-sample"
+spewdo "cp $PKG_BUILDROOT/config-files/kdc.conf $PKG_STAGEROOT$PKG_SYSCONFDIR/krb5kdc/kdc.conf-sample"
+
+tidydocumentation
+
+# There's a whole mess of documentation that comes with this baby.
+spewdo "cp -adR $PKG_SRCROOT/doc/* $PKG_STAGEROOT$PKG_DOCDIR/"
+# ...and some examples that otherwise wind up in a stupid place.
+spewdo "mv $PKG_STAGEROOT$PKG_DATADIR/examples $PKG_STAGEROOT$PKG_DOCDIR/examples"
+
+analyzebinaries
+finalizepackage
+packagize
+cleanup

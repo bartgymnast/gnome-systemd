@@ -1,0 +1,39 @@
+2013-09-24 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.0-1dl:
+	* Updated to the latest stable sources available.
+	* PKG_USEAUTOGENSH added
+
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.7.4-2dl:
+	* Rebuild against Slackware 14.1
+
+2013-03-31 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.7.4-1dl:
+	* Updated to the latest available sources.
+
+2012-10-17 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.6.0-1dl:
+	* Updated to 3.6.0
+
+2012-10-04 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 3.5.91
+	* Change architecture to noarch
+
+2012-07-26 Eugene Wissner <belka.ew@gmail.com>
+	* Set the executable bit on build script
+
+2012-05-26 Eugene Wissner <belka.ew@gmail.com>
+	* ChageLog renamed to ChangeLog (typo)
+	* Changed the download archive to xz
+	* Added $PKG_NEEDSTATIC constant
+	* Removed duplicate package from /scripts/platform
+	* Updated to the latest SVN branch 3.4.0.1
+
+2010-03-21  Sasa Ostrouska <saxa@droplinegnome.org>
+
+	* Ported the gnome-common script to the new build system.
+	* ChangeLog begins here.

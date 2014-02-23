@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# Copyright 2012 Bart van der Hall <bartgymnast@hotmail.com>
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="lua"
+VERSION="5.1.5"
+REVISION="1"
+
+PKG_SOURCEURL='http://www.lua.org/ftp/${NAME}-${VERSION}.tar.gz'
+
+PKG_PATCH[0]="lua.pc"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+
+# lua does not come with a configure script
+# configure
+
+# Fix up a to-be-installed header
+spewdo "sed -i 's|/usr/local|/usr|' ${PKG_BUILDROOT}/src/luaconf.h"
+
+if [ "$DLG_ARCH" = "x86-64" ]; then
+	spewdo "sed -i 's|lib/lua|lib64/lua|' ${PKG_BUILDROOT}/src/luaconf.h"
+fi
+
+make linux \
+	CFLAGS="\"$PKG_CFLAGS \\\$(MYCFLAGS)\"" \
+	INSTALL_TOP=${PKG_STAGEROOT}${PKG_PREFIX} \
+	INSTALL_LIB=${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX} \
+	INSTALL_CMOD=/usr/lib${LIBSUFFIX}/lua/5.1
+
+make install \
+	CFLAGS="\"$PKG_CFLAGS \\\$(MYCFLAGS)\"" \
+	INSTALL_TOP=${PKG_STAGEROOT}${PKG_PREFIX} \
+	INSTALL_LIB=${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX} \
+	INSTALL_CMOD=/usr/lib${LIBSUFFIX}/lua/5.1
+
+# Now let's build the shared library
+createdir ${PKG_BUILDROOT}/shared
+spewdo "cd ${PKG_BUILDROOT}/shared"
+spewdo "ar vx ${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX}/liblua.a"
+spewdo "gcc -ldl -lreadline -lhistory -lncurses -lm -shared *.o -o ${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX}/liblua.so.5.1.5"
+
+spewdo "cd ${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX}"
+for shared_lib in liblua.so.5.1 liblua.so.5 liblua.so; do
+	spewdo "ln -s liblua.so.5.1.5 $shared_lib"
+done
+
+# and install the pkgconfig file
+createdir "${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX}/pkgconfig"
+findpatch pc ${PKG_PATCH[0]}
+spewdo "install -o root -g root -m 644 $pc ${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX}/pkgconfig"
+if [ "$DLG_ARCH" = "x86-64" ]; then
+	spewdo "sed -i \"s|prefix}/lib|prefix}/lib${LIBSUFFIX}|g\" ${PKG_STAGEROOT}${PKG_PREFIX}/lib${LIBSUFFIX}/pkgconfig/lua.pc"
+fi
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

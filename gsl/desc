@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+   |-----handy-ruler------------------------------------------------------|
+gsl: gsl (GNU Scientific Library)
+gsl:
+gsl: GNU scientific library (GSL) is a numerical library for C and C++
+gsl: programmers. It is free software under the GNU General Public Licence.
+gsl: The library provides a wide range of mathematical routines such as
+gsl: random number generators, special functions and least-squares fitting.
+gsl: There are over 1000 functions in total with an extensive test suite.
+gsl:
+gsl:
+gsl:
+gsl:

@@ -1,0 +1,54 @@
+#!/bin/bash
+#
+# Copyright 2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="polkit"
+VERSION="0.112"
+REVISION="1"
+
+PKG_SOURCEURL='http://www.freedesktop.org/software/${NAME}/releases/${NAME}-${VERSION}.tar.gz'
+PKG_SANIFYNOTOUCH='yes'
+
+PKG_PATCH[0]='05_revert-admin-identities-unix-group-wheel.patch'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+if [ "$DLG_ARCH" == "x86-64" ]; then
+        host="x86_64-slackware-linux"
+else
+        host="i486-slackware-linux"
+fi
+
+cflags
+cxxflags
+prepare
+analyzesource
+
+applypatch 0 1
+
+configure --with-authfw=pam  \
+	--enable-man-pages \
+	--enable-gtk-doc \
+	--enable-introspection \
+	--enable-verbose-mode \
+	--with-mozjs=mozjs-17.0 \
+	--with-os-type=Slackware \
+	--build=$host
+
+make
+makeinstall install-strip
+
+# There should be a dedicated user and group to take control of the polkitd daemon after it is started.
+createroleaccount polkitd 28 28
+
+spewdo "chmod 0700 ${PKG_STAGEROOT}/etc/polkit-1/rules.d"
+spewdo "chmod 0700 ${PKG_STAGEROOT}/usr/share/polkit-1/rules.d"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

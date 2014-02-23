@@ -1,0 +1,16 @@
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.1.2-3dl:
+	* Build on Slackware 14.1
+
+2013-04-29 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	0.1.2-2dl:
+	* Rebuilt on 3.8.x platform.
+	* Removed configure options.
+
+2013-01-03 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.1.2-1dl:
+	* ported to dbs 2
+	* fixed desc

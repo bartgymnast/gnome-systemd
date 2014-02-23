@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Copyright 2005-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gtkmm2"
+VERSION="2.24.4"
+REVISION="2"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/gtkmm/$VER_MAJ.$VER_MIN/gtkmm-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+# buildrequires cairomm
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure
+make
+makecheck
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2005-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gnome-icon-theme-symbolic"
+VERSION="3.10.1"
+REVISION="1"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+PKG_NEEDSTATIC="no libraries"
+PKG_SANIFYNOTOUCH='ass'
+PKG_ARCH="noarch"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+prepare
+analyzesource
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

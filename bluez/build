@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# Copyright 2013 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="bluez"
+VERSION="5.10"
+REVISION="1"
+
+PKG_SOURCEURL='http://www.kernel.org/pub/linux/bluetooth/$NAME-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_PATCH[0]='bluez-dbus-config.patch'
+PKG_PATCH[1]='rc.bluetooth'
+PKG_PATCH[2]='bluetooth.sh'
+
+cflags
+prepare
+
+applypatch 0 1
+
+spewdo "cd $PKG_SRCROOT"
+spewdo "sed -i -e 's|-lreadline|\0 -lncursesw|g' Makefile.{in,tools}"
+
+spewdo "libtoolize -f -c"
+spewdo "autoreconf -ivf"
+
+analyzesource
+configure --enable-datafiles \
+	--enable-library \
+	--enable-tools\
+	--enable-cups \
+	--enable-test \
+	--disable-systemd
+
+make
+makeinstall install-strip
+
+createdir $PKG_STAGEROOT/etc/bluetooth
+spewdo "cp -a $PKG_SRCROOT/audio/audio.conf $PKG_STAGEROOT/etc/bluetooth"
+spewdo "cp -a $PKG_SRCROOT/input/input.conf $PKG_STAGEROOT/etc/bluetooth"
+spewdo "cp -a $PKG_SRCROOT/network/network.conf $PKG_STAGEROOT/etc/bluetooth"
+spewdo "cp -a $PKG_SRCROOT/serial/serial.conf $PKG_STAGEROOT/etc/bluetooth"
+spewdo "chmod 644 $PKG_STAGEROOT/etc/bluetooth/*.conf"
+
+createdir $PKG_STAGEROOT/etc/alsa
+spewdo "mv $PKG_STAGEROOT/usr/share/alsa/bluetooth.conf $PKG_STAGEROOT/etc/alsa"
+( cd $PKG_STAGEROOT/usr/share/alsa ; ln -s ../../../etc/alsa/bluetooth.conf . )
+
+
+# Do not overwrite configuration
+# Well, let the dbus file be overwritten, as it is not usually user-edited.
+( cd $PKG_STAGEROOT
+  for file in \
+    etc/alsa/bluetooth.conf \
+    etc/bluetooth/audio.conf \
+    etc/bluetooth/input.conf \
+    etc/bluetooth/network.conf \
+    etc/bluetooth/serial.conf \
+    etc/bluetooth/rfcomm.conf \
+    etc/bluetooth/main.conf \
+    etc/modprobe.d/bluetooth.conf ; do
+      mv ${file} ${file}.new
+  done
+)
+
+## Add the wrapper script
+findpatch filename ${PKG_PATCH[2]}
+install -m 644 $filename $PKG_STAGEROOT/lib/udev/bluetooth.sh
+
+createdir ${PKG_STAGEROOT}/var/lib/bluetooth
+
+# Add an init script
+createdir $PKG_STAGEROOT/etc/rc.d
+findpatch filename ${PKG_PATCH[1]}
+install -m 644 $filename $PKG_STAGEROOT/etc/rc.d/rc.bluetooth.new
+
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

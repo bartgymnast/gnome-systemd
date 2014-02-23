@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+libpst: libpst (Converts MS Outlook format to evolution)
+libpst:
+libpst: This version can now convert both 32 bit Outlook files (pre 2003), and
+libpst: the 64 bit Outlook 2003 pst files. Utilities are supplied to convert
+libpst: email messages to both mbox and MH mailbox formats, and to DII load
+libpst: file format for use with many of the CT Summation products. Contacts
+libpst: can be converted to a simple list, to vcard format, or to ldif format
+libpst: for import to an LDAP server.
+libpst:
+libpst:
+libpst:

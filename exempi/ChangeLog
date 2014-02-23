@@ -1,0 +1,17 @@
+2013-09-08 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.2.1-1dl:
+	* Updated to 2.2.1
+
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.2.0-2dl:
+	* Build on Slackware 14.1
+	* Fixed typo of version in this changelog of 2013-10-10
+
+
+2012-10-10 Eugene Wissner <belka.ew@gmail.com>
+	* Ported script to the new build system.
+	* Updated to 2.2.0
+	* Fixed desc
+	* Added --enable-unittest=no to ./configure

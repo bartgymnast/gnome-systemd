@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="cantarell-fonts"
+VERSION="0.0.15"
+REVISION="1"
+PKG_ARCH="noarch"
+
+PKG_SOURCEURL='$DLG_GNOMEMIRROR/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_NEEDSTATIC="1"
+PKG_SANIFYNOTOUCH="bah"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+prepare
+analyzesource
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

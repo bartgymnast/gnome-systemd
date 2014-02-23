@@ -1,0 +1,27 @@
+2013-09-22 Bart van der Hall <bartgymnast@hotmail.com>
+
+	2.10.10-2dl:
+	* Rebuild on Slackware 14.1
+
+2013-02-22 Eugene Wissner <belka.ew@gmail.com>
+
+	2.10.10-1dl:
+	* Updated
+	* Removed spewdo "createdir $PKG_STAGEROOT$PKG_PREFIX/bin" line from
+	the script
+
+2012-11-28 Eugene Wissner <belka.ew@gmail.com>
+
+	2.10.9-1dl:
+	* Updated
+	* Removed the patches
+	* Deleted the code that created symbolic link to ptlib-config (created
+	automatically)
+	* Fixed the code that strips libraries
+	* Remove static libraries
+
+2012-11-22 Eugene Wissner <belka.ew@gmail.com>
+
+	2.6.7-2dl:
+	* Bumped the build number to 2dl
+	* Added patch to fix ptlib header files (for opal and gcc47)

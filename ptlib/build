@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# Copyright 2005-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="ptlib"
+VERSION="2.10.10"
+REVISION="2"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_DOCFILES="$PKG_DOCFILES History.txt ReadMe.txt ReadMe_QOS.txt mpl-1.0.htm"
+
+# These don't seem to impress it much, but we try our best.
+cflags
+cxxflags
+prepare
+analyzesource
+# You may need kernel headers installed for v4l2 support.
+configure --enable-plugins \
+	--enable-alsa \
+	--enable-v4l2
+make
+makeinstall
+
+spewdo "rm $PKG_STAGEROOT$PKG_PREFIX/lib$LIBSUFFIX/libpt_s.a"
+spewdo "strip -g $PKG_STAGEROOT$PKG_PREFIX/lib$LIBSUFFIX/libpt.so.${VERSION}"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,16 @@
+2013-10-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.9.14-1dl:
+	* Renamed to zeitgeist
+	* Updated to 0.9.14
+	* Applied patch to fix build
+
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.3.18-2dl:
+	* Rebuild on Slackware 14.1
+
+2012-10-20 Bart van der Hall<bartgymnast@hotmail.com>
+
+	0.3.18-1dl:
+	* Created Package as it is needed by folks

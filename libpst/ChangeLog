@@ -1,0 +1,21 @@
+2013-09-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.6.61-1dl:
+	* Updated to latest stable sources tarball available.
+	* Build on Slackware 14.1
+
+2013-02-22 Eugene Wissner <belka.ew@gmail.com>
+
+	0.6.58-1dl:
+	* Updated
+
+2013-01-15 Eugene Wissner <belka.ew@gmail.com>
+
+	0.6.57-1dl:
+	* Updated
+	* Added a description
+
+2012-11-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.6.55-1dl:
+	* ported to dbs2

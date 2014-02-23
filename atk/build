@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Copyright 2004 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Copyright 2005, 2006 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="atk"
+VERSION="2.10.0"
+REVISION="1"
+
+PKG_SOURCEURL='ftp://ftp.gnome.org/mirror/gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

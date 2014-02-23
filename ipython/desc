@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+       |-----handy-ruler------------------------------------------------------|
+ipython: IPython (Python interactive interpreter)
+ipython:
+ipython: IPython is a free software project that tries to provide an
+ipython: interactive shell superior to Python's defaults, to serve as an
+ipython: embedded, ready to use interpreter for your own programs, to offer a
+ipython: flexible framework which can be used as the base environment for
+ipython: other systems with Python as the underlying language, and to allow
+ipython: interactive testing of threaded graphical toolkits.
+ipython:
+ipython: This package is needed by Accerciser.
+ipython:

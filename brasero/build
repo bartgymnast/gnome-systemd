@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2004, 2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Copyright 2005, 2006, 2007 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="brasero"
+VERSION="3.8.0"
+REVISION="2"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH='ioooo'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

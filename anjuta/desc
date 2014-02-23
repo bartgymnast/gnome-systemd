@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+      |-----handy-ruler------------------------------------------------------|
+anjuta:
+anjuta: Anjuta the DevStudio
+anjuta:
+anjuta: Anjuta is a versatile Integrated Development Environment (IDE) for
+anjuta: C/C++ and other languages on GNU/Linux. It has been written for
+anjuta: Gtk/Gnome and features a number of advanced programming facilities.
+anjuta: These include project management, application wizards, an on-board
+anjuta: interactive debugger, and a powerful source editor with source
+anjuta: browsing and syntax highlighting.
+anjuta:
+anjuta:

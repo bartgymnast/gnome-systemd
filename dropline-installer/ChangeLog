@@ -1,0 +1,147 @@
+2013-05-04 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8_r4490-1dl:
+	* First build of the 3.8 ALPHA installer.
+
+2012-12-12 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.6_r4104
+	* Updated the installer source to the svn checkout source
+	possibly this becomes the alpha installer for both archs.
+	* From now on we will use in alpha , beta , and RC phases 
+	the following nameing scheme for the sources of the installer
+	<$MAJ_VER>.<$MIN_VER>_<svn revision nr.> and when we get the 
+	thing sorted out and tagged then we use only the first part
+	with <$MAJ_VER>.<$MIN_VER> .
+
+2012-11-02 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	* Ported the script to dbs2
+	* Fixed download url.
+
+2008-08-04 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.22b-x86_64-1dl.  (Dropline GNOME 2.22 / Slamd64-12.1)
+
+	* build: Rebuilt on Slamd64-12.1 platform and updated
+	to the latest stable source available tarball.
+	This is the BETA installer with small modifications of the applet.
+	See the http://dlg64.redos.si for more details , fixed bug #87
+
+2008-07-16 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.22a-x86_64-2dl.  (Dropline GNOME 2.22 / Slamd64-12.1)
+
+	* build: Rebuilt on Slamd64-12.1 platform and updated
+	to the latest stable source available tarball.
+	Corrected the MIRROR_LIST to point to the 2.22 directory.
+
+2008-07-07 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.22a-x86_64-1dl.  (Dropline GNOME 2.22 / Slamd64-12.1)
+
+	* build: Rebuilt on Slamd64-12.1 platform and updated
+	to the latest stable source available tarball.
+	Updated the download locations.
+
+2008-01-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.20a-x86_64-2dl.  (Dropline GNOME 2.20 / Slamd64-12.0)
+
+	* build: Rebuilt on Slamd64-12.0 platform and updated
+	to the latest stable source available tarball.
+	Updated download locations.
+
+2008-01-15 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.20a-x86_64-1dl.  (Dropline GNOME 2.20 / Slamd64-12.0)
+
+	* build: Rebuilt on Slamd64-12.0 platform and updated
+	to the latest stable source available tarball.
+	First build of the ALPHA installer.
+	* dlg-applet-makefile-fix.patch: This patch solves the build problem
+	with the GtkToolTip error , see ticket #62 here:
+	http://dlg64.redos.si/trac/ticket/62
+
+
+2007-07-05 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.3-x86_64-1dl.  (Dropline GNOME 2.18.3)
+
+	* build: Rebuilt on Slamd64-11.0 platform and updated
+	to the latest stable source available tarball.
+	This is the 2.18.3-RC1 version. Hopefully we solve some critical bugs
+	and we can safely go real.
+
+2007-06-05 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.2-x86_64-1dl.  (Dropline GNOME 2.18.2)
+
+	* build: Rebuilt on Slamd64-11.0 platform and updated
+	to the latest sources for gnome 2.18.2.
+	This will also be the BETA version of our DLG 64 desktop.
+	If everything goes ok, we soon release the final version.
+
+2007-05-24 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.1a-x86_64-3dl.  (Dropline GNOME 2.18.1)
+
+	* build: Rebuilt on Slamd64-11.0 platform and updated
+	to the latest stable source available tarball.
+	Some small textual fixes in the installer error messages.
+
+2007-05-03 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.1a-x86_64-2dl.  (Dropline GNOME 2.18.1)
+
+	* build: Rebuilt the installer with some small corrections and fixes
+	reffering to various bugs and optimisations. For more details please
+	look at: http://dlg64.redos.si/trac/wiki 
+	This is still a work in progress, dont expect it to work correctly.
+
+2007-04-25 Sasa Ostrouska <saxa@droplinegnome.org>
+	 
+	Released revision 2.18.1a-x86_64-1dl.  (Dropline GNOME 2.18.1)
+
+	* build: This is the first build of the updated dropline-installer
+	most probably this will not work out of the box but we will be able to
+	correct all the problems soon. Many thanks to Trovao (Renato Cunha)
+	and to Diffie (Paul Blaziewski) for their help, and of course thanks
+	to all of you who use it and especially who report bugs on my site.
+	http://dlg64.redos.si/trac
+
+2006-04-07 Diffie <diffie@blazebox.homeip.net>
+
+	Released revision 2.14.0-x86_64-1
+
+	* Release: Dropline GNOME 2.14.0 x86_64 Edition
+
+	* build: Updated internal version to 2.14.0
+
+2006-02-27 Diffie <diffie@blazebox.homeip.net>
+
+	Released revision 2.12.3-x86_64-1
+	
+	* Release: Dropline GNOME 2.12.3 x86_64 Edition
+
+	* build: Updated internal version to 2.12.3
+
+2005-12-26 Diffie <diffie@blazebox.homeip.net>
+
+	Released revision 2.12.2-x86_64-1 (Dropline GNOME 2.12.2 x86_64 Edition)
+
+	* build: Updated internal version to 2.12.2
+
+2005-10-26 Diffie <diffie@blazebox.homeip.net>
+
+	Released revision 2.12.1-x86_64-1
+	
+	* build: ported to new build engine
+	
+	* build: updated for arch x86_64
+	
+	* dlg-installer.patch: Patch from Michael Edgar
+	  to make the applet transparent.
+	
+	* Added function to dropline-installer script to
+	  detect amd64 architecture.

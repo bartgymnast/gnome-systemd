@@ -1,0 +1,20 @@
+2013-09-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.30-3dl:
+	* Put back --enable-alsa
+
+2013-09-18 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.30-2dl:
+	* Added --enable-gstreamer and --enable-pulseaudio
+
+2012-10-12 Eugene Wissner <belka.ew@gmail.com>
+
+	0.30-1dl:
+	* Updated to be able to use gstreamer1
+
+
+2012-07-28 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2 
+	* Updated to 0.29
+	* Changed archive type to .xz

@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+     |-----handy-ruler------------------------------------------------------|
+ragel: ragel (State Machine Compiler)
+ragel:
+ragel: Ragel is a software development tool that allows user actions to be 
+ragel: embedded into the transitions of a regular expression's corresponding
+ragel: state machine, eliminating the need to switch from the regular
+ragel: expression engine and user code execution environment and back again.
+ragel: As a result, expressions can be maximally continuous. Ragel compiles
+ragel: executable finite state machines from a high level regular language
+ragel: notation. Ragel targets C, C++, Objective-C, D, Go, Java and Ruby.
+ragel:
+ragel:

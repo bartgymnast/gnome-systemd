@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+                  |-----handy-ruler------------------------------------------------------|
+dropline-installer: dropline-installer (automatic installation system)
+dropline-installer:
+dropline-installer: The Dropline Installer is a program designed to
+dropline-installer: install and maintain the Dropline GNOME Desktop.
+dropline-installer: It can automatically download and install the
+dropline-installer: correct packages from the Internet, and it checks
+dropline-installer: for basic package dependencies.  It also has the
+dropline-installer: ability to upgrade your system to the latest 
+dropline-installer: version of Dropline GNOME without the hassle of
+dropline-installer: determining which packages need to be upgraded.
+dropline-installer:

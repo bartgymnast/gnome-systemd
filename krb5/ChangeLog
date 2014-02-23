@@ -1,0 +1,30 @@
+2013-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	1.11.4-1dl:
+	* Updated
+
+2013-08-09 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.11.3-1dlc:
+	* Removed patch man2htmlfix.diff as it was not being used
+	* build on Slackware 14.1
+	* Added patches that fixes build with Python 2.7 and TCL 8.6
+
+2013-03-16 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	1.11.2-1dl:
+	* Updated to the latest stable sources tarball.
+	* Commented out applypatch()
+
+2012-10-07 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 1.10.3
+
+2012-07-27 Eugene Wissner <belka.ew@gmail.com>
+	* Use preparescratchspace() to create the package built directories
+
+2012-06-26 Eugene Wissner <belka.ew@gmail.com>
+	* Ported script to the new build system.
+	* Updated to 1.10.2
+	* krb5 is now splitted in two packages: krb5 and krb5-appl, therefore a
+	part of code was dropped from the original package and will be inserted in
+	the new krb5-appl later 

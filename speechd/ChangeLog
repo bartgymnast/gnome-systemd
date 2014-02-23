@@ -1,0 +1,15 @@
+2013-07-05 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.8-1dlc:
+	* Updated to latest stable sources tarball available.
+	* Build on Slackware 14.1
+
+2012-11-22 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.7.1-2dl:
+	* Added SANIFYNOTOUCH
+
+2012-11-20 Eugene Wissner <belka.ew@gmail.com>
+
+	0.7.1-1dl:
+	* Created

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2008 Renato Cunha
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gvfs"
+VERSION="1.18.3"
+REVISION="1"
+
+PKG_SOURCEURL='$DLG_GNOMEMIRROR/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH="Again"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --enable-gtk-doc
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

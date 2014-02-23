@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# Copyright 2004-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="evolution-data-server"
+VERSION="3.10.4"
+REVISION="1"
+
+PKG_SOURCEURL='${DLG_GNOMEMIRROR}/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+PKG_SANIFYNOTOUCH="Its needed."
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+
+configure --with-openldap=yes \
+	  --enable-gtk-doc \
+	  --with-krb5=$PKG_PREFIX \
+	  --disable-uoa \
+	  --enable-smime=yes \
+	  --enable-ipv6=yes \
+	  --enable-largefile \
+	  --with-nss-includes=/usr/include/nss \
+	  --with-nspr-includes=/usr/include/nspr \
+	  --enable-vala-bindings
+make
+makeinstall install-strip
+
+# Remove the static libraries
+spewdo "find $PKG_STAGEROOT$PKG_PREFIX/lib$LIBSUFFIX/evolution-data-server -name '*.la' -exec rm {} \;"
+
+spewdo "sed -e 's@Requires: gio-2.0, ,@Requires: gio-2.0@' -i $PKG_STAGEROOT/usr/lib${LIBSUFFIX}/pkgconfig/evolution-data-server-1.2.pc"
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

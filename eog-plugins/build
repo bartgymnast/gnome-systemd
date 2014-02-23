@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Copyright 2005 John M. Lang <john.m.lang@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="eog-plugins"
+VERSION="3.10.1"
+REVISION="1"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Copyright 2010 Sasa Ostrouska <saxa@droplinegnome.org>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gupnp"
+VERSION="0.20.10"
+REVISION="1"
+
+PKG_SOURCEURL='${DLG_GNOMEMIRROR}/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH="1"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --with-context-manager=network-manager
+make
+makecheck
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

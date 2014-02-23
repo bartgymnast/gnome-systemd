@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="speechd"
+VERSION="0.8"
+REVISION="1"
+
+PKG_SOURCEURL='http://devel.freebsoft.org/pub/projects/$NAME/speech-dispatcher-$VERSION.tar.gz'
+PKG_SANIFYNOTOUCH='argh'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

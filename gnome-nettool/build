@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2004 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Copyright 2006 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="gnome-nettool"
+VERSION="3.8.1"
+REVISION="2"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

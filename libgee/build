@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Copyright 2009 Tiago Salvador Souza
+# Available under the terms of the GNU GPL.
+#
+
+NAME="libgee"
+VERSION="0.12.0"
+REVISION="1"
+
+PKG_SOURCEURL='http://download.gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+PKG_SANIFYNOTOUCH="1"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

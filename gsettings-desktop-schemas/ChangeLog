@@ -1,0 +1,47 @@
+2013-10-17 Eugene Wissner <belka.ew@gmail.com>
+
+	3.10.1-1dl:
+	* Updated
+
+2013-10-14 Eugene Wissner <belka.ew@gmail.com>
+	
+	3.10.0-1dl:
+	* Updated to the latest stable sources tarball available.
+	* Modified mirror using $DLG_GNOMEMIRROR
+
+2013-05-18 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.2-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.0-1dl:
+	* Updated to the latest stable sources tarball.
+	* Added PKG_SANIFYNOTOUCH
+
+2013-02-23 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.1-2dl:
+	* Added patch setting dropline background as default
+	* Bumped the build number to 2dl
+
+2012-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.1-1dl:
+	* Updated
+
+2012-11-11 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.0-3dl:
+	* Added $PKG_NEEDSTATIC
+	* Bumped the build number to 3dl
+
+2012-11-11 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.0-2dl:
+	* Removed doinst.sh (GSettings installation support in the build system)
+	* Bumped the build number to 2dl
+
+2012-10-07 Eugene Wissner <belka.ew@gmail.com>
+	* Created

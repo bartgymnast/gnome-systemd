@@ -1,0 +1,20 @@
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.8.1-2dl:
+	* Build on Slackware 14.1
+
+2013-06-03 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.1-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-05-02 Sasa Ostrouska <saxa@droplinegnome.org>
+	
+	3.8.0-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2012-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	3.2.0-1dl:
+	* Updated
+	* Ported to dbs-2

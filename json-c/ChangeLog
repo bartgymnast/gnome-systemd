@@ -1,0 +1,32 @@
+2013-10-12 Eugene Wissner <belka.ew@gmail.com>
+
+	0.11-1dl:
+        * Removed unused patch
+	* Prevent breaking on smp
+	* set PKG_LOCALSTATEDIR
+
+2013-04-18 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	0.11-1dl:
+	* Updated to the latest sources tarball available.
+	* Updated the download URL.
+	* Commented out the applypatch()
+
+2013-01-02 Eugene Wissner <belka.ew@gmail.com>
+
+	0.9.10-2dl:
+        * Added patch that adds missing json_object_iterator to the Makefile
+	* Bumped the build number to 2dl
+
+2012-12-22 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.9.10-1dl:
+        * Upgraded
+
+2012-10-12 Eugene Wissner <belka.ew@gmail.com>
+	* Fixed desc
+	* Added install-strip to makeinstall() arguments
+	* Removed cxxflags()
+
+2012-07-27 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2

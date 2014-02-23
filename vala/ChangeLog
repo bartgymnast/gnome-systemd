@@ -1,0 +1,39 @@
+2013-11-13 Eugene Wissner <belka.ew@gmail.com>
+
+	0.22.1-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2013-10-13 Eugene Wissner <belka.ew@gmail.com>
+
+	0.22.0-1dl:
+	* Updated
+	* Mirror updated using $DLG_GNOMEMIRROR
+
+2013-06-20 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.20.1-2dl:
+	* removed --enable-vapigen, as it gets build standard
+
+2013-04-13 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	0.20.1-1dl:
+	* Updated to the latest stable sources tarball available.
+
+2012-11-14 Eugene Wissner <belka.ew@gmail.com>
+
+	0.18.1-1dl:
+	* rebuild against glib-2.34.1
+
+2012-10-17 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.18.0-2dl:
+	* rebuild against glib-2.34.1
+
+2012-10-06 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 0.18.0
+
+2012-07-27 Eugene Wissner <belka.ew@gmail.com>
+	* Updated to 0.17.3
+
+2012-06-14 Eugene Wissner <belka.ew@gmail.com>
+	* Ported script to the new build system.

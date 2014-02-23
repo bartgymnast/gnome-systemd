@@ -1,0 +1,14 @@
+2012-12-27 Bart van der Hall <bartgymnast@hotmail.com>
+
+        0.8.1-3dl:
+        * Rebuild against Twisted 12.3.0
+
+2012-11-30 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.8.1-2dl:
+	* added --disable-avahi-test to configure option
+
+2012-11-23 Bart van der Hall <bartgymnast@hotmail.com>
+
+	0.8.1-1dl:
+	* ported to dbs2

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2005, 2006 Scott Harmon
+# Available under the terms of the GNU GPL.
+#
+
+NAME="nautilus"
+VERSION="3.10.1"
+REVISION="1"
+
+PKG_SOURCEURL='${DLG_GNOMEMIRROR}/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH="Ups op"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --enable-introspection=no
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

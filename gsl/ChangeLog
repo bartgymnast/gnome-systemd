@@ -1,0 +1,13 @@
+2013-09-222 Bart van der Hall <bartgymnast@hotmail.com>
+
+	1.16-1dl:
+	* Updated to latest stable sources available.
+
+2012-11-17 Eugene Wissner <belka.ew@gmail.com>
+
+	1.15-1dl:
+	* Ported to dbs-2
+	* Updated
+	* Added install-strip to makeinstall ()
+	* Added ChangeLog
+	* Fixed a typo in desc

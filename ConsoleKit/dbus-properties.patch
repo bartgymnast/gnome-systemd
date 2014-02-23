@@ -1,0 +1,12 @@
+diff -ur ConsoleKit-0.4.5/data/ConsoleKit.conf ConsoleKit-0.4.5a/data/ConsoleKit.conf
+--- ConsoleKit-0.4.5/data/ConsoleKit.conf	2010-11-19 03:34:18.000000000 +0200
++++ ConsoleKit-0.4.5a/data/ConsoleKit.conf	2013-06-10 14:40:25.654602417 +0300
+@@ -21,7 +21,7 @@
+           send_interface="org.freedesktop.ConsoleKit.Seat"/>
+     <deny send_destination="org.freedesktop.ConsoleKit" 
+           send_interface="org.freedesktop.ConsoleKit.Session"/>
+-    <deny send_destination="org.freedesktop.ConsoleKit"
++    <allow send_destination="org.freedesktop.ConsoleKit"
+           send_interface="org.freedesktop.DBus.Properties" />
+ 
+     <allow send_destination="org.freedesktop.ConsoleKit"

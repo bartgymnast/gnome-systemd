@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Copyright 2010 Sasa Ostrouska
+# Available under the terms of the GNU GPL.
+#
+
+NAME="telepathy-python"
+VERSION="0.15.19"
+REVISION="3"
+
+PKG_SOURCEURL='http://telepathy.freedesktop.org/releases/${NAME}/${NAME}-${VERSION}.tar.gz'
+PKG_NEEDSTATIC="configure: WARNING: unrecognized options: --disable-static"
+
+PKG_PATCH[0]="telepathy-python-0.15.19-double_errors_py_install.patch"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+prepare
+
+applypatch 0 1
+spewdo "cd $PKG_BUILDROOT && autoreconf"
+
+analyzesource
+configure
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,75 @@
+#!/bin/bash
+#
+# Copyright 2005 Paul Blazejowski <paulb@blazebox.homeip.net>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="avahi"
+VERSION="0.6.31"
+REVISION="1"
+
+PKG_SOURCEURL='http://www.avahi.org/download/$NAME-$VERSION.tar.gz'
+PKG_SANIFYNOTOUCH='yes'
+
+PKG_PATCH[0]='avahi-0.6.17-nonetdevneeded.diff'
+PKG_PATCH[1]='reserve-space-for-data-record.patch'
+PKG_PATCH[2]='hostname-machineid.patch'
+PKG_PATCH[3]='avahi-privacy.patch'
+PKG_PATCH[4]='gtk-box-new.patch'
+PKG_PATCH[5]='avahi-0.6.31-no-deprecations.patch'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+
+applypatch 0 1
+applypatch 1 1
+applypatch 2 1
+applypatch 3 1
+applypatch 4 1
+applypatch 5 1
+
+analyzesource
+configure --disable-gtk \
+	--enable-gtk3 \
+	--disable-qt3 \
+	--disable-qt4 \
+	--disable-mono \
+	--disable-monodoc \
+	--disable-manpages \
+	--enable-compat-howl \
+	--enable-compat-libdns_sd \
+	--with-systemdsystemunitdir=no \
+	--with-avahi-user=avahi \
+	--with-avahi-group=avahi \
+	--with-avahi-priv-access-group=avahi \
+	--disable-autoipd \
+	--disable-xmltoman \
+	--disable-doxygen-doc \
+	--with-distro=slackware
+
+make
+makecheck
+makeinstall install-strip
+
+# We insert the symlinks for the rc.avahidaemon script 
+sysvinitsetup $PKG_STAGEROOT$PKG_SYSCONFDIR/rc.d/rc.avahidaemon 345 95
+
+# We insert the symlinks for the rc.avahidnsconfd script
+sysvinitsetup $PKG_STAGEROOT$PKG_SYSCONFDIR/rc.d/rc.avahidnsconfd 345 96
+
+tidydocumentation
+
+# Copy avahi documentation files from docs into proper places
+spewdo "cp -adR $PKG_SRCROOT/docs/* $PKG_STAGEROOT$PKG_DOCDIR/"
+
+analyzebinaries
+
+createroleaccount avahi 85 85
+
+finalizepackage
+packagize
+cleanup

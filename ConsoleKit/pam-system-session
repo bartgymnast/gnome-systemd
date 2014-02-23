@@ -1,0 +1,10 @@
+# We want to try to ensure that any limits set are applied in all contexts.
+session     required      pam_limits.so
+session     required      pam_unix.so
+
+# Begin ConsoleKit addition
+
+session   optional    pam_loginuid.so
+session   optional    pam_ck_connector.so nox11
+
+# End ConsoleKit addition

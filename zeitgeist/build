@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Copyright 2012 Bart van der Hall
+# Available under the terms of the GNU GPL.
+#
+
+NAME="zeitgeist"
+VERSION="0.9.14"
+REVISION="1"
+
+PKG_SOURCEURL='https://launchpad.net/$NAME/$VER_MAJ.$VER_MIN/$VERSION/+download/$NAME-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_PATCH[0]='zeitgeist-dso-build-fix.patch'
+
+cflags
+prepare
+
+spewdo "sed -i -e 's|\"/lib /usr/lib|\"/lib${LIBSUFFIX} /usr/lib${LIBSUFFIX}|' configure"
+
+applypatch 0 0
+
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="libgnomekbd"
+VERSION="3.6.0"
+REVISION="1"
+
+PKG_SOURCEURL='ftp://ftp.gnome.org/mirror/gnome.org/sources/$NAME/$VER_MAJ.$VER_MIN/$NAME-$VERSION.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+PKG_SANIFYNOTOUCH="wtf?"
+
+cflags
+prepare
+analyzesource
+configure
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

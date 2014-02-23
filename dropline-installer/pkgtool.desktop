@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Slackware Package Manager
+Comment=Add and remove Slackware software
+TryExec=/usr/bin/pkgtool
+Exec=pkgtool
+Terminal=true
+Type=Application
+Icon=pkgtool.png
+StartupNotify=true
+Categories=Application;System;

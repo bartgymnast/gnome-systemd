@@ -1,0 +1,50 @@
+2013-10-16 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.10.1-1dl:
+	* Updated to the latest stable sources available.
+
+2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.8.0-2dl:
+	* Build on Slackware 14.1
+	* removed patch completly
+
+2013-04-17 Sasa Ostrouska <saxa@droplinegnome.org>
+
+	3.8.0-1dl:
+	* Updated to the latest sources tarball available.
+
+2013-01-15 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.2-1dl:
+	* Updated
+
+2012-11-14 Eugene Wissner <belka.ew@gmail.com>
+
+	3.6.1-1dl:
+	* Updated
+
+2012-10-21 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.6.0-3dl:
+	* removed patch, as whole patch didnt work
+
+2012-10-21 Bart van der Hall <bartgymnast@hotmail.com>
+
+	3.6.0-2dl:
+	* reverted back to gnome-applications as applications menu didnt work
+
+2012-10-10 Bart van der Hall <bartgymnast@hotmail.com>
+	* Updated to version 3.6.0
+	* changed patch to state dropline-gnome-applications.menu
+
+2012-07-30 Eugene Wissner <belka.ew@gmail.com>
+	* Added patch to change default menu name from applications.menu to
+	gnome-applications.menu (what would the world do without debian)
+
+2012-07-27 Eugene Wissner <belka.ew@gmail.com>
+	* Ported to dbs-2
+	* Updated to 3.4.2
+	* Added this ChangeLog
+	* Removed old gnome-menus-2.26.0-dlgfixes.patch
+	* Added --enable-debug to configure options

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Copyright 2013 Eugene Wissner <belka.ew@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="libpst"
+VERSION="0.6.61"
+REVISION="1"
+
+PKG_SOURCEURL='http://www.five-ten-sg.com/${NAME}/packages/${NAME}-${VERSION}.tar.gz'
+PKG_SANIFYNOTOUCH="uff"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+cxxflags
+prepare
+analyzesource
+configure --enable-libpst-shared
+make
+makeinstall
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

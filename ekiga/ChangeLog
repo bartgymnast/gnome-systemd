@@ -1,0 +1,27 @@
+2013-09-26 Bart van der Hall <bartgymnast@hotmail.com>
+
+	4.0.1-3dl:
+	* added --disable-gconf and --disable-scrollkeeper
+
+2013-09-22 Bart van der Hall <bartgymnast@hotmail.com>
+
+	4.0.1-2dl:
+	* Rebuild on Slackware 14.1
+
+2013-02-22 Eugene Wissner <belka.ew@gmail.com>
+
+	4.0.1-1dl:
+	* Updated to 4.0.1
+
+2012-11-28 Eugene Wissner <belka.ew@gmail.com>
+
+	4.0.0-1dl:
+	* Updated to 4.0.0
+
+2012-11-22 Eugene Wissner <belka.ew@gmail.com>
+
+	3.2.7-3dl:
+	* Ported
+	* Added this ChangeLog
+	* Added patch which adopts ekiga to gcc-47, evolution-3.6 and
+	libnotify-0.7

@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# Copyright 2004-2007 Dagmar d'Surreal <rivyqntzne@tznvy.pbz>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="evolution"
+VERSION="3.10.4"
+REVISION="1"
+
+PKG_SOURCEURL='${DLG_GNOMEMIRROR}/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+
+# Regenerate ./configure:
+spewdo "cd $PKG_SRCROOT"
+libtoolize --copy --force
+autoreconf -vif
+# Autoconf changes linux to linux-gnu.
+# Our host is $ARCH-slackware-linux not $ARCH-slackware-linux-gnu:
+spewdo "cd $PKG_SRCROOT/build-aux; sed -i -e 's#linux|linux-gnu|#linux|linux|#' config.sub"
+
+analyzesource
+configure --enable-nss=yes \
+	--disable-pst-import \
+	--enable-smime=yes \
+	--with-krb5=$PKG_PREFIX \
+	--with-openldap \
+	--disable-bogofilter \
+	--disable-spamassassin \
+	--disable-text-highlight \
+	--enable-plugins=all \
+	--enable-contact-maps=no \
+	--with-sub-version=\"Dropline GNOME\"
+
+make
+makeinstall install-strip
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

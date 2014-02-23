@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Copyright 2005 Zach Borgerding <zborgerd@gmail.com>
+# Available under the terms of the GNU GPL.
+#
+
+NAME="libgda"
+VERSION="5.2.2"
+REVISION="1"
+
+PKG_SOURCEURL='${DLG_GNOMEMIRROR}/${NAME}/$VER_MAJ.$VER_MIN/${NAME}-$VERSION.tar.xz'
+PKG_SANIFYNOTOUCH="do not touch me"
+
+. $DLG_ROOT/etc/config
+. $DLG_ROOT/lib/dl-base
+
+cflags
+prepare
+analyzesource
+configure --with-bdb-libdir-name=lib$LIBSUFFIX \
+	--enable-system-sqlite \
+	--with-java=no \
+	--enable-introspection=no
+make
+makeinstall install-strip
+
+configfile $PKG_SYSCONFDIR/libgda-${VER_MAJ}.0/config
+PKG_SCROLLKEEPER=0
+
+tidydocumentation
+analyzebinaries
+finalizepackage
+packagize
+cleanup

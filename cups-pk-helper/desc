@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
+
+              |-----handy-ruler------------------------------------------------------|
+cups-pk-helper: cups-pk-helper (PolicyKit helper to configure cups)
+cups-pk-helper:
+cups-pk-helper: cups-pk-helper is a PolicyKit helper to configure cups
+cups-pk-helper: with fine-grained privileges.
+cups-pk-helper: For example, it's possible to let users enable/disable printers
+cups-pk-helper: without requiring a password,
+cups-pk-helper: while still requiring a password for editing printer settings.
+cups-pk-helper:
+cups-pk-helper:
+cups-pk-helper:
+cups-pk-helper:
