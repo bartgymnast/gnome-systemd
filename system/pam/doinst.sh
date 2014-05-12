@@ -11,4 +11,3 @@ if [ $? != 0 ]; then
         echo "# Delete pam_console lock and refcount files" >> $ROOT/etc/rc.d/rc.local
         echo "rm -f /var/run/console/*" >> $ROOT/etc/rc.d/rc.local
 fi
-
