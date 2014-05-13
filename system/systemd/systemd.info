@@ -1,0 +1,7 @@
+PRGNAM="systemd"
+VERSION="212"
+HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
+DOWNLOAD="http://www.freedesktop.org/software/systemd/systemd-212.tar.xz"
+MD5SUM="257a75fff826ff91cb1ce567091cf270"
+MAINTAINER="bartgymnast"
+EMAIL="bartgymnast@hotmail.com"
