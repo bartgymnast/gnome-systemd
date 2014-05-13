@@ -26,7 +26,7 @@ SRCNAM=Linux-PAM
 PKGNAM=pam
 VERSION=${VERSION:-1.1.8}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-_dlack}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
