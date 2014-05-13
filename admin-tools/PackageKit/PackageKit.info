@@ -1,0 +1,7 @@
+PRGNAM="PackageKit"
+VERSION="0.9.2"
+HOMEPAGE="http://www.freedesktop.org"
+DOWNLOAD="http://www.freedesktop.org/software/PackageKit/releases/PackageKit-0.9.2.tar.xz"
+MD5SUM="17ffc13ad8ad28a135b3093402b9254c"
+MAINTAINER="Eugene Wissner"
+EMAIL="belka.ew@gmail.com"
