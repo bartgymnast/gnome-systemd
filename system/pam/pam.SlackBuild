@@ -40,7 +40,7 @@ NUMJOBS=${NUMJOBS:--j7}
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
-PKG=$TMP/package-$PRGNAM
+PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
 if [ "$ARCH" = "i486" ]; then

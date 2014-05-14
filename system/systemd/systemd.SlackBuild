@@ -27,11 +27,11 @@
 #
 
 PKGNAM=systemd
-VERSION=${VERSION:-212}
+VERSION=${VERSION:-$(echo $PKGNAM-*.tar.?z* | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
-# Set to YES to enable pam support
+# Set to NO to disable pam support
 SBO_PAM=${SBO_PAM:-YES}
 # Set YES to set systemd as default init
 SBO_INIT=${SBO_INIT:-YES}
@@ -51,9 +51,9 @@ fi
 NUMJOBS=${NUMJOBS:--j7}
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/dlackware}
 PKG=$TMP/package-$PKGNAM
-OUTPUT=${OUTPUT:-/tmp}
+OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -111,9 +111,14 @@ mkdir -p ${PKG}/run
 
 find . -name "*.[1-8]" -exec touch '{}' ';'
 
+# Patch to handle newer crypt() that may return NULL:
+patch -p0 --verbose <${CWD}/patches/60-cdrom_id.rules.diff || exit 1
+
+# Patch to handle newer crypt() that may return NULL:
+patch -p1 --verbose <${CWD}/patches/backlight.patch || exit 1
+
 unset SBO_PAMOPTS
-if [ "${SBO_PAM}" = "YES" ]
-then
+if [ "${SBO_PAM}" = "YES" ] ;then
   SBO_PAMOPTS='--enable-pam --with-pamlibdir=/lib${LIBDIRSUFFIX}/security'
 else
   SBO_PAMOPTS='--disable-pam'
@@ -203,9 +208,8 @@ chmod 0755 ${PKG}/lib/systemd/systemd.new
 ln -sf ../lib/systemd/systemd ${PKG}/bin/systemd || exit 1
 
 
-if [ "${SBO_INIT}" = "YES" ]
-then
-  mkdir -p ${PKG}/sbin
+if [ "${SBO_INIT}" = "YES" ] ;then
+mkdir -p ${PKG}/sbin
   ln -s ../lib/systemd/systemd ${PKG}/sbin/init
   ln -s ../bin/systemctl ${PKG}/sbin/reboot
   ln -s ../bin/systemctl ${PKG}/sbin/halt
@@ -222,8 +226,7 @@ fi
 ln -sf ../lib/systemd/systemd ${PKG}/bin/systemd
 ln -sf ../../../dev/null ${PKG}/etc/udev/rules.d/80-net-name-slot.rules
 
-if [ "${SBO_PAM}" = "NO" ]
-then
+if [ "${SBO_PAM}" = "NO" ] ;then
   rm -f ${PKG}/usr/man/man8/pam*
 fi
 
