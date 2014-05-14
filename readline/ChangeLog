@@ -1,6 +1,0 @@
-2013-10-04 Bart van der Hall <bartgymnast@hotmail.com>
-
-	5.2-1dl:
-	* Initial Release
-	* Added to fix a bug in slackware's own readline,
-	  that prevented other packages to build with --with-system-readline

@@ -1,9 +1,0 @@
-2013-10-21 Eugene Wissner <belka.ew@gmail.com>
-
-	2.28.5-1dl:
-	* Updated
-	* Changed download url
-
-2012-07-28 Eugene Wissner <belka.ew@gmail.com>
-	* Modified for the new build system
-	* Changed archive type to .xz

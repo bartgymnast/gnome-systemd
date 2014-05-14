@@ -1,7 +1,0 @@
-2013-08-10 Bart van der Hall <bartgymnast@hotmail.com>
-
-	3.3.2-1dl:
-	* Ininitial Release
-	* Converted script from slackbuilds
-	* Added a PKG_DISABLESMP as it sometimes breaks the build process otherwise
-	* Build on Slackware 14.1
