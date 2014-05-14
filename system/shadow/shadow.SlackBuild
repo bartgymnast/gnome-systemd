@@ -21,13 +21,13 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PKGNAM=shadow
-VERSION=${VERSION:-4.1.5.1}
-BUILD=${BUILD:-2}
+PRGNAM=shadow
+VERSION=${VERSION:-$(echo $PRGNAM-*.tar.?z* | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
-# Set to YES to enable pam support
-SBO_PAM=${SBO_PAM:-NO}
+# Set to NO to disable pam support
+SBO_PAM=${SBO_PAM:-YES}
 
 # Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
@@ -42,9 +42,9 @@ fi
 NUMJOBS=${NUMJOBS:--j6}
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
-PKG=$TMP/package-$PKGNAM
-OUTPUT=${OUTPUT:-/tmp}
+TMP=${TMP:-/tmp/dlackware}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -57,7 +57,7 @@ else
 fi
 
 rm -rf $PKG
-mkdir -p $TMP $PKG
+mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf shadow-$VERSION
 tar xvf $CWD/shadow-$VERSION.tar.?z* || exit 1
@@ -116,21 +116,22 @@ find $PKG -name groups.1 -exec rm {} \;
 rm -f $PKG/etc/login.defs
 cat $CWD/login.defs > $PKG/etc/login.defs.new
 
-if [ "${SBO_PAM}" = "YES" ] ;then
-mv $PKG/etc/login.access $PKG/etc/login.access.new
+if [ "${SBO_PAM}" = "YES" ]
+then
+	mkdir -p $PKG/etc/pam.d/
+	cp $CWD/pam/system-auth $PKG/etc/pam.d/
+	cp $CWD/pam/other $PKG/etc/pam.d/
+	cp $CWD/pam/login $PKG/etc/pam.d/
 
-mkdir -p $PKG/etc/pam.d/
-cp $CWD/pam/system-auth $PKG/etc/pam.d/
-cp $CWD/pam/other $PKG/etc/pam.d/
-cp $CWD/pam/login $PKG/etc/pam.d/
-
-(
-  cd $PKG/etc/pam.d
-  for i in * ; do
-    cat $i | grep -vE '(pam_console.so|selinux)' > ${i}.new
-    rm $i
-  done
-)
+	(
+	  cd $PKG/etc/pam.d
+	  for i in * ; do
+		cat $i | grep -vE '(pam_console.so|selinux)' > ${i}.new
+		rm $i
+	  done
+	)
+else
+	mv $PKG/etc/login.access $PKG/etc/login.access.new
 fi
 
 # Add the friendly 'adduser' script:
@@ -179,7 +180,7 @@ cp -a \
 # If there's a ChangeLog, installing at least part of the recent history
 # is useful, but don't let it get totally out of control:
 if [ -r ChangeLog ]; then
-  DOCSDIR=$(echo $PKG/usr/doc/${PKGNAM}-$VERSION)
+  DOCSDIR=$(echo $PKG/usr/doc/${PRGNAM}-$VERSION)
   cat ChangeLog | head -n 1000 > $DOCSDIR/ChangeLog
   touch -r ChangeLog $DOCSDIR/ChangeLog
 fi
@@ -189,4 +190,4 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.txz
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.txz

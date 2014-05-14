@@ -39,7 +39,7 @@ fi
 NUMJOBS=${NUMJOBS:--j7}
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/dlackware}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
