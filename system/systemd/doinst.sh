@@ -104,7 +104,7 @@ setcaps () {
 
 enableservice () {
   if ! chroot . /bin/systemctl is-enable "${1}" > /dev/null 2>&1 ;then
-    chroot . /bin/systemctl enable "${1}" 2>&1
+    chroot . /bin/systemctl enable "${1}" > /dev/null 2>&1
   fi
 }
 
