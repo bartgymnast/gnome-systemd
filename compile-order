@@ -10,3 +10,4 @@ openssh
 NetworkManager
 # System
 python3
+json-c
