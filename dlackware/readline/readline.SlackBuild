@@ -23,7 +23,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PKGNAM=readline
-VERSION=${VERSION:-6.3}
+VERSION=${VERSION:-5.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -66,6 +66,9 @@ cd $TMP
 rm -rf $PKGNAM-$VERSION
 tar xvf $CWD/$PKGNAM-$VERSION.tar.?z*
 cd $PKGNAM-$VERSION
+
+patch -p0< $CWD/readline-patches.patch
+
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 -o -perm 511 \) \
