@@ -1,8 +1,9 @@
-admin-tools/PackageKit
-system/cracklib
-system/pam
-system/libpwquality
-system/shadow
-system/systemd
-system/dbus
-network/NetworkManager
+PackageKit
+cracklib
+pam
+libpwquality
+shadow
+systemd
+dbus
+openssh
+NetworkManager
