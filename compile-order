@@ -1,4 +1,5 @@
 PackageKit
+# systemd
 cracklib
 pam
 libpwquality
@@ -7,3 +8,5 @@ systemd
 dbus
 openssh
 NetworkManager
+# System
+python3
