@@ -25,6 +25,7 @@
 
 PKGNAM=python3
 VERSION=${VERSION:-3.4.1}
+DOCS_VERSION=${DOCS_VERSION:-3.4.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -37,7 +38,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 wget -c https://python.org/ftp/python/${VERSION}/Python-${VERSION}.tar.xz \
-	https://python.org/ftp/python/doc/3.4.0/python-3.4.0-docs-html.tar.bz2
+	https://python.org/ftp/python/doc/${DOCS_VERSION}/python-${DOCS_VERSION}-docs-html.tar.bz2
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
@@ -124,8 +125,8 @@ mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cp -a README LICENSE Misc $PKG/usr/doc/$PKGNAM-$VERSION
 mv $SITEPK/README $PKG/usr/doc/$PKGNAM-$VERSION/README.python-tools
 ( cd $PKG/usr/doc/$PKGNAM-$VERSION ; ln -sf $TOOLSDIR Tools )
-tar xf $CWD/python-$VERSION-docs-html.tar.bz2
-mv python-$VERSION-docs-html $PKG/usr/doc/$PKGNAM-$VERSION/html
+tar xf $CWD/python-$DOCS_VERSION-docs-html.tar.bz2
+mv python-$DOCS_VERSION-docs-html $PKG/usr/doc/$PKGNAM-$VERSION/html
 chown -R root:root $PKG/usr/doc/$PKGNAM-$VERSION
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
