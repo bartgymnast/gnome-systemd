@@ -1,14 +1,17 @@
-PackageKit
-# systemd
+# PAM support
 cracklib
 pam
 libpwquality
 shadow
+# systemd
+python3
 systemd
 dbus
-openssh
-NetworkManager
-# System
-python3
+dbus-python3
 json-c
+openssh
+# Slackware recompiles for systemd
 readline
+# gnome-suites-core
+NetworkManager
+PackageKit
