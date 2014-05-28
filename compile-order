@@ -16,6 +16,7 @@ readline
 bluez
 udisks
 udisks2
+libatasmart
 # gnome-suites-core
 NetworkManager
 PackageKit
