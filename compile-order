@@ -17,6 +17,7 @@ bluez
 udisks
 udisks2
 libatasmart
+xorg-server
 # gnome-suites-core
 NetworkManager
 PackageKit
