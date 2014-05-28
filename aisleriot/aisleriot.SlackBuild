@@ -36,7 +36,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/$PKGNAME/3.12/$PKGNAM-$VERSION.tar.xz
+wget -c ftp://ftp.gnome.org/pub/gnome/sources/$PKGNAM/3.12/$PKGNAM-$VERSION.tar.xz
 
 NUMJOBS=${NUMJOBS:-"-j4"}
 
@@ -94,7 +94,7 @@ CXXFLAGS="$SLKCFLAGS" \
 make $NUMJOBS
 make install DESTDIR=$PKG
 
-rm -rf ${PKG}/usr/lib*/valgrind
+rm -rf $PKG/usr/lib*/valgrind
 
 # Strip binaries:
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
@@ -122,6 +122,7 @@ cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.txz
