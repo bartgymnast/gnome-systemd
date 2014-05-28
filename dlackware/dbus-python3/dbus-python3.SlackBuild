@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for PackageKit
+# Slackware build script for dbus-python3
 
 # Copyright 2014 Eugene Wissner, Dachau, Germany
 # All rights reserved.
@@ -22,22 +22,21 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PKGNAM="PackageKit"
-VERSION=${VERSION:-0.9.2}
+SRCNAM=dbus-python
+PKGNAM=dbus-python3
+VERSION=${VERSION:-1.2.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
-# Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
     arm*) ARCH=arm ;;
-    # Unless $ARCH is already set, use uname -m for all other archs:
        *) ARCH=$( uname -m ) ;;
   esac
 fi
 
-wget -c http://www.freedesktop.org/software/${PKGNAM}/releases/${PKGNAM}-${VERSION}.tar.xz
+wget -c http://dbus.freedesktop.org/releases/dbus-python/${SRCNAM}-${VERSION}.tar.gz
 
 NUMJOBS=${NUMJOBS:-"-j4"}
 
@@ -60,20 +59,22 @@ else
   LIBDIRSUFFIX=""
 fi
 
-set -e # Exit on most errors
+set -e
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PKGNAM-$VERSION
-tar xvf $CWD/$PKGNAM-$VERSION.tar.xz
-cd $PKGNAM-$VERSION
+rm -rf $SRCNAM-$VERSION
+tar xvf $CWD/$SRCNAM-$VERSION.tar.?z*
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
- \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
-  -o -perm 511 \) -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
- -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+export PYTHON=python3
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
@@ -82,24 +83,19 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var \
+  --disable-static \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
-  --enable-katja \
-  --with-default-backend=katja \
-  --disable-systemd \
-  --disable-systemd-updates \
   --build=$ARCH-slackware-linux
 
 make $NUMJOBS
 make install-strip DESTDIR=$PKG
 
-# Compress man pages
-find $PKG/usr/man -type f -exec gzip -9 {} \;
-for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+export PYTHON=python
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING README \
+  AUTHORS COPYING ChangeLog INSTALL NEWS README doc/* \
   $PKG/usr/doc/$PKGNAM-$VERSION
 cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild
 

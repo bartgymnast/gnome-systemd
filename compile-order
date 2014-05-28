@@ -1,8 +1,20 @@
-admin-tools/PackageKit
-system/cracklib
-system/pam
-system/libpwquality
-system/shadow
-system/systemd
-system/dbus
-network/NetworkManager
+# PAM support
+cracklib
+pam
+libpwquality
+shadow
+# systemd
+python3
+systemd
+dbus
+dbus-python3
+json-c
+openssh
+# Slackware recompiles for systemd
+util-linux
+readline
+bluez
+udisks
+# gnome-suites-core
+NetworkManager
+PackageKit
