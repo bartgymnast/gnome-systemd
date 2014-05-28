@@ -28,6 +28,7 @@
 PKGNAM=udisks
 VERSION=${VERSION:-1.0.5}
 BUILD=${BUILD:-1}
+TAG=${TAG:-_dlack}
 
 NUMJOBS=${NUMJOBS:--j7}
 
