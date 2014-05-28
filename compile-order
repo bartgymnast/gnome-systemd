@@ -13,6 +13,7 @@ openssh
 # Slackware recompiles for systemd
 util-linux
 readline
+bluez
 # gnome-suites-core
 NetworkManager
 PackageKit
