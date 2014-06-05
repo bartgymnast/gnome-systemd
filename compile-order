@@ -1,25 +1,11 @@
-# PAM support
-cracklib
-pam
-libpwquality
-shadow
-# systemd
-python3
-systemd
-dbus
-dbus-python3
-json-c
-openssh
-# Slackware recompiles for systemd
-util-linux
-readline
-bluez
-udisks
-udisks2
-system-config-printer
-lvm2
-libatasmart
-xorg-server
-# gnome-suites-core
-NetworkManager
-PackageKit
+### [gnome-min] begin
+
+### [gnome-min] end
+
+### [gnome-all] begin
+
+### [gnome-all] end
+
+### [gnome-extras] begin
+
+### [gnome-extras] end
