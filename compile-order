@@ -1,7 +1,10 @@
 ### [gnome-suites-core-deps] begin
-itstool
-yelp-xsl
-yelp-tools
+ap/itstool
+gnome/yelp-xsl
+gnome/yelp-tools
+l/glib2
+l/gobject-introspection
+l/gnome-common
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin

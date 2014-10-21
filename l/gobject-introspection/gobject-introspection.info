@@ -1,0 +1,6 @@
+PRGNAM="gobject-introspection"
+VERSION="3.14.0"
+HOMEPAGE="http://projects.gnome.org/gobject-introspection/"
+DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/gobject-introspection/1.42/gobject-introspection-1.42.0.tar.xz"
+DOWNLOAD="http://dlackware.omgwtfroflol.com/source/gobject-introspection-1.42.0.tar.xz"
+MD5SUM=""
