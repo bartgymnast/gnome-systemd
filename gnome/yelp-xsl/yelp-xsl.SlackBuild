@@ -24,7 +24,7 @@
 #
 # Modified for dlackware by Bart van der Hall <bartgymnast@hotmail.com>
 
-PRGNAM=yelp-xsl
+PKGNAM=yelp-xsl
 VERSION=${VERSION:-3.14.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
@@ -37,10 +37,13 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
+wget -c ftp://ftp.acc.umu.se/pub/gnome/sources/yelp-xsl/3.14/yelp-xsl-3.14.0.tar.xz
+
+
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
-PKG=$TMP/package-$PRGNAM
-OUTPUT=${OUTPUT:-/tmp}
+TMP=${TMP:-/tmp/dlackware}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -58,12 +61,12 @@ fi
 
 set -e
 
-rm -rf $PKG
+rm -rf $TMP
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-tar xvf $CWD/$PRGNAM-$VERSION.tar.xz
-cd $PRGNAM-$VERSION
+rm -rf $PKGNAM-$VERSION
+tar xvf $CWD/$PKGNAM-$VERSION.tar.xz
+cd $PKGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -79,7 +82,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --sysconfdir=/etc \
   --localstatedir=/var \
   --mandir=/usr/man \
-  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
 make $NUMJOBS || make
@@ -88,12 +91,13 @@ make install DESTDIR=$PKG
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a AUTHORS COPYING* ChangeLog INSTALL NEWS README $PKG/usr/doc/$PRGNAM-$VERSION
-cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
+cp -a AUTHORS COPYING* ChangeLog INSTALL NEWS README $PKG/usr/doc/$PKGNAM-$VERSION
+cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild
+cat $CWD/$PKGNAM.info > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.info
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
