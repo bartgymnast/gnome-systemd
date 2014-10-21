@@ -5,6 +5,7 @@ gnome/yelp-tools
 l/glib2
 l/gobject-introspection
 l/gnome-common
+l/atk
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
