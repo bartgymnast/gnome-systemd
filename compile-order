@@ -8,6 +8,7 @@ l/gnome-common
 l/atk
 l/harfbuzz
 l/pango
+l/gdk-pixbuf2
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
