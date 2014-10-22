@@ -6,6 +6,8 @@ l/glib2
 l/gobject-introspection
 l/gnome-common
 l/atk
+l/harfbuzz
+l/pango
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
