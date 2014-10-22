@@ -11,6 +11,9 @@ l/pango
 l/gdk-pixbuf2
 l/at-spi2-core
 l/at-spi2-atk
+l/libxkbcommon
+l/gtk+3
+d/vala
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin

@@ -22,7 +22,7 @@
 
 
 PKGNAM=gtk+3
-VERSION=${VERSION:-3.14.0}
+VERSION=${VERSION:-3.14.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -59,7 +59,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-rm -rf $PKG
+rm -rf $TMP
 mkdir -p $TMP $PKG/usr
 cd $TMP
 rm -rf gtk+-$VERSION
@@ -81,6 +81,14 @@ autoreconf -vif
 # Our host is $ARCH-slackware-linux not $ARCH-slackware-linux-gnu:
 sed -i -e 's#linux|linux-gnu|#linux|linux|#' config.sub
 
+# Extract module version
+BVER="$(grep gtk_binary_version configure.ac | grep ^m4_define | cut -d , -f2 | sed 's/.*\[//;s/\].*//')"
+if [ -z "${BVER}" ] ;then
+  echo "Variable BVER not defined"
+  exit 1
+fi
+
+
 CFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
@@ -88,9 +96,18 @@ CFLAGS="$SLKCFLAGS" \
   --sysconfdir=/etc \
   --mandir=/usr/man \
   --enable-xkb \
-  --enable-packagekit=no \
-  --build=$ARCH-slackware-linux
+  --enable-gtk2-dependency \
+  --enable-xinerama \
+  --enable-xrandr \
+  --enable-xfixes \
+  --enable-xcomposite \
+  --enable-xdamage \
+  --enable-x11-backend \
+  --enable-wayland-backend \
+  --build=$ARCH-slackware-linux || exit 1
 #  --enable-gtk-doc-html=no \
+
+sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 make $NUMJOBS || make || exit 1
 
@@ -105,8 +122,12 @@ make install \
 # Don't clobber im-multipress.conf
 mv $PKG/etc/gtk-3.0/im-multipress.conf $PKG/etc/gtk-3.0/im-multipress.conf.new
 
+mkdir -p ${PKG}/usr/lib${LIBDIRSUFFIX}/gtk-3.0/modules
+mkdir -p ${PKG}/usr/lib${LIBDIRSUFFIX}/gtk-3.0/immodules
+mkdir -p ${PKG}/usr/lib${LIBDIRSUFFIX}/gtk-3.0/${BVER}/theming-engines
+
 # Install a "starter" gtkrc
-echo 'gtk-theme-name="Adwaita"' > $PKG/etc/gtk-3.0/gtkrc.new
+#echo 'gtk-theme-name="Adwaita"' > $PKG/etc/gtk-3.0/gtkrc.new
 
 # We need to have separate 32-bit and 64-bit binaries
 # for places where we have two copies of the GTK+ package installed.
@@ -126,9 +147,21 @@ case "$host" in
    ;;
 esac
 
-# Install wrappers for the binaries:
-cp $CWD/update-gtk-immodules-3.0 $PKG/usr/bin/update-gtk-immodules-3.0
-chmod 0755 $PKG/usr/bin/update-*
+touch ${PKG}/usr/lib${LIBDIRSUFFIX}/gtk-3.0/${BVER}/immodules.cache
+install -pm0755 ${CWD}/update-gtk-immodules-3.0 \
+  ${PKG}/usr/bin/update-gtk-immodules-3.0 || exit 1
+
+mkdir -p ${PKG}/lib/systemd/system
+install -pm644 ${CWD}/update-gtk-immodules.service \
+  ${PKG}/lib/systemd/system/update-gtk-immodules-3.service || exit 1
+
+find ${PKG} | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null
+
+cat > ${PKG}/usr/share/gtk-3.0/settings.ini <<'EOF'
+[Settings]
+gtk-theme-name = Adwaita
+EOF
 
 find $PKG | xargs file | egrep "executable|shared object" | grep "ELF" | \
   cut -d: -f1 | xargs strip --strip-unneeded 2>/dev/null
@@ -161,8 +194,8 @@ find $PKG/usr/doc/gtk+3-$VERSION/ -type f -exec chmod 644 {} \;
 chown -R root:root $PKG/usr/doc/gtk+3-$VERSION
 
 mkdir -p $PKG/install 
-zcat $CWD/doinst.sh > $PKG/install/doinst.sh
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -p -l y -c n $TMP/gtk+3-${VERSION}-$ARCH-${BUILD}.txz
+/sbin/makepkg -p -l y -c n $OUTPUT/gtk+3-${VERSION}-$ARCH-${BUILD}$TAG.txz

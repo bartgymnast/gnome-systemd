@@ -1,11 +1,16 @@
 chroot . rm -f /usr/share/icons/*/icon-theme.cache 1> /dev/null 2> /dev/null
 
-# Run this if we are on an installed system.  Otherwise it will be
-# handled on first boot.
-if [ -x /usr/bin/update-gtk-immodules-3.0 ]; then
-  /usr/bin/update-gtk-immodules-3.0
+chroot . /sbin/ldconfig 2> /dev/null
+if [ -e /usr/lib64/libX11.so.6 ] && [ -x /usr/bin/gtk-query-immodules-3.0 ] ; then
+  chroot . /usr/bin/update-gtk-immodules-3.0
 fi
 
-# In case this is the first run installing the standalone gdk-pixbuf,
-# we will run this a second time to fix machines that will not reboot.
-chroot . /usr/bin/update-gdk-pixbuf-loaders 1> /dev/null 2> /dev/null
+if [ -x /usr/bin/glib-compile-schemas ] ;then
+  chroot . /usr/bin/glib-compile-schemas --allow-any-name /usr/share/glib-2.0/schemas &> /dev/null
+fi
+
+if [ -x /bin/systemctl ] ; then
+  chroot . /bin/systemctl --system daemon-reload >/dev/null 2>&1
+fi
+
+
