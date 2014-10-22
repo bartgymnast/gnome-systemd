@@ -23,7 +23,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PKGNAM=at-spi2-atk
-VERSION=${VERSION:-2.12.1}
+VERSION=${VERSION:-2.14.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -36,7 +36,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/$PKGNAM/2.12/$PKGNAM-$VERSION.tar.xz
+wget -c ftp://ftp.gnome.org/pub/gnome/sources/$PKGNAM/2.14/$PKGNAM-$VERSION.tar.xz
 
 NUMJOBS=${NUMJOBS:-"-j4"}
 
@@ -93,7 +93,7 @@ cp -a \
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-zcat $CWD/doinst.sh.gz > $PKG/install/doinst.sh
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.txz

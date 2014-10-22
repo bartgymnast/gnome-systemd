@@ -9,6 +9,8 @@ l/atk
 l/harfbuzz
 l/pango
 l/gdk-pixbuf2
+l/at-spi2-core
+l/at-spi2-atk
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
