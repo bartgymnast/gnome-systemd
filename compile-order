@@ -22,6 +22,7 @@ n/p11-kit
 l/gcr
 l/json-glib
 l/geocode-glib
+gnome/libgweather
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
