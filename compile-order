@@ -29,6 +29,8 @@ l/iso-codes
 l/libwebp
 gnome/webkitgtk
 l/libnotify
+l/rest
+l/telepathy-glib
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
