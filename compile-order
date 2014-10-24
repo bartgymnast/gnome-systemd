@@ -33,6 +33,7 @@ l/rest
 l/telepathy-glib
 gnome/webkitgtk3
 gnome/gnome-online-accounts
+gnome/uhttpmock
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
