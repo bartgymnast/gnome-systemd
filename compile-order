@@ -23,6 +23,11 @@ l/gcr
 l/json-glib
 l/geocode-glib
 gnome/libgweather
+n/GeoIP
+l/geoclue
+l/iso-codes
+l/libwebp
+gnome/webkitgtk
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
