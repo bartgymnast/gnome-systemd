@@ -23,7 +23,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PKGNAM=cogl
-VERSION=${VERSION:-1.18.0}
+VERSION=${VERSION:-1.18.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -81,13 +81,17 @@ find -L . \
   --localstatedir=/var/lib \
   --disable-silent-rules \
   --disable-rpath \
-  --disable-gdk-pixbuf \
+  --enable-gdk-pixbuf \
   --enable-cogl-pango \
   --enable-cogl-gst \
   --enable-glx \
   --enable-gtk-doc \
   --enable-introspection \
   --enable-xlib-egl-platform \
+  --enable-wayland-egl-platform \
+  --enable-wayland-egl-server \
+  --enable-kms-egl-platform \
+  --with-x \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
@@ -97,7 +101,7 @@ make install DESTDIR=$PKG || exit 1
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cp -a \
-  AUTHORS COPYING ChangeLog INSTALL NEWS README \
+  COPYING ChangeLog NEWS README \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
 # If there's a ChangeLog, installing at least part of the recent history

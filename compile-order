@@ -38,6 +38,7 @@ gnome/liboauth
 gnome/libgdata
 gnome/evolution-data-server
 gnome/accountsservice
+gnome/cogl
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
