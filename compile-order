@@ -37,6 +37,7 @@ gnome/uhttpmock
 gnome/liboauth
 gnome/libgdata
 gnome/evolution-data-server
+gnome/accountsservice
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
