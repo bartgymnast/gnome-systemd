@@ -16,9 +16,9 @@ l/gtk+3
 d/vala
 l/dconf
 l/gsettings-desktop-schemas
+n/p11-kit
 l/glib-networking
 l/libsoup
-n/p11-kit
 l/gcr
 l/json-glib
 l/geocode-glib
@@ -28,6 +28,7 @@ l/geoclue
 l/iso-codes
 l/libwebp
 gnome/webkitgtk
+l/libnotify
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
