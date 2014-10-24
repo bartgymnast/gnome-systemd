@@ -123,7 +123,7 @@ make install DESTDIR=${PKG} || exit 1
 mkdir -p ${PKG}/usr/libexec/${PKGNAM}
 
 install -m 755 Programs/GtkLauncher \
-  ${PKG}/usr/libexec/${NAME}/ || exit 1
+  ${PKG}/usr/libexec/${PKGNAM}/ || exit 1
 install -m 755 Programs/MiniBrowser ${PKG}/usr/libexec/${PKGNAM}/ || exit 1
 
 if [ -x /usr/bin/chrpath ] ;then
