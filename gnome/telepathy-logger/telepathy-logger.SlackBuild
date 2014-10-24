@@ -22,7 +22,7 @@
 # -----------------------------------------------------------------------------
 
 PKGNAM=telepathy-logger
-VERSION=${VERSION:-$(echo $PKGNAM-*.tar.?z* | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
+VERSION=${VERSION:-0.8.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -36,6 +36,8 @@ if [ -z "$ARCH" ]; then
        *) export ARCH=$( uname -m ) ;;
   esac
 fi
+
+wget -c http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.1.tar.bz2
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
@@ -58,7 +60,7 @@ fi
 
 set -e # Exit on most errors
 
-rm -rf $PKG
+rm -rf $TMP
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PKGNAM-$VERSION
@@ -78,10 +80,16 @@ CXXFLAGS="$SLKCFLAGS" \
   --prefix=/usr \
   --libdir=/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
-  --localstatedir=/var \
+  --localstatedir=/var/lib \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
+  --disable-schemas-compile \
   --build=$ARCH-slackware-linux
+
+sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
+sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
+
+export LD_LIBRARY_PATH="$(pwd)/telepathy-logger/.libs${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 
 make $NUMJOBS
 make install DESTDIR=$PKG
