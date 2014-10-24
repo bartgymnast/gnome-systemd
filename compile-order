@@ -34,6 +34,9 @@ l/telepathy-glib
 gnome/webkitgtk3
 gnome/gnome-online-accounts
 gnome/uhttpmock
+gnome/liboauth
+gnome/libgdata
+gnome/evolution-data-server
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
