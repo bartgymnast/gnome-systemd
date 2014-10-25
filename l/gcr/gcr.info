@@ -1,6 +1,6 @@
-PKGNAM="gnome-common"
+PKGNAM="gcr"
 VERSION="3.14.0"
 HOMEPAGE="http://www.gnome.org/"
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-common/3.14/gnome-common-3.14.0.tar.xz"
+DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gcr/3.14/gcr-3.14.0.tar.xz"
 MD5SUM=""
 
