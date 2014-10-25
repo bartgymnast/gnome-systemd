@@ -39,6 +39,8 @@ gnome/libgdata
 gnome/evolution-data-server
 gnome/accountsservice
 gnome/cogl
+x/libevdev
+x/libinput
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
