@@ -41,6 +41,7 @@ gnome/accountsservice
 gnome/cogl
 x/libevdev
 x/libinput
+gnome/clutter
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
