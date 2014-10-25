@@ -5,15 +5,15 @@
 # exactly 11 lines for the formatting to be correct.  It's also customary to
 # leave one space after the ':'.
 
-      |-----handy-ruler------------------------------------------------------|
-webkit: webkit (An opensource browser engine)
-webkit:
-webkit: WebKit is an open source web browser engine. It is able to display
-webkit: content such as HTML, SVG, XML, and others. It also supports DOM,
-webkit: XMLHttpRequest, XSLT, CSS, Javascript/ECMAscript and more.
-webkit:
-webkit:
-webkit:
-webkit:
-webkit:
-webkit:
+          |-----handy-ruler------------------------------------------------------|
+webkitgtk3: webkitgtk3 (An opensource browser engine)
+webkitgtk3:
+webkitgtk3: WebKit is an open source web browser engine. It is able to display
+webkitgtk3: content such as HTML, SVG, XML, and others. It also supports DOM,
+webkitgtk3: XMLHttpRequest, XSLT, CSS, Javascript/ECMAscript and more.
+webkitgtk3:
+webkitgtk3:
+webkitgtk3:
+webkitgtk3:
+webkitgtk3:
+webkitgtk3:
