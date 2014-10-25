@@ -47,6 +47,7 @@ l/libgusb
 l/lcms2
 l/colord
 l/colord-gtk
+l/gvfs
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
