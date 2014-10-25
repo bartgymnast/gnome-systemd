@@ -42,6 +42,7 @@ gnome/cogl
 x/libevdev
 x/libinput
 gnome/clutter
+gnome/clutter-gtk
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
