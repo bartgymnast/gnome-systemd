@@ -44,6 +44,9 @@ x/libinput
 gnome/clutter
 gnome/clutter-gtk
 l/libgusb
+l/lcms2
+/colord
+l/colord-gtk
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
