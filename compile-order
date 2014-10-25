@@ -48,6 +48,7 @@ l/lcms2
 l/colord
 l/colord-gtk
 l/gvfs
+gnome/gnome-desktop
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
