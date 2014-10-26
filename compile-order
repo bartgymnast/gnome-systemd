@@ -53,6 +53,7 @@ l/gtk+2
 gnome/PackageKit
 a/upower
 l/ibus
+l/libgsystem
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
