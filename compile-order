@@ -52,6 +52,7 @@ gnome/gnome-desktop
 l/gtk+2
 gnome/PackageKit
 a/upower
+l/ibus
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
