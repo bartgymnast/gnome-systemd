@@ -51,6 +51,7 @@ l/gvfs
 gnome/gnome-desktop
 l/gtk+2
 gnome/PackageKit
+a/upower
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
