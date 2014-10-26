@@ -54,6 +54,7 @@ gnome/PackageKit
 a/upower
 l/ibus
 l/libgsystem
+l/librsvg
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin

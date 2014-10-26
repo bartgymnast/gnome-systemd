@@ -22,7 +22,7 @@
 # -----------------------------------------------------------------------------
 
 PKGNAM=librsvg
-VERSION=${VERSION:-$(echo $PKGNAM-*.tar.?z* | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
+VERSION=${VERSION:-2.40.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -42,6 +42,8 @@ TMP=${TMP:-/tmp/dlackware}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
+wget -c ftp://ftp.gnome.org/pub/gnome/sources/librsvg/2.40/librsvg-2.40.5.tar.xz
+
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
   LIBDIRSUFFIX=""
@@ -58,7 +60,7 @@ fi
 
 set -e # Exit on most errors
 
-rm -rf $PKG
+rm -rf $TMP
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PKGNAM-$VERSION
@@ -76,11 +78,13 @@ CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
-  --libdir=/lib${LIBDIRSUFFIX} \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
-  --localstatedir=/var \
+  --localstatedir=/var/lib \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
+  --enable-vala \
+  --disable-static \
   --build=$ARCH-slackware-linux
 
 make $NUMJOBS
