@@ -80,6 +80,7 @@ gnome/nautilus-sendto
 gnome/gnome-bluetooth
 gnome/network-manager-applet
 gnome/appstream-glib
+gnome/clutter-gst
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
