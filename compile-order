@@ -81,6 +81,9 @@ gnome/gnome-bluetooth
 gnome/network-manager-applet
 gnome/appstream-glib
 gnome/clutter-gst
+gnome/gnome-video-effects
+#gnome/cheese - error on build atm
+gnome/gnome-control-center
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
