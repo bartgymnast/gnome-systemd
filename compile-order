@@ -56,6 +56,7 @@ l/ibus
 l/libgsystem
 l/librsvg
 l/libwacom
+gnome/gnome-settings-daemon
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
