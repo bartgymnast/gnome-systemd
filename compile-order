@@ -78,6 +78,7 @@ gnome/gupnp
 gnome/gupnp-av
 gnome/nautilus-sendto
 gnome/gnome-bluetooth
+gnome/network-manager-applet
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
