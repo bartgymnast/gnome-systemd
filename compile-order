@@ -57,6 +57,7 @@ l/libgsystem
 l/librsvg
 l/libwacom
 gnome/gnome-settings-daemon
+l/libgtop
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
