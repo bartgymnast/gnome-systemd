@@ -89,6 +89,7 @@ gnome/adwaita-icon-theme
 gnome/gnome-keyring
 gnome/gnome-menus
 gnome/gnome-packagekit
+gnome/gnome-session
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
