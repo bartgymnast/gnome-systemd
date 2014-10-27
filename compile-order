@@ -8,6 +8,7 @@ l/gnome-common
 l/atk
 l/harfbuzz
 l/pango
+l/libpng
 l/gdk-pixbuf2
 l/at-spi2-core
 l/at-spi2-atk
@@ -82,8 +83,9 @@ gnome/network-manager-applet
 gnome/appstream-glib
 gnome/clutter-gst
 gnome/gnome-video-effects
-#gnome/cheese - error on build atm
+gnome/cheese
 gnome/gnome-control-center
+gnome/adwaita-icon-theme
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
