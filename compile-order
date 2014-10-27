@@ -90,6 +90,9 @@ gnome/gnome-keyring
 gnome/gnome-menus
 gnome/gnome-packagekit
 gnome/gnome-session
+gnome/py3cairo
+gnome/pygobject3
+l/libgee
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
