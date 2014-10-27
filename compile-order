@@ -76,6 +76,7 @@ gnome/nautilus
 gnome/gssdp
 gnome/gupnp
 gnome/gupnp-av
+gnome/nautilus-sendto
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
