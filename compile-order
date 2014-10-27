@@ -68,6 +68,8 @@ gnome/libmediaart
 l/libgsf
 l/poppler-data
 l/poppler
+l/check
+l/libosinfo
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
