@@ -73,6 +73,7 @@ l/libosinfo
 gnome/tracker
 gnome/exempi
 gnome/nautilus
+gnome/gssdp
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
