@@ -65,6 +65,7 @@ gnome/quvi
 gnome/totem-pl-parser
 gnome/grilo
 gnome/libmediaart
+l/libgsf
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
