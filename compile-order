@@ -74,6 +74,8 @@ gnome/tracker
 gnome/exempi
 gnome/nautilus
 gnome/gssdp
+gnome/gupnp
+gnome/gupnp-av
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
