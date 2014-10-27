@@ -55,6 +55,7 @@ a/upower
 l/ibus
 l/libgsystem
 l/librsvg
+l/libwacom
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin

@@ -1,0 +1,6 @@
+PKGNAM="libwacom"
+VERSION="0.10"
+HOMEPAGE="http://project.gnome.org/linuxwacom"
+DOWNLOAD="https://downloads.sourceforge.net/project/linuxwacom/libwacom/libwacom-0.10.tar.bz2?r=&ts=1414368016&use_mirror=cznic"
+MD5SUM=""
+
