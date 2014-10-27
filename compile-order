@@ -63,6 +63,7 @@ gnome/libquvi-scripts
 gnome/libquvi
 gnome/quvi
 gnome/totem-pl-parser
+gnome/grilo
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
