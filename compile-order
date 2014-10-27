@@ -71,7 +71,8 @@ l/poppler
 l/check
 l/libosinfo
 gnome/tracker
-gnome-exempi
+gnome/exempi
+gnome/nautilus
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
