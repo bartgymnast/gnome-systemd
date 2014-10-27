@@ -70,6 +70,7 @@ l/poppler-data
 l/poppler
 l/check
 l/libosinfo
+gnome/tracker
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
