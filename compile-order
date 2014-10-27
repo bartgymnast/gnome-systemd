@@ -58,6 +58,11 @@ l/librsvg
 l/libwacom
 gnome/gnome-settings-daemon
 l/libgtop
+gnome/lua
+gnome/libquvi-scripts
+gnome/libquvi
+gnome/quvi
+gnome/totem-pl-parser
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
