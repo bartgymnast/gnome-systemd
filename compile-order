@@ -66,6 +66,8 @@ gnome/totem-pl-parser
 gnome/grilo
 gnome/libmediaart
 l/libgsf
+l/poppler-data
+l/poppler
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
