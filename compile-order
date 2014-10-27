@@ -86,6 +86,7 @@ gnome/gnome-video-effects
 gnome/cheese
 gnome/gnome-control-center
 gnome/adwaita-icon-theme
+gnome/gnome-keyring
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
