@@ -100,6 +100,7 @@ gnome/caribou
 gnome/gdm
 gnome/mozjs24
 gnome/gjs
+gnome/zenity
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
