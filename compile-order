@@ -92,7 +92,14 @@ gnome/gnome-packagekit
 gnome/gnome-session
 gnome/py3cairo
 gnome/pygobject3
+gnome/py2gobject3
+gnome/pyatspi
+gnome/py3atspi
 l/libgee
+gnome/caribou
+gnome/gdm
+gnome/mozjs24
+gnome/gjs
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin

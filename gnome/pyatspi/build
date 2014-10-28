@@ -1,16 +1,15 @@
 #!/bin/bash
 #
-# Copyright 2009 Tiago Salvador Souza
+# Copyright 2012 Eugene Wissner <belka.ew@gmail.com>
 # Available under the terms of the GNU GPL.
 #
 
-NAME="gjs"
-VERSION="1.38.1"
+NAME="pyatspi"
+VERSION="2.10.0"
 REVISION="1"
 
-PKG_SOURCEURL='${DLG_GNOMEMIRROR}/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
-PKG_USEAUTOGENSH="yes please"
-PKG_DISABLESMP="yes"
+PKG_SOURCEURL='http://download.gnome.org/sources/${NAME}/${VER_MAJ}.${VER_MIN}/${NAME}-${VERSION}.tar.xz'
+PKG_SANIFYNOTOUCH="1"
 
 . $DLG_ROOT/etc/config
 . $DLG_ROOT/lib/dl-base
@@ -19,9 +18,8 @@ cflags
 cxxflags
 prepare
 analyzesource
-configure
+configure --with-python=python3
 make
-#makecheck
 makeinstall
 tidydocumentation
 analyzebinaries
