@@ -105,6 +105,10 @@ gnome/cantarell-fonts
 gnome/gnome-themes-standard
 gnome/mousetweaks
 gnome/telepathy-mission-control
+gnome/gnome-backgrounds
+gnome/gnome-user-share
+gnome/vino
+gnome/gnome-user-docs
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
