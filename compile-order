@@ -100,6 +100,7 @@ gnome/gjs
 gnome/zenity
 gnome/mutter
 gnome/telepathy-logger
+gnome/gnome-shell
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
