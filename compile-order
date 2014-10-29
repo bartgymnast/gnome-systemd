@@ -98,6 +98,8 @@ gnome/gdm
 gnome/mozjs24
 gnome/gjs
 gnome/zenity
+gnome/mutter
+gnome/telepathy-logger
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
