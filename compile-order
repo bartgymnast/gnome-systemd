@@ -101,6 +101,7 @@ gnome/zenity
 gnome/mutter
 gnome/telepathy-logger
 gnome/gnome-shell
+gnome/cantarell-fonts
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
