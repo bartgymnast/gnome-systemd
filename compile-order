@@ -12,7 +12,6 @@ l/libpng
 l/gdk-pixbuf2
 l/at-spi2-core
 l/at-spi2-atk
-l/libxkbcommon
 l/gtk+3
 d/vala
 l/dconf
@@ -40,8 +39,6 @@ gnome/libgdata
 gnome/evolution-data-server
 gnome/accountsservice
 gnome/cogl
-x/libevdev
-x/libinput
 gnome/clutter
 gnome/clutter-gtk
 l/libgusb
