@@ -103,6 +103,7 @@ gnome/telepathy-logger
 gnome/gnome-shell
 gnome/cantarell-fonts
 gnome/gnome-themes-standard
+gnome/mousetweaks
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
