@@ -30,7 +30,7 @@ l/libwebp
 gnome/webkitgtk
 l/libnotify
 l/rest
-l/telepathy-glib
+gnome/telepathy-glib
 gnome/webkitgtk3
 gnome/gnome-online-accounts
 gnome/uhttpmock
@@ -104,6 +104,7 @@ gnome/gnome-shell
 gnome/cantarell-fonts
 gnome/gnome-themes-standard
 gnome/mousetweaks
+gnome/telepathy-mission-control
 ### [gnome-suites-core-deps] end
 
 ### [gnome-all] begin
