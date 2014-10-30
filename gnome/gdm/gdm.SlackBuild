@@ -129,7 +129,6 @@ cp $CWD/pamd/gdmcard-pamd $PKG/etc/pam.d/
 cp $CWD/pamd/gdmfinger-pamd $PKG/etc/pam.d/
 cp $CWD/pamd/gdmpass-pamd $PKG/etc/pam.d/
 
-mkdir -p $PKG/etc/dbus-1/system.conf
 install -m 644 $CWD/system.conf $PKG/etc/dbus-1/system.conf
 
 # Add a documentation directory:
