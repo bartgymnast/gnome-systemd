@@ -95,7 +95,7 @@ gnome/py3atspi
 l/libgee
 gnome/caribou
 gnome/gdm
-gnome/mozjs24
+l/mozjs24
 gnome/gjs
 gnome/zenity
 gnome/mutter
