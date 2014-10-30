@@ -23,7 +23,7 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PKGNAM=mozjs24
-VERSION=${VERSION:-$(echo $PKGNAM-*.tar.?z* | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
+VERSION=${VERSION:-24.2.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -45,7 +45,7 @@ wget -c ftp://ftp.mozilla.org/pub/mozilla.org/js/mozjs-24.2.0.tar.bz2
 NUMJOBS=${NUMJOBS:-" -j7 "}
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp}
+TMP=${TMP:-/tmp/dlackware}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/var/cache/dlackware}
 

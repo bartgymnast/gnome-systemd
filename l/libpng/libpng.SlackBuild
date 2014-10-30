@@ -23,6 +23,7 @@
 # Modified 2014 by Bart van der Hall for dlackware
 
 PKGNAM=libpng
+VERSION=${VERSION:-1.6.14}
 VERSION_OLD=1.2.50
 VERSION_NEW=1.4.12
 VERSION_NEW1=1.6.14
@@ -133,4 +134,4 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/libpng-$VERSION-$ARCH-$BUILD$TAG.txz
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.txz
