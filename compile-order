@@ -24,9 +24,9 @@ l/json-glib
 l/geocode-glib
 gnome/libgweather
 n/GeoIP
-l/geoclue
+gnome/geoclue
 l/iso-codes
-l/libwebp
+gnome/libwebp
 gnome/webkitgtk
 l/libnotify
 l/rest
