@@ -117,7 +117,7 @@ gnome/libnice
 gnome/farstream
 # l/python-rdflib
 # gnome/zeitgeist
-
+gnome/folks # - zeitgeist disabled - libsocial-web disabled
 
 
 ### [gnome-all] end
