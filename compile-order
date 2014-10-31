@@ -122,6 +122,7 @@ gnome/folks
 gnome/telepathy-farstream
 l/libchamplain
 gnome/empathy
+l/libwnck3
 
 ### [gnome-all] end
 
