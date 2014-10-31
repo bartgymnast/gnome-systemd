@@ -1,0 +1,5 @@
+PKGNAM="brasero"
+VERSION="3.11.3"
+HOMEPAGE="https://wiki.gnome.org/Apps/Brasero"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/brasero/3.11/brasero-3.11.3.tar.xz"
+MD5SUM="001a3d620acae64986bd371c68e81ad2"

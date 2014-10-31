@@ -1,0 +1,5 @@
+PKGNAM="baobab"
+VERSION="3.12.1"
+HOMEPAGE="https://wiki.gnome.org/Apps/Baobab"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/baobab/3.12/baobab-3.12.1.tar.xz"
+MD5SUM="1d265bf555143f7aa0a7d961fd8126c2"
