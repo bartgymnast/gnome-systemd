@@ -113,6 +113,7 @@ gnome/gnome-user-docs
 ### [gnome-all] begin
 gnome/baobab
 gnome/gupnp-igd
+gnome/libnice
 ### [gnome-all] end
 
 ### [gnome-extras] begin
