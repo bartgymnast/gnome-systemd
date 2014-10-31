@@ -115,8 +115,8 @@ gnome/baobab
 gnome/gupnp-igd
 gnome/libnice
 gnome/farstream
-
-
+# l/python-rdflib
+# gnome/zeitgeist
 
 
 
