@@ -123,6 +123,8 @@ gnome/telepathy-farstream
 l/libchamplain
 gnome/empathy
 l/libwnck3
+gnome/webkit2gtk3
+gnome/epiphany
 
 ### [gnome-all] end
 
