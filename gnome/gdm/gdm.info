@@ -1,0 +1,5 @@
+PKGNAM="gdm"
+VERSION="3.14.1"
+HOMEPAGE="https://wiki.gnome.org/Projects/GDM"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/gdm/3.14/gdm-3.14.1.tar.xz"
+MD5SUM="6ebb3c1a694c58651f3e1116ff3f542d"
