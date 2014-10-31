@@ -112,7 +112,7 @@ gnome/gnome-user-docs
 ### [gnome-suites-core-deps] end
 ### [gnome-all] begin
 gnome/baobab
-
+gnome/gupnp-igd
 ### [gnome-all] end
 
 ### [gnome-extras] begin
