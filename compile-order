@@ -110,8 +110,8 @@ gnome/gnome-user-share
 gnome/vino
 gnome/gnome-user-docs
 ### [gnome-suites-core-deps] end
-
 ### [gnome-all] begin
+gnome/baobab
 
 ### [gnome-all] end
 
