@@ -120,6 +120,8 @@ gnome/farstream
 # - zeitgeist disabled - libsocial-web disabled on folks
 gnome/folks
 gnome/telepathy-farstream
+l/libchamplain
+
 
 ### [gnome-all] end
 
