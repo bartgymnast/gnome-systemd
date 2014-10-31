@@ -125,6 +125,8 @@ gnome/empathy
 l/libwnck3
 gnome/webkit2gtk3
 gnome/epiphany
+gnome/glade
+
 
 ### [gnome-all] end
 
