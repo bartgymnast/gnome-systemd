@@ -24,7 +24,7 @@
 
 PKGNAM=at-spi2-core
 VERSION=${VERSION:-2.14.0}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_dlack}
 
 # Automatically determine the architecture we're building on:
@@ -78,8 +78,8 @@ find -L . \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
-  --with-dbus-daemondir=/bin \
-  --localstatedir=/var \
+  --with-dbus-daemondir=/usr/bin \
+  --localstatedir=/var/lib \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
