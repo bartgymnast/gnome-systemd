@@ -45,7 +45,7 @@ then
 else
   # Add new user
   echo -n "Creating unprivileged user " 1>&2
-  geoclue /usr/sbin/useradd \
+  chroot . /usr/sbin/useradd \
     -c 'User for geoclue' \
     -u $(free_user_id) \
     -g geoclue \
