@@ -1,0 +1,5 @@
+PKGNAM="zenity"
+VERSION="3.14.0"
+HOMEPAGE="https://wiki.gnome.org/Projects/Zenity"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/zenity/3.14/zenity-3.14.0.tar.xz"
+MD5SUM="144712f5f29a71bf5969525052e75d1c"

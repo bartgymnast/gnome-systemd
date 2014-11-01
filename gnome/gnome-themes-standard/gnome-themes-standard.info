@@ -1,0 +1,5 @@
+PKGNAM="gnome-themes-standard"
+VERSION="3.14.0"
+HOMEPAGE="https://git.gnome.org/browse/gnome-themes-standard"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/gnome-themes-standard/3.14/gnome-themes-standard-3.14.0.tar.xz"
+MD5SUM="fe121e92298b527f6f614050bddd866a"

@@ -1,0 +1,5 @@
+PKGNAM="pygobject3"
+VERSION="3.14.0"
+HOMEPAGE="https://wiki.gnome.org/Projects/PyGObject"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/pygobject/3.14/pygobject-3.14.0.tar.xz"
+MD5SUM="17722912afa982a6feace4bb9bf52778"

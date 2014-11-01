@@ -1,0 +1,5 @@
+PKGNAM="gnome-session"
+VERSION="3.14.0"
+HOMEPAGE="http://www.gnome.org/"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/gnome-session/3.14/gnome-session-3.14.0.tar.xz"
+MD5SUM="ca05c48f7dfe6ddd78ac0a6bffb9592a"
