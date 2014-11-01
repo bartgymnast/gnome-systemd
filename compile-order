@@ -148,6 +148,7 @@ l/pangomm
 l/atkmm
 l/gtkmm
 gnome/gnome-system-monitor
+gnome/vte2_91
 
 ### [gnome-all] end
 
