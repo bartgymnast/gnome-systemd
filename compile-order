@@ -134,6 +134,12 @@ gnome/eog
 l/libgxps
 gnome/evince
 l/gtksourceview
+gnome/gnome-calculator
+gnome/gnome-contacts
+gnome/gnome-dictionary
+gnome/gnome-font-viewer
+gnome/gnome-screenshot
+gnome/gnome-system-log
 
 ### [gnome-all] end
 
