@@ -147,6 +147,7 @@ l/cairomm
 l/pangomm
 l/atkmm
 l/gtkmm
+gnome/gnome-system-monitor
 
 ### [gnome-all] end
 
