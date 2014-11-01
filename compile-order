@@ -129,6 +129,7 @@ gnome/glade
 l/gnome-js-common
 gnome/seed
 l/libdvdcss
+l/libpeas
 
 ### [gnome-all] end
 
