@@ -1,4 +1,4 @@
-PRGNAM="totem-pl-parser"
+PKGNAM="totem-pl-parser"
 VERSION="3.10.3"
 HOMEPAGE="ftp://ftp.gnome.org/pub/gnome/sources/totem-pl-parser"
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/totem-pl-parser/3.10/totem-pl-parser-3.10.3.tar.xz"

@@ -1,4 +1,4 @@
-PRGNAM="tracker"
+PKGNAM="tracker"
 VERSION="1.2.3"
 HOMEPAGE="http://projects.gnome.org/tracker/"
 DOWNLOAD="http://ftp.gnome.org/pub/GNOME/sources/tracker/1.2/tracker-1.2.3.tar.xz"

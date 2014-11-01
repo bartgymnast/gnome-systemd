@@ -1,0 +1,5 @@
+PKGNAM="aisleriot"
+VERSION="3.12.1"
+HOMEPAGE="https://wiki.gnome.org/action/show/Apps/Aisleriot"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/aisleriot/3.12/aisleriot-3.12.1.tar.xz"
+MD5SUM="439d677774ffbefda6290972b48c9235"
