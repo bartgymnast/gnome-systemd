@@ -3,4 +3,3 @@ VERSION="0.1.6"
 HOMEPAGE="http://www.gnome.org/"
 DOWNLOAD='http://people.freedesktop.org/~hughsient/releases/libgusb-0.1.6.tar.xz'
 MD5SUM=""
-
