@@ -22,7 +22,7 @@
 # -----------------------------------------------------------------------------
 
 PKGNAM=gnome-js-common
-VERSION=${VERSION:-$(echo $PKGNAM-*.tar.?z* | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
+VERSION=${VERSION:-0.1.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -36,6 +36,8 @@ if [ -z "$ARCH" ]; then
        *) export ARCH=$( uname -m ) ;;
   esac
 fi
+
+wget -c ftp://ftp.gnome.org/pub/gnome/sources/gnome-js-common/0.1/gnome-js-common-0.1.2.tar.gz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
@@ -76,10 +78,9 @@ CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
-  --libdir=/lib${LIBDIRSUFFIX} \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
-  --localstatedir=/var \
-  --mandir=/usr/man \
+  --localstatedir=/var/lib \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
@@ -89,10 +90,6 @@ make install DESTDIR=$PKG
 # Strip binaries:
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
 	  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
-# Compress man pages:
-find $PKG/usr/man -type f -exec gzip -9 {} \;
-for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild

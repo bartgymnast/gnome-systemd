@@ -126,7 +126,8 @@ l/libwnck3
 gnome/webkit2gtk3
 gnome/epiphany
 gnome/glade
-
+l/gnome-js-common
+gnome/seed
 
 ### [gnome-all] end
 
