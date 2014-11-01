@@ -152,6 +152,8 @@ gnome/vte2_91
 l/appdata-tools
 gnome/gnome-terminal
 l/gucharmap
+l/libmusicbrainz5
+gnome/sushi
 
 ### [gnome-all] end
 
