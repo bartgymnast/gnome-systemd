@@ -140,6 +140,13 @@ gnome/gnome-dictionary
 gnome/gnome-font-viewer
 gnome/gnome-screenshot
 gnome/gnome-system-log
+l/mm-common
+l/libsigc++
+l/glibmm2
+l/cairomm
+l/pangomm
+l/atkmm
+l/gtkmm
 
 ### [gnome-all] end
 
