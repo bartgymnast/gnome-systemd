@@ -133,6 +133,7 @@ l/libpeas
 gnome/eog
 l/libgxps
 gnome/evince
+l/gtksourceview
 
 ### [gnome-all] end
 
