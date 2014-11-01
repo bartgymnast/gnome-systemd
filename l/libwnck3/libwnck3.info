@@ -1,0 +1,5 @@
+PKGNAM="libwnck3"
+VERSION="3.4.9"
+HOMEPAGE="http://www.gnome.org/"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/libwnck/3.4/libwnck-3.4.9.tar.xz"
+MD5SUM="5cb080285e8d5d6a70424cfb43bbf440"

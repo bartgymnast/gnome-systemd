@@ -1,0 +1,5 @@
+PKGNAM="libgee"
+VERSION="0.16.1"
+HOMEPAGE="https://wiki.gnome.org/action/show/Projects/Libgee"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/libgee/0.16/libgee-0.16.1.tar.xz"
+MD5SUM="d30cf203784431b0fdc3216b1acd999c"

@@ -24,7 +24,7 @@
 # Modified 2014 by Bart van der Hall for dlackware
 
 PKGNAM=iso-codes
-VERSION=3.56
+VERSION=${VERSION:-3.56}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
