@@ -1,4 +1,4 @@
-PRGNAM="libvirt-glib"
+PKGNAM="libvirt-glib"
 VERSION="0.1.7"
 HOMEPAGE=""
 DOWNLOAD="http://libvirt.org/sources/glib/libvirt-glib-0.1.7.tar.gz"

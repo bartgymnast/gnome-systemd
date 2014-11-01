@@ -1,4 +1,4 @@
-PRGNAM="gnome-photos"
+PKGNAM="gnome-photos"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-photos/3.12/gnome-photos-3.12.2.tar.xz"

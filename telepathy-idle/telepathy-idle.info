@@ -1,4 +1,4 @@
-PRGNAM="telepathy-idle"
+PKGNAM="telepathy-idle"
 VERSION="0.1.17"
 HOMEPAGE=""
 DOWNLOAD="http://telepathy.freedesktop.org/releases/telepathy-idle/telepathy-idle-0.1.17.tar.gz"

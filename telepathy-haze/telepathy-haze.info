@@ -1,4 +1,4 @@
-PRGNAM="telepathy-haze"
+PKGNAM="telepathy-haze"
 VERSION="0.7.0"
 HOMEPAGE=""
 DOWNLOAD="http://telepathy.freedesktop.org/releases/telepathy-haze/telepathy-haze-0.7.0.tar.gz"

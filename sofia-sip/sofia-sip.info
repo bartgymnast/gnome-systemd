@@ -1,4 +1,4 @@
-PRGNAM="sofia-sip"
+PKGNAM="sofia-sip"
 VERSION="1.12.11"
 HOMEPAGE=""
 DOWNLOAD="http://downloads.sourceforge.net/project/sofia-sip/sofia-sip/1.12.11/sofia-sip-1.12.11.tar.gz"

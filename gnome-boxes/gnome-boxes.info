@@ -1,4 +1,4 @@
-PRGNAM="gnome-boxes"
+PKGNAM="gnome-boxes"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-boxes/3.12/gnome-boxes-3.12.2.tar.xz"
