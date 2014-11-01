@@ -1,4 +1,4 @@
-PRGNAM="libopenraw"
+PKGNAM="libopenraw"
 VERSION="0.0.9"
 HOMEPAGE=""
 DOWNLOAD="http://libopenraw.freedesktop.org/download/libopenraw-0.0.9.tar.bz2"

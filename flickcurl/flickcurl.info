@@ -1,4 +1,4 @@
-PRGNAM="flickcurl"
+PKGNAM="flickcurl"
 VERSION="1.25"
 HOMEPAGE=""
 DOWNLOAD="http://download.dajobe.org/flickcurl/flickcurl-1.25.tar.gz"

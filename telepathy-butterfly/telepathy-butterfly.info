@@ -1,4 +1,4 @@
-PRGNAM="telepathy-butterfly"
+PKGNAM="telepathy-butterfly"
 VERSION="0.5.15"
 HOMEPAGE=""
 DOWNLOAD="http://telepathy.freedesktop.org/releases/telepathy-butterfly/telepathy-butterfly-0.5.15.tar.gz"

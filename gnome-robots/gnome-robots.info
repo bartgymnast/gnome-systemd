@@ -1,4 +1,4 @@
-PRGNAM="gnome-robots"
+PKGNAM="gnome-robots"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-robots/3.12/gnome-robots-3.12.2.tar.xz"

@@ -1,4 +1,4 @@
-PRGNAM="gnome-sudoku"
+PKGNAM="gnome-sudoku"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-sudoku/3.12/gnome-sudoku-3.12.2.tar.xz"

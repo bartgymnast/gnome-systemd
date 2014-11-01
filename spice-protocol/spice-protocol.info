@@ -1,4 +1,4 @@
-PRGNAM="spice-protocol"
+PKGNAM="spice-protocol"
 VERSION="0.12.6"
 HOMEPAGE=""
 DOWNLOAD="http://spice-space.org/download/releases/spice-protocol-0.12.6.tar.bz2"

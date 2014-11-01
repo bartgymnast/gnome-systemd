@@ -1,4 +1,4 @@
-PRGNAM="tdb"
+PKGNAM="tdb"
 VERSION="1.2.12"
 HOMEPAGE=""
 DOWNLOAD="http://www.samba.org/ftp/tdb/tdb-1.2.12.tar.gz"

@@ -1,4 +1,4 @@
-PRGNAM="tali"
+PKGNAM="tali"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/tali/3.12/tali-3.12.2.tar.xz"

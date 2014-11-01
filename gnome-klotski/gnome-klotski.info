@@ -1,4 +1,4 @@
-PRGNAM="gnome-klotski"
+PKGNAM="gnome-klotski"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/gnome-klotski/3.12/gnome-klotski-3.12.2.tar.xz"
