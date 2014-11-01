@@ -1,0 +1,5 @@
+PKGNAM="gucharmap"
+VERSION="3.14.1"
+HOMEPAGE="http://www.gnome.org/"
+DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gucharmap/3.14/gucharmap-3.14.1.tar.xz"
+MD5SUM=""
