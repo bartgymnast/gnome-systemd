@@ -1,4 +1,4 @@
-PRGNAM="libosinfo"
+PKGNAM="libosinfo"
 VERSION="0.2.11"
 HOMEPAGE=""
 DOWNLOAD="https://fedorahosted.org/releases/l/i/libosinfo/libosinfo-0.2.11.tar.gz"

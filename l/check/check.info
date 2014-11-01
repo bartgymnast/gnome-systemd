@@ -1,4 +1,4 @@
-PRGNAM="check"
+PKGNAM="check"
 VERSION="0.9.14"
 HOMEPAGE=""
 DOWNLOAD="http://downloads.sourceforge.net/check/check-0.9.14.tar.gz"

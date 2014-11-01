@@ -1,4 +1,4 @@
-PRGNAM="evolution-mapi"
+PKGNAM="evolution-mapi"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/evolution-mapi/3.12/evolution-mapi-3.12.2.tar.xz"

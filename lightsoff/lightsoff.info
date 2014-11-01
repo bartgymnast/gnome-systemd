@@ -1,4 +1,4 @@
-PRGNAM="lightsoff"
+PKGNAM="lightsoff"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/lightsoff/3.12/lightsoff-3.12.2.tar.xz"

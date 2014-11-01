@@ -1,4 +1,4 @@
-PRGNAM="geoclue"
+PKGNAM="geoclue"
 VERSION="0.12.99"
 HOMEPAGE="http://geoclue.freedesktop.org/"
 DOWNLOAD="http://freedesktop.org/~hadess/geoclue-0.12.99.tar.gz"

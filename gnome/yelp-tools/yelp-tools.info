@@ -1,4 +1,4 @@
-PRGNAM="yelp-tools"
+PKGNAM="yelp-tools"
 VERSION="3.14.1"
 HOMEPAGE="http://projects.gnome.org/yelp/"
 DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/yelp-tools/3.14/yelp-tools-3.14.1.tar.xz"

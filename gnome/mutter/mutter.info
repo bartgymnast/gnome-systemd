@@ -1,4 +1,4 @@
-PRGNAM="mutter"
+PKGNAM="mutter"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/mutter/3.12/mutter-3.12.2.tar.xz"

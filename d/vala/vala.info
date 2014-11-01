@@ -1,4 +1,4 @@
-PRGNAM="vala"
+PKGNAM="vala"
 VERSION="0.26.1"
 HOMEPAGE="http://live.gnome.org/Vala"
 DOWNLOAD="http://ftp.gnome.org/pub/GNOME/sources/vala/0.26/vala-0.26.1.tar.xz"

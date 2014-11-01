@@ -1,4 +1,4 @@
-PRGNAM="gnome-mahjongg"
+PKGNAM="gnome-mahjongg"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-mahjongg/3.12/gnome-mahjongg-3.12.2.tar.xz"

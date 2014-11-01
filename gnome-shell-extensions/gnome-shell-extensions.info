@@ -1,4 +1,4 @@
-PRGNAM="gnome-shell-extensions"
+PKGNAM="gnome-shell-extensions"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/gnome-shell-extensions/3.12/gnome-shell-extensions-3.12.2.tar.xz"

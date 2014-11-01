@@ -1,4 +1,4 @@
-PRGNAM="seahorse-nautilus"
+PKGNAM="seahorse-nautilus"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/seahorse-nautilus/3.12/seahorse-nautilus-3.12.2.tar.xz"

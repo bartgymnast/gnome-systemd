@@ -1,4 +1,4 @@
-PRGNAM="yelp-xsl"
+PKGNAM="yelp-xsl"
 VERSION="3.14.0"
 HOMEPAGE="http://projects.gnome.org/yelp/"
 DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/yelp-xsl/3.14/yelp-xsl-3.14.0.tar.xz"

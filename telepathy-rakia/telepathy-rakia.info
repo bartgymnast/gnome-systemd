@@ -1,4 +1,4 @@
-PRGNAM="telepathy-rakia"
+PKGNAM="telepathy-rakia"
 VERSION="0.7.5"
 HOMEPAGE=""
 DOWNLOAD="http://telepathy.freedesktop.org/releases/telepathy-rakia/telepathy-rakia-0.7.5.tar.gz"

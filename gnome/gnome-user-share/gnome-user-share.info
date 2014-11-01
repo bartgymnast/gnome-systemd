@@ -1,4 +1,4 @@
-PRGNAM="gnome-user-share"
+PKGNAM="gnome-user-share"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-user-share/3.12/gnome-user-share-3.12.2.tar.xz"

@@ -1,4 +1,4 @@
-PRGNAM="clutter-gtk"
+PKGNAM="clutter-gtk"
 VERSION="1.6.0"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/clutter-gtk/1.6/clutter-gtk-1.6.0.tar.xz"

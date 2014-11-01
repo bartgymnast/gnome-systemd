@@ -1,4 +1,4 @@
-PRGNAM="libquvi-scripts"
+PKGNAM="libquvi-scripts"
 VERSION="0.9.20131130"
 HOMEPAGE="http://quvi.sourceforge.net"
 DOWNLOAD="http://downloads.sourceforge.net/quvi/libquvi-scripts-0.9.20131130.tar.xz"

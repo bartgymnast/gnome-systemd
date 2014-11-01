@@ -1,4 +1,4 @@
-PRGNAM="seed"
+PKGNAM="seed"
 VERSION="3.8.1"
 HOMEPAGE=""
 DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/seed/3.8/seed-3.8.1.tar.xz"

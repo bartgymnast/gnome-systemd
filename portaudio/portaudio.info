@@ -1,4 +1,4 @@
-PRGNAM="portaudio"
+PKGNAM="portaudio"
 VERSION="V19"
 HOMEPAGE=""
 DOWNLOAD="http://www.portaudio.com/archives/pa_stable_v19_20111121.tgz"

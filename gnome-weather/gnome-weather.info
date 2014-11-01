@@ -1,4 +1,4 @@
-PRGNAM="gnome-weather"
+PKGNAM="gnome-weather"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/gnome-weather/3.12/gnome-weather-3.12.2.tar.xz"

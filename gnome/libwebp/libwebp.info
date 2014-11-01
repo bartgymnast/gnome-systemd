@@ -1,4 +1,4 @@
-PRGNAM="libwebp"
+PKGNAM="libwebp"
 VERSION="0.3.1"
 HOMEPAGE=""
 DOWNLOAD="https://webp.googlecode.com/files/libwebp-0.3.1.tar.gz"

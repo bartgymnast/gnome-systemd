@@ -1,4 +1,4 @@
-PRGNAM="speechd"
+PKGNAM="speechd"
 VERSION="0.8"
 HOMEPAGE=""
 DOWNLOAD="http://devel.freebsoft.org/pub/projects/speechd/speech-dispatcher-0.8.tar.gz"

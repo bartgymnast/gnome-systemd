@@ -1,4 +1,4 @@
-PRGNAM="seahorse-sharing"
+PKGNAM="seahorse-sharing"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/seahorse-sharing/3.12/seahorse-sharing-3.12.2.tar.xz"

@@ -1,4 +1,4 @@
-PRGNAM="gnome-tetravex"
+PKGNAM="gnome-tetravex"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://download.gnome.org/sources/gnome-tetravex/3.12/gnome-tetravex-3.12.2.tar.xz"

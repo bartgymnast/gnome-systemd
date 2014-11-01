@@ -1,4 +1,4 @@
-PRGNAM="quvi"
+PKGNAM="quvi"
 VERSION="0.9.5"
 HOMEPAGE="http://quvi.sourceforge.net"
 DOWNLOAD="http://downloads.sourceforge.net/quvi/quvi-0.9.5.tar.xz"

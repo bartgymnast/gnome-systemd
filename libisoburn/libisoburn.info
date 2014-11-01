@@ -1,4 +1,4 @@
-PRGNAM="libisoburn"
+PKGNAM="libisoburn"
 VERSION="1.3.2"
 HOMEPAGE=""
 DOWNLOAD="http://files.libburnia-project.org/releases/libisoburn-1.3.2.tar.gz"

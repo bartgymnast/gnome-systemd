@@ -1,4 +1,4 @@
-PRGNAM="gnome-calculator"
+PKGNAM="gnome-calculator"
 VERSION="3.12.2"
 HOMEPAGE=""
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-calculator/3.12/gnome-calculator-3.12.2.tar.xz"
