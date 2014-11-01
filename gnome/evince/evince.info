@@ -1,0 +1,5 @@
+PKGNAM="evince"
+VERSION="3.14.1"
+HOMEPAGE="http://www.gnome.org/"
+DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/evince/3.14/evince-3.14.1.tar.xz"
+MD5SUM=""
