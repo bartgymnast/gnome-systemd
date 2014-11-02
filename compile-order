@@ -109,8 +109,8 @@ gnome/gnome-backgrounds
 gnome/gnome-user-share
 gnome/vino
 gnome/gnome-user-docs
-### [gnome-suites-core-deps] end
-### [gnome-all] begin
+### [gnome-suites-core-deps] end - part 1, working desktop
+### [gnome-suites-core-deps] part 2, finishing the jhbuild
 gnome/baobab
 gnome/gupnp-igd
 gnome/libnice
@@ -158,7 +158,10 @@ l/pylint
 gnome/totem
 gnome/yelp
 gnome/gnome-disk-utility
+gnome/gnome-shell-extensions
+### [gnome-suites-core-deps] end - part 2, jhbuild list finished
 
+### [gnome-all] begin
 
 ### [gnome-all] end
 
