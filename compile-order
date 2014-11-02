@@ -157,6 +157,8 @@ gnome/sushi
 l/pylint
 gnome/totem
 gnome/yelp
+gnome/gnome-disk-utility
+
 
 ### [gnome-all] end
 
