@@ -154,6 +154,8 @@ gnome/gnome-terminal
 l/gucharmap
 l/libmusicbrainz5
 gnome/sushi
+l/pylint
+gnome/totem
 
 ### [gnome-all] end
 
