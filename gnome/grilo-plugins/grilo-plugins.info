@@ -1,0 +1,5 @@
+PKGNAM="grilo-plugins"
+VERSION="0.2.13"
+HOMEPAGE="http://www.gnome.org/"
+DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/grilo-plugins/0.2/grilo-plugins-0.2.13.tar.xz"
+MD5SUM=""
