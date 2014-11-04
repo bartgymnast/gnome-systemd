@@ -1,5 +1,5 @@
 PKGNAM="gnome-system-monitor"
 VERSION="3.14.1"
-HOMEPAGE=""
+HOMEPAGE="http://www.gnome.org/"
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-system-monitor/3.14/gnome-system-monitor-3.14.1.tar.xz"
-MD5SUM=""
+MD5SUM="1dde2e2a7d557b713e2f1fbff9ee0774"

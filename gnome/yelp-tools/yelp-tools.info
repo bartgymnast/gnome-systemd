@@ -1,6 +1,5 @@
 PKGNAM="yelp-tools"
 VERSION="3.14.1"
 HOMEPAGE="http://projects.gnome.org/yelp/"
-DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/yelp-tools/3.14/yelp-tools-3.14.1.tar.xz"
 DOWNLOAD="http://dlackware.omgwtfroflol.com/source/yelp-tools-3.14.1.tar.xz"
 MD5SUM="c1e82214b07acf6e90e0cdb49e91e01f"

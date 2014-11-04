@@ -1,5 +1,5 @@
 PKGNAM="clutter-gtk"
 VERSION="1.6.0"
-HOMEPAGE=""
+HOMEPAGE="https://wiki.gnome.org/Projects/Clutter"
 DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/clutter-gtk/1.6/clutter-gtk-1.6.0.tar.xz"
-MD5SUM=""
+MD5SUM="08e5d7c249733d4d96bbbd2dc970a06c"

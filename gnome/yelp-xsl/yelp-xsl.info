@@ -1,6 +1,5 @@
 PKGNAM="yelp-xsl"
 VERSION="3.14.0"
 HOMEPAGE="http://projects.gnome.org/yelp/"
-DOWNLOAD="http://ftp.acc.umu.se/pub/gnome/sources/yelp-xsl/3.14/yelp-xsl-3.14.0.tar.xz"
 DOWNLOAD="http://dlackware.omgwtfroflol.com/source/yelp-xsl-3.14.0.tar.xz"
 MD5SUM="8965c1363857f223a6b761af6a37363d"
