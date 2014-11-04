@@ -1,5 +1,5 @@
 PKGNAM="pangomm"
 VERSION="2.34.0"
-HOMEPAGE=""
+HOMEPAGE="http://www.gtkmm.org/"
 DOWNLOAD="http://download.gnome.org/sources/pangomm/2.34/pangomm-2.34.0.tar.xz"
-MD5SUM=""
+MD5SUM="2c702caede167323c9ed9eed2b933098"

@@ -1,5 +1,5 @@
 PKGNAM="libosinfo"
 VERSION="0.2.11"
-HOMEPAGE=""
+HOMEPAGE="http://libosinfo.org/"
 DOWNLOAD="https://fedorahosted.org/releases/l/i/libosinfo/libosinfo-0.2.11.tar.gz"
 MD5SUM="497111d96815ff27e0da662bc3cc4b69"

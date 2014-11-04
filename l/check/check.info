@@ -1,5 +1,5 @@
 PKGNAM="check"
 VERSION="0.9.14"
-HOMEPAGE=""
+HOMEPAGE="http://check.sourceforge.net/"
 DOWNLOAD="http://downloads.sourceforge.net/check/check-0.9.14.tar.gz"
 MD5SUM="6d10a8efb9a683467b92b3bce97aeb30"
