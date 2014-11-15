@@ -22,7 +22,7 @@
 # -----------------------------------------------------------------------------
 
 PKGNAM=gnome-disk-utility
-VERSION=${VERSION:-3.12.1}
+VERSION=${VERSION:-3.14.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/gnome-disk-utility/3.12/gnome-disk-utility-3.12.1.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/3.14/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
