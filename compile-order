@@ -162,6 +162,10 @@ gnome/gnome-shell-extensions
 ### [gnome-suites-core-deps] end - part 2, jhbuild list finished
 ### [gnome-all] begin
 gnome/gmime
+l/gfbgraph
+l/libzapojit
+gnome/gnome-online-miners
+
 
 ### [gnome-all] end
 
