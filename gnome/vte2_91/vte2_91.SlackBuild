@@ -23,7 +23,7 @@
 
 PKGNAM=vte2_91
 SRCNAM=vte
-VERSION=${VERSION:-0.38.1}
+VERSION=${VERSION:-0.38.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -38,7 +38,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/vte/0.38/vte-0.38.1.tar.xz
+wget -c http://download.gnome.org/sources/$SRCNAM/0.38/$SRCNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
