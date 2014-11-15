@@ -1,5 +1,5 @@
 PKGNAM="gnome-packagekit"
-VERSION="3.14.0"
+VERSION="3.14.2"
 HOMEPAGE="http://www.freedesktop.org/software/PackageKit/"
-DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/gnome-packagekit/3.14/gnome-packagekit-3.14.0.tar.xz"
-MD5SUM="b7ca974d901ee8e5d730c34c58cc7af1"
+DOWNLOAD="http://download.gnome.org/sources/gnome-packagekit/3.14/gnome-packagekit-3.14.2.tar.xz"
+MD5SUM="a503defd4d21203407e2f2c6d92928b4"
