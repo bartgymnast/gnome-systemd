@@ -1,5 +1,5 @@
 PKGNAM="gnome-control-center"
-VERSION="3.14.1"
+VERSION="3.14.2"
 HOMEPAGE="http://www.gnome.org/"
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-control-center/3.14/gnome-control-center-3.14.1.tar.xz"
-MD5SUM="80ac2767307691a36a13b9f3cae68c51"
+DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-control-center/3.14/gnome-control-center-3.14.2.tar.xz"
+MD5SUM="729951bfecc3f5fa87973383ec4ab787"
