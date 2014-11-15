@@ -23,7 +23,7 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PKGNAM=tracker
-VERSION=${VERSION:-1.2.3}
+VERSION=${VERSION:-1.2.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -35,7 +35,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/tracker/1.2/tracker-1.2.3.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/1.2/$PKGNAM-1.2.4.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
