@@ -1,0 +1,5 @@
+PKGNAM="bijiben"
+VERSION="3.14.2"
+HOMEPAGE="https://wiki.gnome.org/action/show/Apps/Aisleriot"
+DOWNLOAD="http://download.gnome.org/sources/bijiben/3.14/aisleriot-3.14.2.tar.xz"
+MD5SUM="7b05805417e306f6a6335ff125b14e1a"

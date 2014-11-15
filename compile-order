@@ -169,7 +169,9 @@ l/gtk-engines
 l/libgnomekbd
 gnome/accerciser
 gnome/aisleriot
-
+gnome/gtkhtml
+gnome/evolution
+gnome/bijiben
 
 ### [gnome-all] end
 

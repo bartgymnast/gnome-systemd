@@ -1,0 +1,5 @@
+PKGNAM="evolution"
+VERSION="3.12.8"
+HOMEPAGE="https://wiki.gnome.org/action/show/Apps/Aisleriot"
+DOWNLOAD="http://download.gnome.org/sources/evolution/3.12/evolution-3.12.8.tar.xz"
+MD5SUM="2861ecacd698c9dc8ba2bee491fa9569"
