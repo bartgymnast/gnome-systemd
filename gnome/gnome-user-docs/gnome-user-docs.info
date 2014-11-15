@@ -1,5 +1,5 @@
 PKGNAM="gnome-user-docs"
-VERSION="3.14.1"
+VERSION="3.14.2"
 HOMEPAGE="https://wiki.gnome.org/DocumentationProject/Tasks/DesktopHelp"
-DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/gnome-user-docs/3.14/gnome-user-docs-3.14.1.tar.xz"
-MD5SUM="979a8b8cbed654f7684405f1df54fe46"
+DOWNLOAD="http://download.gnome.org/sources/gnome-user-docs/3.14/gnome-user-docs-3.14.2.tar.xz"
+MD5SUM="077c2c8e7e74327cecd1a32a07741b62"
