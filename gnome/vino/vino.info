@@ -1,5 +1,5 @@
 PKGNAM="vino"
-VERSION="3.14.0"
+VERSION="3.14.1"
 HOMEPAGE="https://wiki.gnome.org/action/show/Projects/Vino"
-DOWNLOAD="ftp://ftp.gnome.org/pub/gnome/sources/vino/3.14/vino-3.14.0.tar.xz"
-MD5SUM="3564333509f9554fe8047cc34748cec1"
+DOWNLOAD="http://download.gnome.org/sources/vino/3.14/vino-3.14.1.tar.xz"
+MD5SUM="f2146337a41fd52306c5b1aefcc462f1"
