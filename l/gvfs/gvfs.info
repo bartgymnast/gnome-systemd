@@ -1,5 +1,5 @@
 PKGNAM="gvfs"
-VERSION="1.22.1"
+VERSION="1.22.2"
 HOMEPAGE="https://wiki.gnome.org/Projects/gvfs"
-DOWNLOAD="https://download.gnome.org/sources/gvfs/1.22/gvfs-1.22.1.tar.xz"
-MD5SUM="ad3e96e322f7bbf5b765c0c6da9228cf"
+DOWNLOAD="http://download.gnome.org/sources/gvfs/1.22/gvfs-1.22.2.tar.xz"
+MD5SUM=""
