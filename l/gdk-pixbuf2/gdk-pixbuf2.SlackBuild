@@ -38,7 +38,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/2.31/gdk-pixbuf-2.31.1.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAME/2.31/$PKGNAM-$VERSION.tar.xz
 
 NUMJOBS=${NUMJOBS:-" -j7 "}
 
