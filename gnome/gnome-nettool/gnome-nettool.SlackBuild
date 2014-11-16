@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2014 Eugene Wissner (belka.ew@gmail.com)
+# Copyright 2014 Bart van der Hall, Almere, NL
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -21,8 +21,8 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 
-PKGNAM=gnome-mahjongg
-VERSION=${VERSION:-3.14.1}
+PKGNAM=gnome-nettool
+VERSION=${VERSION:-3.8.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c http://download.gnome.org/sources/$PKGNAM/3.14/$PKGNAM-$VERSION.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/3.8/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
@@ -90,10 +90,6 @@ make install DESTDIR=$PKG
 # Strip binaries:
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
 	  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
-# Compress man pages:
-find $PKG/usr/share/man -type f -exec gzip -9 {} \;
-for i in $( find $PKG/usr/share/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild

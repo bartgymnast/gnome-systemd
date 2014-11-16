@@ -1,5 +1,5 @@
 PKGNAM="gnome-mahjongg"
-VERSION="3.12.2"
+VERSION="3.14.1"
 HOMEPAGE=""
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-mahjongg/3.12/gnome-mahjongg-3.12.2.tar.xz"
-MD5SUM="960dcfc885ddfc7aedaa9ad3a71f2677"
+DOWNLOAD="http://download.gnome.org/sources/gnome-mahjongg/3.14/gnome-mahjongg-3.14.1.tar.xz"
+MD5SUM="d9ae05397a68f9b39b7a9604f72ae394"
