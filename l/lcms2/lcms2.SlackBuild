@@ -42,7 +42,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget http://www.littlecms.com/$PKGNAM-$VERSION.tar.gz
+wget -c http://www.littlecms.com/$PKGNAM-$VERSION.tar.gz
 
 
 if [ "$ARCH" = "i486" ]; then

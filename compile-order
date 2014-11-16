@@ -10,7 +10,7 @@ l/harfbuzz
 l/pango
 l/libpng
 l/gdk-pixbuf2
-l/at-spi2-core
+/at-spi2-core
 l/at-spi2-atk
 l/gtk+3
 d/vala
@@ -68,7 +68,7 @@ l/poppler-data
 l/poppler
 l/check
 l/libosinfo
-gnome/tracker
+nome/tracker
 gnome/exempi
 gnome/nautilus
 gnome/gssdp
@@ -115,9 +115,8 @@ gnome/baobab
 gnome/gupnp-igd
 gnome/libnice
 gnome/farstream
-# l/python-rdflib
-# gnome/zeitgeist
-# - zeitgeist disabled - libsocial-web disabled on folks
+l/python-rdflib
+gnome/zeitgeist
 gnome/folks
 gnome/telepathy-farstream
 l/libchamplain
@@ -159,8 +158,8 @@ gnome/totem
 gnome/yelp
 gnome/gnome-disk-utility
 gnome/gnome-shell-extensions
-### [gnome-suites-core-deps] end - part 2, jhbuild list finished
-### [gnome-all] begin
+## [gnome-suites-core-deps] end - part 2, jhbuild list finished
+## [gnome-all] begin
 gnome/gmime
 l/gfbgraph
 l/libzapojit
