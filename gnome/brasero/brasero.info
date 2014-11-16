@@ -1,0 +1,5 @@
+PKGNAM="brasero"
+VERSION="3.12.0"
+HOMEPAGE="https://wiki.gnome.org/Apps/Brasero"
+DOWNLOAD="http://download.gnome.org/sources/brasero/3.12/brasero-3.12.0.tar.xz"
+MD5SUM="3a12a2b954b265c751ef29669d589908"

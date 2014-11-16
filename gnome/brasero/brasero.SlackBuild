@@ -23,7 +23,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PKGNAM=brasero
-VERSION=${VERSION:-3.11.3}
+VERSION=${VERSION:-3.12.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -36,7 +36,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/$PKGNAM/3.11/$PKGNAM-$VERSION.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/3.12/$PKGNAM-$VERSION.tar.xz
 
 NUMJOBS=${NUMJOBS:-"-j4"}
 
