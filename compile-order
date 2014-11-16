@@ -177,6 +177,12 @@ gnome/file-roller
 gnome/five-or-more
 gnome/four-in-a-row
 gnome/gedit
+gnome/libgit2
+gnome/libgit2-glib
+gnome/gtkspell3
+gnome/gitg
+
+
 
 ### [gnome-all] end
 

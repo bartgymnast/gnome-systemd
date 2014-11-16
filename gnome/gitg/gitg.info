@@ -1,0 +1,5 @@
+PKGNAM="gitg"
+VERSION="3.14.0"
+HOMEPAGE=""
+DOWNLOAD="http://download.gnome.org/sources/gitg/3.14/gitg-3.14.0.tar.xz"
+MD5SUM="6cfd9cf5b219379b7144f1197b1cbc7a"

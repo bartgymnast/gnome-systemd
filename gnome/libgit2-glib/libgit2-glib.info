@@ -1,0 +1,5 @@
+PKGNAM="libgit2-glib"
+VERSION="0.0.24"
+HOMEPAGE=""
+DOWNLOAD="http://download.gnome.org/sources/libgit2-glib/0.0/libgit2-glib-0.0.24.tar.xz"
+MD5SUM="aaded43add73d27ecdc4018707df224b"
