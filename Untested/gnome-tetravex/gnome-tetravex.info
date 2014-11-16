@@ -1,5 +1,5 @@
 PKGNAM="gnome-tetravex"
-VERSION="3.12.2"
+VERSION="3.14.0"
 HOMEPAGE=""
-DOWNLOAD="http://download.gnome.org/sources/gnome-tetravex/3.12/gnome-tetravex-3.12.2.tar.xz"
-MD5SUM="d30b9c901f8492055780475244ae7ffb"
+DOWNLOAD="http://download.gnome.org/sources/gnome-tetravex/3.14/gnome-tetravex-3.14.0.tar.xz"
+MD5SUM="3b41d3af227a3eff3963fa2154d91a0d"

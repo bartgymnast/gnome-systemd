@@ -39,7 +39,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/libgsf/1.14/libgsf-1.14.30.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/1.14/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}

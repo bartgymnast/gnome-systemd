@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2014 Eugene Wissner (belka.ew@gmail.com)
+# Copyright 2014 Bart van der Hall, Almere, NL
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -21,7 +21,7 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 
-PKGNAM=gnome-sudoku
+PKGNAM=orca
 VERSION=${VERSION:-3.14.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}

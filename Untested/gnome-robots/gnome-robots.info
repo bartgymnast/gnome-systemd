@@ -1,5 +1,5 @@
 PKGNAM="gnome-robots"
-VERSION="3.12.2"
+VERSION="3.14.2"
 HOMEPAGE=""
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-robots/3.12/gnome-robots-3.12.2.tar.xz"
-MD5SUM="61029bdaaa2162c492a9854b952d5a4f"
+DOWNLOAD="http://download.gnome.org/sources/gnome-robots/3.14/gnome-robots-3.14.2.tar.xz"
+MD5SUM="a9286c0bfbdcd931791fc6b8893b2489"

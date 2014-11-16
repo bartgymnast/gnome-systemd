@@ -1,5 +1,5 @@
 PKGNAM="swell-foop"
-VERSION="3.12.2"
+VERSION="3.14.0"
 HOMEPAGE=""
-DOWNLOAD="http://download.gnome.org/sources/swell-foop/3.12/swell-foop-3.12.2.tar.xz"
-MD5SUM="03c227f399f0162261f5e0f9d735e420"
+DOWNLOAD="http://download.gnome.org/sources/swell-foop/3.14/swell-foop-3.14.0.tar.xz"
+MD5SUM="ab9ac4c413095dbf9c49c851eb12d6a0"

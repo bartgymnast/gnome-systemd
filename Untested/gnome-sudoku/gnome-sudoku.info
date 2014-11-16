@@ -1,5 +1,5 @@
 PKGNAM="gnome-sudoku"
-VERSION="3.12.2"
+VERSION="3.14.2"
 HOMEPAGE=""
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-sudoku/3.12/gnome-sudoku-3.12.2.tar.xz"
-MD5SUM="b462663d952c62d91b8319d9d58949a5"
+DOWNLOAD="http://download.gnome.org/sources/gnome-sudoku/3.14/gnome-sudoku-3.14.2.tar.xz"
+MD5SUM="73445779e693ed5b847435c0f7c9ef11"

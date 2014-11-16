@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/GNOME/sources/rest/0.7/rest-0.7.92.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/0.7/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}

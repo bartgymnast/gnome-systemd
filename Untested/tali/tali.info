@@ -1,5 +1,5 @@
 PKGNAM="tali"
-VERSION="3.12.2"
+VERSION="3.14.0"
 HOMEPAGE=""
-DOWNLOAD="http://download.gnome.org/sources/tali/3.12/tali-3.12.2.tar.xz"
-MD5SUM="d26dbc8eac48f8fa126b48283a056152"
+DOWNLOAD="http://download.gnome.org/sources/tali/3.14/tali-3.14.0.tar.xz"
+MD5SUM="94cfdb28435358eec2a82ec12ab8def4"

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2014 Eugene Wissner (belka.ew@gmail.com)
+# Copyright 2014 Bart van der Hall, Almere, NL
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -21,8 +21,8 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 
-PKGNAM=gnome-sudoku
-VERSION=${VERSION:-3.14.2}
+PKGNAM=seahorse
+VERSION=${VERSION:-3.14.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -81,6 +81,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var/lib \
+  --enable-debug=no \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 

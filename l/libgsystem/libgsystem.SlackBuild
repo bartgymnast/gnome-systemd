@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/libgsystem/2014.1/libgsystem-2014.1.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/$VERSION/$PKGNAM-$VERSION.tar.xz
 
 
 CWD=$(pwd)

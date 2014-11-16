@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/GNOME/sources/json-glib/1.0/json-glib-1.0.2.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/1.0/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2014 Eugene Wissner (belka.ew@gmail.com)
+# Copyright 2014 Bart van der Hall, Almere, NL
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -21,8 +21,8 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 
-PKGNAM=gnome-sudoku
-VERSION=${VERSION:-3.14.2}
+PKGNAM=rygel
+VERSION=${VERSION:-0.24.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c http://download.gnome.org/sources/$PKGNAM/3.14/$PKGNAM-$VERSION.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/0.24/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
@@ -81,6 +81,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var/lib \
+  --enable-gst-launch-plugin \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 

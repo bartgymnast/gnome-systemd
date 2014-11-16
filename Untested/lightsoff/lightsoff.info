@@ -1,5 +1,5 @@
 PKGNAM="lightsoff"
-VERSION="3.12.2"
+VERSION="3.14.1"
 HOMEPAGE=""
-DOWNLOAD="http://download.gnome.org/sources/lightsoff/3.12/lightsoff-3.12.2.tar.xz"
-MD5SUM="c5ae516ea89ba6aec8fe67ee70b1039a"
+DOWNLOAD="http://download.gnome.org/sources/lightsoff/3.14/lightsoff-3.14.1.tar.xz"
+MD5SUM="46881da28fed94425c688f5d84b54198"

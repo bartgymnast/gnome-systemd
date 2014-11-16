@@ -42,7 +42,7 @@ TMP=${TMP:-/tmp/dlackware}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/var/cache/dlackware}
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/librsvg/2.40/librsvg-2.40.5.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/2.40/$PKGNAM-$VERSION.tar.xz
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"

@@ -1,5 +1,5 @@
 PKGNAM="gupnp"
 VERSION="0.20.12"
 HOMEPAGE="http://www.gnome.org/"
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gupnp/0.20/gupnp-0.20.12.tar.xz"
+DOWNLOAD="http://download.gnome.org/sources/gupnp/0.20/gupnp-0.20.12.tar.xz"
 MD5SUM="c01aa6d3a78792b3a24591f036dd91f4"

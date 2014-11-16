@@ -1,5 +1,5 @@
 PKGNAM="gnome-photos"
-VERSION="3.12.2"
+VERSION="3.14.2"
 HOMEPAGE=""
-DOWNLOAD="http://ftp.gnome.org/pub/gnome/sources/gnome-photos/3.12/gnome-photos-3.12.2.tar.xz"
-MD5SUM=""
+DOWNLOAD="http://download.gnome.org/sources/gnome-photos/3.14/gnome-photos-3.14.2.tar.xz"
+MD5SUM="494ef47076725305fdcb46fb690e3604"
