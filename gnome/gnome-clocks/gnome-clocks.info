@@ -1,0 +1,5 @@
+PKGNAM="gnome-clocks"
+VERSION="3.14.1"
+HOMEPAGE=""
+DOWNLOAD="http://download.gnome.org/sources/gnome-clocks/3.14/gnome-clocks-3.14.1.tar.xz"
+MD5SUM="1952e7889d979f1221669d451a0971cc"
