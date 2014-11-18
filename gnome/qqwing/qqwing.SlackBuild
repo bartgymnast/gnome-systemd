@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2014 Eugene Wissner (belka.ew@gmail.com)
+# Copyright 2014 Bart van der Hall, Almere, NL
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -21,8 +21,8 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 
-PKGNAM=gnome-photos
-VERSION=${VERSION:-3.14.2}
+PKGNAM=qqwing
+VERSION=${VERSION:-1.3.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -37,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c http://download.gnome.org/sources/$PKGNAM/3.14/$PKGNAM-$VERSION.tar.xz
+wget -c http://ostermiller.org/$PKGNAM/$PKGNAM-$VERSION.tar.gz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}

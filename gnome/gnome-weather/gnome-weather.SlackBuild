@@ -21,9 +21,8 @@
 #   SUCH DAMAGE.
 # -----------------------------------------------------------------------------
 
-PKGNAM=vte2_91
-SRCNAM=vte
-VERSION=${VERSION:-0.38.2}
+PKGNAM=gnome-weather
+VERSION=${VERSION:-3.14.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
@@ -38,7 +37,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c http://download.gnome.org/sources/$SRCNAM/0.38/$SRCNAM-$VERSION.tar.xz
+wget -c http://download.gnome.org/sources/$PKGNAM/3.14/$PKGNAM-$VERSION.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
@@ -61,12 +60,12 @@ fi
 
 set -e # Exit on most errors
 
-rm -rf $TMP
+rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $SRCNAM-$VERSION
-tar xvf $CWD/${SRCNAM}-$VERSION.tar.?z*
-cd $SRCNAM-$VERSION
+rm -rf $PKGNAM-$VERSION
+tar xvf $CWD/${PKGNAM}-$VERSION.tar.?z*
+cd $PKGNAM-$VERSION
 
 chown -R root:root .
 find . \
@@ -82,15 +81,11 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var/lib \
-  --mandir=/usr/man \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --build=$ARCH-slackware-linux
 
 make $NUMJOBS
 make install DESTDIR=$PKG
-
-ln -sf $PKG/usr/lib64/pkgconfig/vte-2.91.pc $PKG/usr/lib64/pkgconfig/vte-2.90.pc
-
 
 # Strip binaries:
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \

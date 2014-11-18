@@ -10,7 +10,7 @@ l/harfbuzz
 l/pango
 l/libpng
 l/gdk-pixbuf2
-/at-spi2-core
+l/at-spi2-core
 l/at-spi2-atk
 l/gtk+3
 d/vala
@@ -26,6 +26,7 @@ gnome/libgweather
 n/GeoIP
 gnome/geoclue
 l/iso-codes
+l/libsecret
 gnome/libwebp
 gnome/webkitgtk
 l/libnotify
@@ -68,7 +69,7 @@ l/poppler-data
 l/poppler
 l/check
 l/libosinfo
-nome/tracker
+gnome/tracker
 gnome/exempi
 gnome/nautilus
 gnome/gssdp
@@ -115,7 +116,7 @@ gnome/baobab
 gnome/gupnp-igd
 gnome/libnice
 gnome/farstream
-l/python-rdflib
+l/rdflib
 gnome/zeitgeist
 gnome/folks
 gnome/telepathy-farstream
@@ -193,6 +194,27 @@ gnome/gnome-mahjongg
 gnome/gnome-mines
 gnome/gnome-nettool
 gnome/gnome-nibbles
+gnome/gnome-photos
+gnome/gnome-robots
+gnome/qqwing
+gnome/gnome-sudoku
+gnome/gnome-tetravex
+gnome/gnome-tweak-tool
+gnome/gnome-weather
+gnome/iagno
+gnome/lightsoff
+gnome/gtksourceviewmm
+# gnome/nemiver - vte errors
+gnome/orca
+gnome/quadrapassel
+gnome/gupnp-dlna
+gnome/rygel
+gnome/seahorse
+gnome/swell-foop
+gnome/tali
+gnome/gtk-vnc
+gnome/vinagre
+
 
 ### [gnome-all] end
 
