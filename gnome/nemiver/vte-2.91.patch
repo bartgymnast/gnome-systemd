@@ -1,0 +1,88 @@
+From cf665417768e73b837f4761e698eb89c2d121ad0 Mon Sep 17 00:00:00 2001
+From: Debarshi Ray <debarshir@gnome.org>
+Date: Fri, 16 May 2014 14:16:43 +0200
+Subject: 730243 Port to vte-2.91 API
+
+	* configure.ac: Build against vte-2.91.
+	* src/uicommon/nmv-terminal (init_body): Use
+	vte_terminal_set_font instead of
+	vte_terminal_set_font_from_string.  Remove
+	vte_terminal_set_emulation that is not present in this version of
+	vte anymore.  The emulation is set to 'xterm' by default anyway.
+	(init_pty): vte_terminal_set_pty expects a VtePty instead of a fd.
+	Adjust according to that.  Do not forget to make the code
+	exception-safe.
+
+diff --git a/configure.ac b/configure.ac
+index db99afd..8b1f93f 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -353,7 +353,7 @@ dnl library dependencies for the nemiver common UI module
+ DEP_UICOMMON=" gtkmm-3.0 >= $LIBGTKMM_VERSION \
+                gtk+-3.0 >= $LIBGTK_VERSION \
+                gtksourceviewmm-3.0 >= $LIBGTKSOURCEVIEWMM_VERSION \
+-               vte-2.90 >= $LIBVTE_VERSION"
++               vte-2.91 >= $LIBVTE_VERSION"
+ 
+ PKG_CHECK_MODULES(NEMIVERUICOMMON, $DEP_UICOMMON $DEP_COMMON $DEP_MEMORYVIEW)
+ NEMIVERUICOMMON_CFLAGS="$NEMIVERUICOMMON_CFLAGS $CPPUNIT_CFLAGS"
+@@ -376,7 +376,7 @@ AC_SUBST(NEMIVERWORKBENCH_CFLAGS)
+ 
+ dnl library dependencies for the nemiver debug perspective plugin
+ DEP_PERSP="gtksourceviewmm-3.0 >= $LIBGTKSOURCEVIEWMM_VERSION \
+-           vte-2.90 >= $LIBVTE_VERSION"
++           vte-2.91 >= $LIBVTE_VERSION"
+ 
+ PKG_CHECK_MODULES(NEMIVERDBGPERSP, $DEP_UICOMMON $DEP_VFS $DEP_PERSP $DEP_MEMORYVIEW $DEP_DYNAMICLAYOUT)
+ NEMIVERDBGPERSP_LIBS="$NEMIVERDBGPERSP_LIBS $CPPUNIT_LIBS"
+diff --git a/src/uicommon/nmv-terminal.cc b/src/uicommon/nmv-terminal.cc
+index 717c094..8ba9139 100644
+--- a/src/uicommon/nmv-terminal.cc
++++ b/src/uicommon/nmv-terminal.cc
+@@ -46,6 +46,7 @@
+ #include <gtkmm/menu.h>
+ #include <gtkmm/builder.h>
+ #include <gtkmm/uimanager.h>
++#include <pangomm/fontdescription.h>
+ #include <vte/vte.h>
+ #include <glib/gi18n.h>
+ #include "common/nmv-exception.h"
+@@ -133,12 +134,12 @@ struct Terminal::Priv {
+         vte = VTE_TERMINAL (w);
+         THROW_IF_FAIL (vte);
+ 
+-        // Mandatory for vte 0.14	
+-        vte_terminal_set_font_from_string (vte, "monospace");
++        // Mandatory for vte >= 0.14
++        Pango::FontDescription font_desc ("monospace");
++        vte_terminal_set_font (vte, font_desc.gobj());
+ 
+         vte_terminal_set_scroll_on_output (vte, TRUE);
+         vte_terminal_set_scrollback_lines (vte, 1000);
+-        vte_terminal_set_emulation (vte, "xterm");
+ 
+         widget = Glib::wrap (w);
+         THROW_IF_FAIL (widget);
+@@ -264,7 +265,13 @@ struct Terminal::Priv {
+         THROW_IF_FAIL (slave_pty);
+         THROW_IF_FAIL (master_pty);
+ 
+-        vte_terminal_set_pty (vte, master_pty);
++        GError *err = 0;
++        VtePty *p = vte_pty_new_foreign_sync (master_pty, 0, &err);
++        GErrorSafePtr error (err);
++        SafePtr<VtePty, RefGObjectNative, UnrefGObjectNative> pty (p);
++        THROW_IF_FAIL2 (!error, error->message);
++
++        vte_terminal_set_pty (vte, pty.get());
+         return true;
+     }
+ };//end Terminal::Priv
+@@ -338,4 +345,3 @@ Terminal::feed (const UString &a_text)
+ 
+ 
+ NEMIVER_END_NAMESPACE(nemiver)
+-
+-- 
+cgit v0.10.1
+

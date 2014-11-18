@@ -74,6 +74,15 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+
+patch -p1 --verbose -i $CWD/vte-2.91.patch || exit 1
+patch -p1 --verbose -i $CWD/fix1.patch || exit 1
+patch -p1 --verbose -i $CWD/fix2.patch || exit 1
+patch -p1 --verbose -i $CWD/pty.patch || exit 1
+patch -p1 --verbose -i $CWD/double-vte.patch || exit 1
+
+autoreconf -ivf
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \

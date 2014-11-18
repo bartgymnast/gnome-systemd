@@ -89,9 +89,6 @@ CXXFLAGS="$SLKCFLAGS" \
 make $NUMJOBS
 make install DESTDIR=$PKG
 
-ln -sf $PKG/usr/lib64/pkgconfig/vte-2.91.pc $PKG/usr/lib64/pkgconfig/vte-2.90.pc
-
-
 # Strip binaries:
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
 	  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
