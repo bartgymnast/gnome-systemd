@@ -204,7 +204,7 @@ gnome/gnome-weather
 gnome/iagno
 gnome/lightsoff
 gnome/gtksourceviewmm
-# gnome/nemiver - vte errors
+gnome/nemiver
 gnome/orca
 gnome/quadrapassel
 gnome/gupnp-dlna
