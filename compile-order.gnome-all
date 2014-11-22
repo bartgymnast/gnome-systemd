@@ -222,5 +222,5 @@ gnome/gnome-initial-setup
 ### [gnome-all] end
 
 ### [gnome-extras] begin
-
+gnome-extra/p7zip
 ### [gnome-extras] end
