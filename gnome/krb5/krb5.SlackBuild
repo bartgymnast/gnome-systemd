@@ -1,0 +1,313 @@
+#!/bin/sh
+# Copyright 2014 Bart van der Hall, Almere, NL.
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR `AS IS'' AND ANY EXPRESS OR IMPLIED
+#  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+#  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+#  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# http://web.mit.edu/kerberos/www/
+
+PKGNAM=krb5
+VERSION=${VERSION:-1.12.1}
+SVER=$(echo ${VERSION} | cut -d. -f1-2)
+BUILD=${BUILD:-1}
+TAG=${TAG:-_dlack}
+
+NUMJOBS=${NUMJOBS:-" -j7 "}
+
+wget -c http://web.mit.edu/kerberos/dist/$PKGNAM/1.12/$PKGNAM-$VERSION-signed.tar
+
+# Automatically determine the architecture we're building on:
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) export ARCH=i486 ;;
+    arm*) export ARCH=arm ;;
+    # Unless $ARCH is already set, use uname -m for all other archs:
+       *) export ARCH=$( uname -m ) ;;
+  esac
+fi
+
+if [ "$ARCH" = "i486" ]; then
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "s390" ]; then
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/dlackware}
+PKG=$TMP/package-${PKGNAM}
+OUTPUT=${OUTPUT:-/var/cache/dlackware}
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PKGNAM-$VERSION
+rm -f $TMP/$PKGNAM-$VERSION.tar.gz{,.asc}
+tar xvf $CWD/$PKGNAM-$VERSION-signed.tar -C $TMP
+tar xvf $TMP/$PKGNAM-$VERSION.tar.gz
+cd $PKGNAM-$VERSION
+
+DOCDIR=${PKG}/usr/doc/${PKGNAM}-${VERSION}
+
+# Set to YES to enable pam support
+SBO_PAM=${SBO_PAM:-YES}
+
+if [ -r ${CWD}/apply-patches.sh ]; then
+  . ${CWD}/apply-patches.sh
+fi
+
+# Generate an FDS-compatible LDIF file.
+inldif=plugins/kdb/ldap/libkdb_ldap/kerberos.ldif
+cat > 60kerberos.ldif << EOF
+# This is a variation on kerberos.ldif which 389 Directory Server will like.
+dn: cn=schema
+EOF
+egrep -iv '(^$|^dn:|^changetype:|^add:)' $inldif | \
+sed -r 's,^		,                ,g' | \
+sed -r 's,^	,        ,g' >> 60kerberos.ldif
+touch -r $inldif 60kerberos.ldif
+
+( cd src || exit 1
+
+if [ "${SBO_AUTOGEN}" = "YES" ] ;then
+  ./util/reconf --verbose || exit $?
+fi
+
+unset SBO_PAMOPTS
+[ "${SBO_PAM}" = "YES" ] || SBO_PAMOPTS='--without-pam'
+
+INCLUDES="-I/usr/include/et"
+SLKCFLAGS="$(echo ${SLKCFLAGS} ${DEFINES} ${INCLUDES} -fPIC -fno-strict-aliasing -fstack-protector-all)"
+CPPFLAGS="$(echo ${DEFINES} ${INCLUDES})"
+
+CFLAGS="${SLKCFLAGS}" \
+CXXFLAGS="${SLKCFLAGS}" \
+CPPFLAGS="${CPPFLAGS}" \
+SS_LIB="-lss" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var/kerberos \
+  --infodir=/usr/info \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/${PKGNAM}-${VERSION} \
+  --enable-shared \
+  --disable-rpath \
+  --with-system-et \
+  --with-system-ss \
+  --with-netlib="-lresolv" \
+  --without-tcl \
+  --enable-dns-for-realm \
+  --with-ldap \
+  --with-dirsrv-account-locking \
+  --enable-pkinit \
+  --with-pkinit-crypto-impl=openssl \
+  --without-system-verto \
+  ${SBO_PAMOPTS} \
+  --without-selinux || exit $?
+
+make -j4 || make || exit $?
+make install DESTDIR=${PKG} EXAMPLEDIR=/usr/doc/${PKGNAM}-${VERSION}/examples || exit $?
+
+) || exit $?
+
+# Munge krb5-config yet again.  This is totally wrong for 64-bit, but chunks
+# of the buildconf patch already conspire to strip out /usr/<anything> from the
+# list of link flags, and it helps prevent file conflicts on multilib systems.
+sed -r -i -e 's|^libdir=/usr/lib(64)?$|libdir=/usr/lib|g' ${PKG}/usr/bin/krb5-config
+
+[ "${LDFLAGS}" ] && sed -i -e "/^LDFLAGS/s|${LDFLAGS}||g" ${PKG}/usr/bin/krb5-config
+
+find ${PKG} | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null
+
+mkdir -p ${PKG}/lib${LIBDIRSUFFIX}
+
+for libname in libgssapi_krb5 libgssrpc libk5crypto libkrb5 libkrb5support ;do
+  mv ${PKG}/usr/lib${LIBDIRSUFFIX}/${libname}.so.* ${PKG}/lib${LIBDIRSUFFIX}/ || exit 1
+
+  reldir=$(perl -e 'use File::Spec; print File::Spec->abs2rel($ARGV[0], $ARGV[1])' /lib${LIBDIRSUFFIX} /usr/lib${LIBDIRSUFFIX})
+  oldlink=$(readlink ${PKG}/usr/lib${LIBDIRSUFFIX}/${libname}.so)
+  ln -sf ${reldir}/$(basename ${oldlink}) ${PKG}/usr/lib${LIBDIRSUFFIX}/${libname}.so || exit 1
+done
+
+# Sample KDC config files (bundled kdc.conf and kadm5.acl).
+mkdir -p ${PKG}/var/kerberos/krb5kdc
+for conf in kdc.conf kadm5.acl ;do
+  install -pm 600 ${CWD}/conf/${conf} ${PKG}/var/kerberos/krb5kdc/${conf}.new || exit 1
+done
+
+# Where per-user keytabs live by default.
+mkdir -p ${PKG}/var/kerberos/kdc/user
+
+# Default configuration file for everything.
+mkdir -p ${PKG}/etc
+install -pm 644 ${CWD}/conf/krb5.conf ${PKG}/etc/krb5.conf.new || exit 1
+
+# Plug-in directories.
+install -pdm 755 ${PKG}/usr/lib${LIBDIRSUFFIX}/krb5/plugins/preauth
+install -pdm 755 ${PKG}/usr/lib${LIBDIRSUFFIX}/krb5/plugins/kdb
+install -pdm 755 ${PKG}/usr/lib${LIBDIRSUFFIX}/krb5/plugins/authdata
+
+RCFILES="kadmind kpropd krb5kdc"
+
+mkdir -p ${PKG}/etc/rc.d
+for rcfile in ${RCFILES} ;do
+  install -pm0755 ${CWD}/conf/rc.${rcfile} ${PKG}/etc/rc.d/rc.${rcfile}.new || exit 1
+done
+
+mkdir -p ${PKG}/lib/systemd/system
+install -pm0644 ${CWD}/conf/*.service ${PKG}/lib/systemd/system/ || exit 1
+
+mkdir -p ${PKG}/var/log/setup
+install -pm0755 ${CWD}/conf/setup.onlyonce.rc${PKGNAM} \
+  ${PKG}/var/log/setup/setup.onlyonce.rc${PKGNAM} || exit 1
+
+
+mkdir -p ${PKG}/etc/default
+cat > ${PKG}/etc/default/krb5kdc.new <<'EOF'
+KRB5KDC_ARGS=
+EOF
+
+cat > ${PKG}/etc/default/kadmin.new <<'EOF'
+KADMIND_ARGS=
+EOF
+
+mkdir -p ${PKG}/etc/logrotate.d
+cat > ${PKG}/etc/logrotate.d/krb5kdc.new <<'EOF'
+/var/log/krb5kdc.log {
+    missingok
+    notifempty
+    monthly
+    rotate 12
+    postrotate
+      /bin/kill -HUP $(at /var/run/krb5kdc.pid 2>/dev/null) 2> /dev/null || true
+    endscript
+}
+EOF
+
+cat > ${PKG}/etc/logrotate.d/kadmind.new <<'EOF'
+/var/log/kadmind.log {
+    missingok
+    notifempty
+    monthly
+    rotate 12
+    postrotate
+     /bin/kill -HUP $(cat /var/run/kadmind.pid 2>/dev/null) 2> /dev/null || true
+    endscript
+}
+
+EOF
+
+if [ "${SBO_PAM}" = "YES" ] ;then
+  mkdir -p ${PKG}/etc/pam.d
+  install -pm0644 ${CWD}/conf/ksu.pamd ${PKG}/etc/pam.d/ksu.new || exit 1
+fi
+
+# Add a documentation directory:
+mkdir -p ${DOCDIR}
+cp -a \
+  NOTICE README 60kerberos ${CWD}/ChangeLog.SB \
+  ${DOCDIR}/
+[ -r ChangeLog ] && head -n 1000 ChangeLog > ${DOCDIR}/ChangeLog
+find ${DOCDIR}/ -type d -print0 | xargs -0 chmod 0755
+find ${DOCDIR}/ -type f -print0 | xargs -0 chmod 0644
+find ${DOCDIR}/ -type f -size 0 -print0 | xargs -0 rm -f
+
+# Compress and link manpages, if any:
+if [ -d ${PKG}/usr/share/man ]; then
+  mv ${PKG}/usr/share/man ${PKG}/usr/man
+  rmdir ${PKG}/usr/share
+fi
+if [ -d ${PKG}/usr/man ]; then
+  ( cd ${PKG}/usr/man
+    for manpagedir in $(find . -type d -name "man*") ; do
+      ( cd ${manpagedir}
+        for eachpage in $( find . -type l -maxdepth 1) ; do
+          ln -s $( readlink ${eachpage} ).gz ${eachpage}.gz
+          rm -f ${eachpage}
+        done
+        gzip -9 *.?
+        # Prevent errors
+        rm -f *.gz.gz
+      )
+    done
+  )
+fi
+
+rm -f ${PKG}/usr/man/man*/.k*.*
+rmdir -p ${PKG}/usr/man/*
+
+mkdir -p ${PKG}/install
+cat ${CWD}/slack-desc > ${PKG}/install/slack-desc
+
+cat > ${PKG}/install/doinst.sh <<EOF
+# Figure out our root directory
+ROOTDIR=\$(pwd)
+unset CHROOT
+if test "\${ROOTDIR}" != "/"; then
+  CHROOT="chroot \${ROOTDIR} "
+  ROOTDIR="\${ROOTDIR}/"
+fi
+config() {
+  NEW="\$1"
+  OLD="\$(dirname \$NEW)/\$(basename \$NEW .new)"
+  # If there's no config file by that name, mv it over:
+  if [ ! -r \$OLD ]; then
+    mv \$NEW \$OLD
+  elif [ "\$(cat \$OLD | md5sum)" = "\$(cat \$NEW | md5sum)" ]; then
+    # toss the redundant copy
+    rm \$NEW
+  fi
+  # Otherwise, we leave the .new copy for the admin to consider...
+}
+
+# Keep same perms on rc.*.new:
+for rcfile in ${RCFILES} ;do
+  if [ -r etc/rc.d/rc.${rcfile} -a -r etc/rc.d/rc.${rcfile}.new ]; then
+    chmod --reference=etc/rc.d/rc.${rcfile} etc/rc.d/rc.${rcfile}.new
+  fi
+done
+
+## List of conf files to check.  The conf files in your package should end in .new
+EOF
+
+( cd ${PKG}
+  find etc/ var -name '*.new' -exec echo config {} ';' | sort >> ${PKG}/install/doinst.sh
+  find etc/ var/ -name '*.new' -a -size 0 -exec echo rm -f {} ';' | sort >> ${PKG}/install/doinst.sh
+  echo >> ${PKG}/install/doinst.sh
+)
+
+cat >> ${PKG}/install/doinst.sh <<'EOF'
+if [ -x bin/systemctl ] ; then
+  ${CHROOT} /bin/systemctl --system daemon-reload >/dev/null 2>&1
+fi
+EOF
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
