@@ -1,36 +1,15 @@
 ### [gnome-suites-core-deps] begin
-l/shared-mime-info
-ap/itstool
 gnome/yelp-xsl
 gnome/yelp-tools
-l/glib2
-l/gobject-introspection
 gnome/gnome-common
-l/atk
-l/harfbuzz
-l/pango
-l/libpng
-l/gdk-pixbuf2
-l/at-spi2-core
-l/at-spi2-atk
-l/gtk+3
 gnome/vala
-l/dconf
-l/gsettings-desktop-schemas
-n/p11-kit
-l/glib-networking
-l/libsoup
-l/gcr
 gnome/json-glib
 gnome/geocode-glib
 gnome/libgweather
 gnome/GeoIP
 gnome/geoclue
-l/iso-codes
-l/libsecret
 gnome/libwebp
 gnome/webkitgtk
-l/libnotify
 gnome/rest
 gnome/telepathy-glib
 gnome/webkitgtk3
@@ -44,17 +23,12 @@ gnome/cogl
 gnome/clutter
 gnome/clutter-gtk
 gnome/libgusb
-l/lcms2
 gnome/colord
 gnome/colord-gtk
-l/gvfs
 gnome/gnome-desktop
-l/gtk+2
 gnome/PackageKit
-a/upower
 gnome/ibus
 gnome/libgsystem
-l/librsvg
 gnome/libwacom
 gnome/gnome-settings-daemon
 gnome/libgtop
@@ -65,9 +39,6 @@ gnome/quvi
 gnome/totem-pl-parser
 gnome/grilo
 gnome/libmediaart
-l/libgsf
-l/poppler-data
-l/poppler
 gnome/check
 gnome/libosinfo
 gnome/tracker
@@ -78,14 +49,11 @@ gnome/gupnp
 gnome/gupnp-av
 gnome/nautilus-sendto
 gnome/gnome-bluetooth
-xap/network-manager-applet
-gnome/appstream-glib
 gnome/clutter-gst
 gnome/gnome-video-effects
 gnome/cheese
 gnome/gnome-control-center
 gnome/adwaita-icon-theme
-l/gnome-keyring
 gnome/gnome-menus
 gnome/gnome-packagekit
 gnome/gnome-session
@@ -105,15 +73,12 @@ gnome/mutter
 gnome/telepathy-logger
 gnome/gnome-shell
 gnome/cantarell-fonts
-l/gnome-themes-standard
 gnome/mousetweaks
 gnome/telepathy-mission-control
 gnome/gnome-backgrounds
 gnome/gnome-user-share
 gnome/vino
 gnome/gnome-user-docs
-### [gnome-suites-core-deps] end - part 1, working desktop
-### [gnome-suites-core-deps] part 2, finishing the jhbuild
 gnome/baobab
 gnome/gupnp-igd
 gnome/libnice
@@ -151,9 +116,7 @@ gnome/atkmm
 gnome/gtkmm
 gnome/gnome-system-monitor
 gnome/vte2_91
-gnome/appdata-tools
 gnome/gnome-terminal
-xap/gucharmap
 gnome/libmusicbrainz5
 gnome/sushi
 gnome/pylint
@@ -161,9 +124,6 @@ gnome/totem
 gnome/yelp
 gnome/gnome-disk-utility
 gnome/gnome-shell-extensions
-## [gnome-suites-core-deps] end - part 2, jhbuild list finished
-## [gnome-all] begin
-l/gmime
 gnome/gfbgraph
 gnome/libzapojit
 gnome/gnome-online-miners
@@ -218,9 +178,3 @@ gnome/gtk-vnc
 gnome/vinagre
 gnome/krb5
 gnome/gnome-initial-setup
-
-### [gnome-all] end
-
-### [gnome-extras] begin
-gnome-extra/p7zip
-### [gnome-extras] end

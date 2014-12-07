@@ -38,7 +38,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-wget -c ftp://ftp.gnome.org/pub/gnome/sources/glibmm/2.42/glibmm-2.42.0.tar.xz
+wget -c http://download.gnome.org/sources/glibmm/2.42/glibmm-2.42.0.tar.xz
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/dlackware}
