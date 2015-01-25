@@ -22,11 +22,11 @@
 # -----------------------------------------------------------------------------
 
 PKGNAM=gnome-shell
-VERSION=${VERSION:-3.14.2}
+VERSION=${VERSION:-3.14.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
 
-NUMJOBS=${NUMJOBS:--j7}
+NUMJOBS=${NUMJOBS:--j2}
 
 # Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
@@ -78,6 +78,8 @@ patch -p0 -E --verbose -i $CWD/gnome-shell-systemd209.patch || exit 1
 
 autoreconf -ivf
 
+#export PYTHON=/usr/bin/python2
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
@@ -85,12 +87,16 @@ CXXFLAGS="$SLKCFLAGS" \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var/lib \
+  --enable-introspection \
+  --disable-browser-plugin \
+  --enable-systemd \
   --mandir=/usr/man \
+  --enable-compile-warnings=no \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
-  --build=$ARCH-slackware-linux
+  --build=$ARCH-slackware-linux || exit 1
 
-make $NUMJOBS
-make install DESTDIR=$PKG
+make $NUMJOBS || exit 1
+make install DESTDIR=$PKG || exit 1
 
 # Strip binaries:
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \

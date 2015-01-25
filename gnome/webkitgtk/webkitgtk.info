@@ -1,5 +1,5 @@
 PKGNAM="webkitgtk"
-VERSION="2.4.7"
+VERSION="2.4.2"
 HOMEPAGE="http://webkitgtk.org/"
-DOWNLOAD="http://www.webkitgtk.org/releases/webkitgtk-2.4.7.tar.xz"
-MD5SUM="e1a10b4730f501980e3681db9b0e5d25"
+DOWNLOAD="http://www.webkitgtk.org/releases/webkitgtk-2.4.2.tar.xz"
+MD5SUM="92ee7b2b15cda9580b842834d4db118a"

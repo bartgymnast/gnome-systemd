@@ -24,7 +24,7 @@
 
 PKGNAM=cogl
 VERSION=${VERSION:-1.18.2}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_dlack}
 
 # Automatically determine the architecture we're building on:
@@ -35,6 +35,10 @@ if [ -z "$ARCH" ]; then
         *) export ARCH=$( uname -m ) ;;
   esac
 fi
+
+# Set YES to set systemd as default init
+SBO_WAYLAND=${SBO_WAYLAND:-YES}
+
 
 wget -c ftp://ftp.gnome.org/pub/gnome/sources/$PKGNAM/1.18/$PKGNAM-$VERSION.tar.xz
 
@@ -74,6 +78,9 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+unset SBO_WAYLANDOPTS
+[ "${SBO_WAYLAND}" = "YES" ] || SB_WAYLANDOPTS='--disable-wayland-egl-platform --disable-wayland-egl-server'
+
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
@@ -88,8 +95,7 @@ find -L . \
   --enable-gtk-doc \
   --enable-introspection \
   --enable-xlib-egl-platform \
-  --enable-wayland-egl-platform \
-  --enable-wayland-egl-server \
+  ${SBO_WAYLANDOPTS} \
   --enable-kms-egl-platform \
   --with-x \
   --mandir=/usr/man \

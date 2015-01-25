@@ -12,7 +12,6 @@ gnome/libwebp
 gnome/webkitgtk
 gnome/rest
 gnome/telepathy-glib
-gnome/webkitgtk3
 gnome/gnome-online-accounts
 gnome/uhttpmock
 gnome/liboauth
@@ -90,7 +89,7 @@ gnome/telepathy-farstream
 gnome/libchamplain
 gnome/empathy
 gnome/libwnck3
-gnome/webkit2gtk3
+gnome/webkit2gtk
 gnome/epiphany
 gnome/glade
 gnome/gnome-js-common
@@ -176,5 +175,4 @@ gnome/swell-foop
 gnome/tali
 gnome/gtk-vnc
 gnome/vinagre
-gnome/krb5
 gnome/gnome-initial-setup

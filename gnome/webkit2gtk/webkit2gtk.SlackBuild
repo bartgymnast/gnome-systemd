@@ -24,7 +24,7 @@
 
 
 
-PKGNAM=webkit2gtk3
+PKGNAM=webkit2gtk
 SRCNAM=webkitgtk
 VERSION=${VERSION:-2.6.2}
 BUILD=${BUILD:-1}

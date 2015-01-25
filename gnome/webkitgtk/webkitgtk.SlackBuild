@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# Slackware build script for WebKitGTK+
+# Slackware build script for WebKitGTK+3
 #
-# Copyright 2010-2014  Erik W. Hanson, Minneapolis, MN, USA
+# Copyright 2014  Bart van der Hall, Almere, NL
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,7 +22,10 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
+
 PKGNAM=webkitgtk
+SRCNAM=webkitgtk
 VERSION=${VERSION:-2.4.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_dlack}
@@ -65,18 +68,15 @@ set -eu
 rm -rf $TMP
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PKGNAM-$VERSION
-tar xvf $CWD/$PKGNAM-$VERSION.tar.xz
-cd $PKGNAM-$VERSION
+rm -rf $SRCNAM-$VERSION
+tar xvf $CWD/$SRCNAM-$VERSION.tar.xz
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
   -o -perm 511 \) -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
-
-# Check if geoclue is there
-if pkg-config --exists geoclue ; then GEOCLUE="yes" ; else GEOCLUE="no" ; fi
 
 ## We don't like pre-built binaries, especially ones for other OSes. =)
 rm -rf WebKitLibraries/{*.a,win/}
@@ -86,6 +86,7 @@ CXXFLAGS="${SLKCFLAGS}" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --libexecdir=/usr/libexec/${PKGNAM} \
   --sysconfdir=/etc \
   --localstatedir=/var/lib \
   --infodir=/usr/info \
@@ -94,7 +95,7 @@ CXXFLAGS="${SLKCFLAGS}" \
   --disable-silent-rules \
   --disable-debug \
   --enable-dependency-tracking \
-  --disable-webkit2 \
+  --enable-webkit2 \
   --enable-svg-fonts \
   --enable-jit \
   --enable-geolocation \
@@ -102,7 +103,7 @@ CXXFLAGS="${SLKCFLAGS}" \
   --enable-introspection \
   --disable-schemas-compile \
   --disable-gtk-doc \
-  --with-gtk=2.0 \
+  --with-gtk=3.0 \
   --build=$ARCH-slackware-linux
 
 mkdir -p DerivedSources/webkit
@@ -120,17 +121,19 @@ make -j${NJOBS} -k || make || exit 1
 make install DESTDIR=${PKG} || exit 1
 
 mkdir -p ${PKG}/usr/libexec/${PKGNAM}
+
 install -m 755 Programs/GtkLauncher \
   ${PKG}/usr/libexec/${PKGNAM}/ || exit 1
-if [ -f Programs/MiniBrowser ] ;then
-  install -m 755 Programs/MiniBrowser ${PKG}/usr/libexec/${PKGNAM}/ || exit 1
-fi
+install -m 755 Programs/MiniBrowser ${PKG}/usr/libexec/${PKGNAM}/ || exit 1
 
 if [ -x /usr/bin/chrpath ] ;then
-  chrpath --delete ${PKG}/usr/bin/jsc-1
-  chrpath --delete ${PKG}/usr/lib${LIBDIRSUFFIX}/libwebkitgtk-1.0.so.*
-  chrpath --delete ${PKG}/usr/libexec/${PKGNAM}/GtkLauncher
-  chrpath --delete ${PKG}/usr/libexec/${PKGNAM}/MiniBrowser
+chrpath --delete ${PKG}/usr/bin/jsc-3
+chrpath --delete ${PKG}/usr/lib${LIBDIRSUFFIX}/libwebkitgtk-3.0.so.*
+chrpath --delete ${PKG}/usr/lib${LIBDIRSUFFIX}/libwebkit2gtk-3.0.so.*
+chrpath --delete ${PKG}/usr/libexec/${PKGNAM}/GtkLauncher
+chrpath --delete ${PKG}/usr/libexec/${PKGNAM}/WebKitPluginProcess
+chrpath --delete ${PKG}/usr/libexec/${PKGNAM}/WebKitWebProcess
+chrpath --delete ${PKG}/usr/libexec/${PKGNAM}/MiniBrowser
 fi
 
 find ${PKG}/usr/lib${LIBDIRSUFFIX} -name '*.la' -delete
