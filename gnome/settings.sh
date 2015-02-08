@@ -22,3 +22,8 @@ systemctl enable canberra-system-bootup
 systemctl enable canberra-system-shutdown-reboot
 systemctl enable canberra-system-shutdown
 systemctl enable glib-compile-schemas
+
+# Lets remove some packages that are not stable with gtk+3 and/or bluez5
+removepkg blueman
+removepkg hplip
+
